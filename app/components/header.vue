@@ -9,7 +9,7 @@ const route = useRoute()
 const isEN = computed(() => route.path.startsWith("/en"))
 const isHU = computed(() => !route.path.startsWith("/en"))
 
-// --- LANGUAGE SWITCHER FIX ---
+// --- LANGUAGE SWITCHER ---
 const toEN = computed(() => {
   if (route.path.startsWith("/en")) return route.path
   if (route.path === "/") return "/en"
@@ -24,14 +24,30 @@ const toHU = computed(() => {
   return route.path
 })
 
-// --- HOME LINK ---
-const homeLink = computed(() => route.path.startsWith("/en") ? "/en" : "/")
+// --- LINKS ---
+const homeLink = computed(() =>
+    route.path.startsWith("/en") ? "/en" : "/"
+)
 
-// --- GALLERY LINK ---
-const galleryLink = computed(() => route.path.startsWith("/en") ? "/en/gallery" : "/gallery")
+const aboutLink = computed(() =>
+    route.path.startsWith("/en") ? "/en/about" : "/about"
+)
 
-// --- CONTACT LINK ---
-const contactLink = computed(() => route.path.startsWith("/en") ? "/en/contact" : "/contact")
+const galleryLink = computed(() =>
+    route.path.startsWith("/en") ? "/en/gallery" : "/gallery"
+)
+
+const contactLink = computed(() =>
+    route.path.startsWith("/en") ? "/en/contact" : "/contact"
+)
+
+// --- MENU LABELS ---
+const labels = computed(() => ({
+  home: isEN.value ? "HOME" : "KEZDŐLAP",
+  about: isEN.value ? "ABOUT US" : "RÓLUNK",
+  gallery: isEN.value ? "GALLERY" : "GALÉRIA",
+  contact: isEN.value ? "CONTACT" : "KAPCSOLAT"
+}))
 </script>
 
 <template>
@@ -57,16 +73,28 @@ const contactLink = computed(() => route.path.startsWith("/en") ? "/en/contact" 
             <NuxtLink
                 :to="homeLink"
                 :class="[
-                // base hover underline animation
                 'relative transition text-white hover:text-[#4fbb9b] ' +
                 'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 ' +
                 'after:bg-[#4fbb9b] after:transition-all after:duration-300 hover:after:w-full',
-
-                // active state
                 route.path === homeLink ? 'text-[#4fbb9b] after:w-full' : ''
               ]"
             >
-              HOME
+              {{ labels.home }}
+            </NuxtLink>
+          </li>
+
+          <!-- ABOUT -->
+          <li>
+            <NuxtLink
+                :to="aboutLink"
+                :class="[
+                'relative transition text-white hover:text-[#4fbb9b] ' +
+                'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 ' +
+                'after:bg-[#4fbb9b] after:transition-all after:duration-300 hover:after:w-full',
+                route.path.startsWith(aboutLink) ? 'text-[#4fbb9b] after:w-full' : ''
+              ]"
+            >
+              {{ labels.about }}
             </NuxtLink>
           </li>
 
@@ -78,11 +106,10 @@ const contactLink = computed(() => route.path.startsWith("/en") ? "/en/contact" 
                 'relative transition text-white hover:text-[#4fbb9b] ' +
                 'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 ' +
                 'after:bg-[#4fbb9b] after:transition-all after:duration-300 hover:after:w-full',
-
                 route.path.startsWith(galleryLink) ? 'text-[#4fbb9b] after:w-full' : ''
               ]"
             >
-              GALLERY
+              {{ labels.gallery }}
             </NuxtLink>
           </li>
 
@@ -94,11 +121,10 @@ const contactLink = computed(() => route.path.startsWith("/en") ? "/en/contact" 
                 'relative transition text-white hover:text-[#4fbb9b] ' +
                 'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 ' +
                 'after:bg-[#4fbb9b] after:transition-all after:duration-300 hover:after:w-full',
-
                 route.path.startsWith(contactLink) ? 'text-[#4fbb9b] after:w-full' : ''
               ]"
             >
-              CONTACT
+              {{ labels.contact }}
             </NuxtLink>
           </li>
 
@@ -106,8 +132,6 @@ const contactLink = computed(() => route.path.startsWith("/en") ? "/en/contact" 
 
         <!-- LANGUAGE SWITCHER -->
         <div class="flex items-center gap-3 text-white text-sm">
-
-          <!-- HU -->
           <NuxtLink
               :to="toHU"
               class="transition"
@@ -118,7 +142,6 @@ const contactLink = computed(() => route.path.startsWith("/en") ? "/en/contact" 
 
           <span>|</span>
 
-          <!-- EN -->
           <NuxtLink
               :to="toEN"
               class="transition"
@@ -126,7 +149,6 @@ const contactLink = computed(() => route.path.startsWith("/en") ? "/en/contact" 
           >
             EN
           </NuxtLink>
-
         </div>
 
       </div>
@@ -155,7 +177,17 @@ const contactLink = computed(() => route.path.startsWith("/en") ? "/en/contact" 
               @click="mobileOpen = false"
               class="text-white hover:text-[#4fbb9b]"
           >
-            HOME
+            {{ labels.home }}
+          </NuxtLink>
+        </li>
+
+        <li>
+          <NuxtLink
+              :to="aboutLink"
+              @click="mobileOpen = false"
+              class="text-white hover:text-[#4fbb9b]"
+          >
+            {{ labels.about }}
           </NuxtLink>
         </li>
 
@@ -165,7 +197,7 @@ const contactLink = computed(() => route.path.startsWith("/en") ? "/en/contact" 
               @click="mobileOpen = false"
               class="text-white hover:text-[#4fbb9b]"
           >
-            GALLERY
+            {{ labels.gallery }}
           </NuxtLink>
         </li>
 
@@ -175,7 +207,7 @@ const contactLink = computed(() => route.path.startsWith("/en") ? "/en/contact" 
               @click="mobileOpen = false"
               class="text-white hover:text-[#4fbb9b]"
           >
-            CONTACT
+            {{ labels.contact }}
           </NuxtLink>
         </li>
 
@@ -183,7 +215,6 @@ const contactLink = computed(() => route.path.startsWith("/en") ? "/en/contact" 
 
       <!-- MOBILE LANG SWITCH -->
       <div class="flex items-center gap-4 mt-4 text-white text-lg">
-
         <NuxtLink
             :to="toHU"
             @click="mobileOpen = false"
@@ -199,7 +230,6 @@ const contactLink = computed(() => route.path.startsWith("/en") ? "/en/contact" 
         >
           EN
         </NuxtLink>
-
       </div>
     </div>
 

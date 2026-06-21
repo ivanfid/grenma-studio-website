@@ -7,6 +7,7 @@ export default {
         extend: {
             fontFamily: {
                 oswald: ["Oswald", "sans-serif"],
+                body: ["Roboto Serif", "serif"],   // ← IDE KELL TENNI
             },
         },
     },

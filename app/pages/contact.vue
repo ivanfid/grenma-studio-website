@@ -67,7 +67,7 @@
 
           <!-- Ivanfi Dániel -->
           <p class="text-lg mb-2">
-            👤 <span class="text-gray-300">Ivanfi Dániel</span>
+            👤 <span class="text-gray-300">Ivánfi Dániel</span>
           </p>
           <p class="text-lg">
             📞 <span class="text-gray-300">+36 30 825 3143</span>
