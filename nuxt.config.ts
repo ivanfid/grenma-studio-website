@@ -3,7 +3,11 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
   modules: ['@nuxtjs/tailwindcss'],
+
+  ssr: false, // <-- GitHub Pages miatt kell
+
   app: {
+    baseURL: '/grenma-studio-website/', // <-- A repo neve KÖTELEZŐ ide
     head: {
       link: [
         {
@@ -13,9 +17,12 @@ export default defineNuxtConfig({
       ]
     }
   },
+
   css: [
     'photoswipe/style.css'
-  ]
+  ],
+
+  nitro: {
+    preset: 'github-pages' // <-- Ez teszi statikussá a buildet
+  }
 })
-
-
