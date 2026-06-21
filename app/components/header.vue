@@ -24,24 +24,22 @@ const toHU = computed(() => {
   return route.path
 })
 
-// --- HOME LINK FIX ---
-const homeLink = computed(() => {
-  return route.path.startsWith("/en") ? "/en" : "/"
-})
+// --- HOME LINK ---
+const homeLink = computed(() => route.path.startsWith("/en") ? "/en" : "/")
 
 // --- GALLERY LINK ---
-const galleryLink = computed(() => {
-  return route.path.startsWith("/en") ? "/en/gallery" : "/gallery"
-})
+const galleryLink = computed(() => route.path.startsWith("/en") ? "/en/gallery" : "/gallery")
 
 // --- CONTACT LINK ---
-const contactLink = computed(() => {
-  return route.path.startsWith("/en") ? "/en/contact" : "/contact"
-})
+const contactLink = computed(() => route.path.startsWith("/en") ? "/en/contact" : "/contact")
 </script>
 
 <template>
-  <header class="w-full bg-black/80 backdrop-blur-md fixed top-0 left-0 z-50">
+  <header
+      class="w-full fixed top-0 left-0 z-50
+           bg-gradient-to-l from-[#b02c07]/20 via-black/80 to-black/95
+           backdrop-blur-xl border-b border-white/5"
+  >
     <nav class="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-4">
 
       <!-- LOGO -->
@@ -58,7 +56,15 @@ const contactLink = computed(() => {
           <li>
             <NuxtLink
                 :to="homeLink"
-                class="text-white hover:text-[#4fbb9b] transition"
+                :class="[
+                // base hover underline animation
+                'relative transition text-white hover:text-[#4fbb9b] ' +
+                'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 ' +
+                'after:bg-[#4fbb9b] after:transition-all after:duration-300 hover:after:w-full',
+
+                // active state
+                route.path === homeLink ? 'text-[#4fbb9b] after:w-full' : ''
+              ]"
             >
               HOME
             </NuxtLink>
@@ -68,7 +74,13 @@ const contactLink = computed(() => {
           <li>
             <NuxtLink
                 :to="galleryLink"
-                class="text-white hover:text-[#4fbb9b] transition"
+                :class="[
+                'relative transition text-white hover:text-[#4fbb9b] ' +
+                'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 ' +
+                'after:bg-[#4fbb9b] after:transition-all after:duration-300 hover:after:w-full',
+
+                route.path.startsWith(galleryLink) ? 'text-[#4fbb9b] after:w-full' : ''
+              ]"
             >
               GALLERY
             </NuxtLink>
@@ -78,7 +90,13 @@ const contactLink = computed(() => {
           <li>
             <NuxtLink
                 :to="contactLink"
-                class="text-white hover:text-[#4fbb9b] transition"
+                :class="[
+                'relative transition text-white hover:text-[#4fbb9b] ' +
+                'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 ' +
+                'after:bg-[#4fbb9b] after:transition-all after:duration-300 hover:after:w-full',
+
+                route.path.startsWith(contactLink) ? 'text-[#4fbb9b] after:w-full' : ''
+              ]"
             >
               CONTACT
             </NuxtLink>
