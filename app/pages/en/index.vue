@@ -16,14 +16,15 @@
     <div class="absolute inset-0 bg-black/40"></div>
 
     <!-- Ultra‑micro grid overlay -->
-    <div class="absolute inset-0 pointer-events-none opacity-45"
-         style="
-       background-image:
-         linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
-         linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px);
-       background-size: 5px 5px;
-     ">
-    </div>
+    <div
+        class="absolute inset-0 pointer-events-none opacity-45"
+        style="
+        background-image:
+          linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px);
+        background-size: 5px 5px;
+      "
+    ></div>
 
     <!-- Content -->
     <div class="relative z-10 text-center px-6 inline-flex flex-col items-center">
@@ -34,8 +35,8 @@
         <!-- Top line -->
         <div class="h-[2px] bg-white/70 w-full translate-y-[4px]"></div>
 
-        <!-- Title -->
-        <div class="font-oswald text-7xl md:text-8xl whitespace-nowrap my-4">
+        <!-- Title (mobile-friendly size) -->
+        <div class="font-oswald text-5xl sm:text-6xl md:text-8xl my-4 text-center">
           GRENMA STUDIO
         </div>
 
@@ -45,20 +46,18 @@
       </div>
 
       <!-- Subtitle -->
-      <p class="text-xl md:text-2xl mb-8 mt-6 text-gray-300">
+      <p class="text-lg sm:text-xl md:text-2xl mb-8 mt-6 text-gray-300">
         Modern equipment • Professional sound • Inspiring environment
       </p>
 
-      <!-- Button (outline base, green fill on hover, larger size) -->
+      <!-- Button -->
       <NuxtLink
           to="/contact"
-          class="px-14 py-5 border-2 border-white text-white rounded-xl text-2xl font-semibold
-         transition-all duration-300 hover:bg-[#4fbb9b] hover:border-[#4fbb9b] hover:text-white"
+          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-semibold
+               transition-all duration-300 hover:bg-[#4fbb9b] hover:border-[#4fbb9b]"
       >
         Book Now
       </NuxtLink>
-
-
 
     </div>
 
