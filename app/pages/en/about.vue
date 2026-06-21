@@ -3,7 +3,7 @@
   <!-- FIX HERO BACKGROUND -->
   <div
       class="w-full h-[50vh] min-h-[350px] bg-cover bg-center bg-fixed"
-      style="background-image: url('/studio_about.jpg')"
+      style="background-image: url(/studio_about.jpg)"
   ></div>
 
   <!-- WHITE CONTENT -->
@@ -93,7 +93,7 @@
   <!-- PARALLAX REVEAL SECTION (before footer) -->
   <div
       class="w-full h-[60vh] bg-cover bg-center bg-fixed"
-      style="background-image: url('/studio_gallery.jpg')"
+      style="background-image: url(/studio_gallery.jpg)"
   ></div>
 
 </template>
