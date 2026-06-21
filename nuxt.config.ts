@@ -24,5 +24,14 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: 'github-pages' // <-- Ez teszi statikussá a buildet
+  },
+
+  vite: {
+    optimizeDeps: {
+      include: [
+        'photoswipe',
+        'photoswipe/lightbox'
+      ]
+    }
   }
 })
