@@ -1,9 +1,13 @@
+<script setup>
+const config = useRuntimeConfig()
+</script>
+
 <template>
 
   <!-- FIX HERO BACKGROUND -->
   <div
       class="w-full h-[50vh] min-h-[350px] bg-cover bg-center bg-fixed"
-      style="background-image: url(/studio_about.jpg)"
+      :style="{ backgroundImage: `url(${config.app.baseURL}studio_about.jpg)` }"
   ></div>
 
   <!-- FEHÉR TARTALOM -->
@@ -82,13 +86,12 @@
 
     </section>
 
-
   </div>
 
   <!-- PARALLAX REVEAL SECTION (footer előtt) -->
   <div
       class="w-full h-[60vh] bg-cover bg-center bg-fixed"
-      style="background-image: url(/studio_gallery.jpg)"
+      :style="{ backgroundImage: `url(${config.app.baseURL}studio_gallery.jpg)` }"
   ></div>
 
 </template>
