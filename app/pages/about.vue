@@ -6,9 +6,10 @@ const config = useRuntimeConfig()
 
   <!-- FIX HERO BACKGROUND -->
   <div
-      class="w-full h-[50vh] min-h-[350px] bg-cover bg-center bg-fixed"
+      class="w-full h-[60vh] md:h-[50vh] min-h-[350px] bg-cover bg-center md:bg-fixed"
       :style="{ backgroundImage: `url(${config.app.baseURL}studio_about.jpg)` }"
   ></div>
+
 
   <!-- FEHÉR TARTALOM -->
   <div class="bg-white text-black py-20">
@@ -23,7 +24,7 @@ const config = useRuntimeConfig()
     </section>
 
     <!-- 1) KÉP – SZÖVEG -->
-    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-24 items-center font-body">
+    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center font-body">
 
       <div class="rounded-xl overflow-hidden">
         <img src="/studio_lounge.jpg" class="w-full h-full object-cover" />
@@ -43,12 +44,16 @@ const config = useRuntimeConfig()
 
     </section>
 
-    <div class="max-w-[1200px] mx-auto h-[2px] bg-[#851707]/50 my-16"></div>
+    <div class="px-6">
+      <div class="max-w-[1200px] mx-auto h-[2px] bg-[#851707]/50 my-16"></div>
+    </div>
+
 
     <!-- 2) SZÖVEG – KÉP -->
-    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-24 items-center font-body">
+    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center font-body">
 
-      <div>
+
+    <div>
         <h2 class="text-3xl font-bold mb-6 font-oswald">A TECHNIKA</h2>
         <p class="opacity-80 leading-relaxed">
           A felszerelésünk Pro Tools alapú, rengeteg plug‑innel és virtuális hangszerrel,
@@ -66,12 +71,17 @@ const config = useRuntimeConfig()
 
     </section>
 
-    <div class="max-w-[1200px] mx-auto h-[2px] bg-[#851707]/50 my-16"></div>
+    <div class="px-6">
+      <div class="max-w-[1200px] mx-auto h-[2px] bg-[#851707]/50 my-16"></div>
+    </div>
+
+
 
     <!-- 3) KÉP – SZÖVEG -->
-    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 items-center font-body">
+    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center font-body">
 
-      <div class="rounded-xl overflow-hidden">
+
+    <div class="rounded-xl overflow-hidden">
         <img src="/matyi_profile.jpg" class="w-full h-full object-cover" />
       </div>
 
@@ -90,8 +100,9 @@ const config = useRuntimeConfig()
 
   <!-- PARALLAX REVEAL SECTION (footer előtt) -->
   <div
-      class="w-full h-[60vh] bg-cover bg-center bg-fixed"
+      class="w-full h-[60vh] md:h-[60vh] bg-cover bg-center md:bg-fixed"
       :style="{ backgroundImage: `url(${config.app.baseURL}studio_gallery.jpg)` }"
   ></div>
+
 
 </template>
