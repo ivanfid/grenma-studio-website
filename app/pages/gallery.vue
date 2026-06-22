@@ -57,8 +57,8 @@ onMounted(async () => {
           target="_blank"
           :data-pswp-width="img.w"
           :data-pswp-height="img.h"
-          class="block overflow-hidden rounded-xl border border-neutral-800 hover:border-[#4fbb9b] transition fadeThumb"
-          :style="{ animationDelay: `${i * 0.15}s` }"
+          class="block overflow-hidden rounded-xl border border-neutral-800 transition fadeThumb"
+          :style="{ animationDelay: `${i * 0.1}s` }"
       >
         <img
             :src="img.src"
@@ -72,12 +72,12 @@ onMounted(async () => {
 
 <style>
 @keyframes fadeThumb {
-  0% { opacity: 0; transform: translateY(20px); }
+  0% { opacity: 0; transform: translateY(10px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
 .fadeThumb {
   opacity: 0;
-  animation: fadeThumb 0.1s ease-out forwards;
+  animation: fadeThumb 1s ease-out forwards;
 }
 </style>
