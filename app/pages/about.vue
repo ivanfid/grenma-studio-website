@@ -6,7 +6,7 @@ const config = useRuntimeConfig()
 
   <!-- FIX HERO BACKGROUND -->
   <div
-      class="w-full h-[60vh] md:h-[50vh] min-h-[350px] bg-cover bg-center md:bg-fixed"
+      class="w-full h-[50vh] md:h-[45vh] min-h-[300px] bg-cover bg-center md:bg-fixed"
       :style="{ backgroundImage: `url(${config.app.baseURL}studio_about.jpg)` }"
   ></div>
 
@@ -98,11 +98,28 @@ const config = useRuntimeConfig()
 
   </div>
 
-  <!-- PARALLAX REVEAL SECTION (footer előtt) -->
-  <div
-      class="w-full h-[60vh] md:h-[60vh] bg-cover bg-center md:bg-fixed"
-      :style="{ backgroundImage: `url(${config.app.baseURL}studio_gallery.jpg)` }"
-  ></div>
+  <!-- ALSÓ PARALLAX + CTA -->
+  <section
+      class="relative w-full h-[45vh] bg-fixed bg-cover bg-center flex items-center justify-center"
+      :style="{ backgroundImage: `url(${config.app.baseURL}studio_about.jpg)` }"
+  >
+
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative z-10 text-center">
+
+      <!-- FŐOLDALI CTA GOMB -->
+      <NuxtLink
+          :to="$route.path.startsWith('/en') ? '/en/gallery' : '/gallery'"
+          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-semibold
+                 transition-all duration-300 hover:bg-[#4fbb9b] hover:border-[#4fbb9b]"
+      >
+        Referenciák
+      </NuxtLink>
+
+    </div>
+
+  </section>
 
 
 </template>

@@ -48,17 +48,17 @@
 
       <!-- Alcím -->
       <p class="text-lg sm:text-xl md:text-2xl mb-8 mt-6 text-gray-300">
-        Modern felszerelés • Profi hangzás • Inspiráló környezet
+        Modern gondolkodás • Profi hangzás • Inspiráló környezet
       </p>
 
-      <!-- Gomb -->
       <NuxtLink
-          to="/contact"
+          :to="$route.path.startsWith('/en') ? '/en/about' : '/about'"
           class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-semibold
-               transition-all duration-300 hover:bg-[#4fbb9b] hover:border-[#4fbb9b]"
+         transition-all duration-300 hover:bg-[#4fbb9b] hover:border-[#4fbb9b]"
       >
-        Foglalás
+        {{ $route.path.startsWith('/en') ? 'Find out more' : 'Tudj meg többet' }}
       </NuxtLink>
+
 
     </div>
 
