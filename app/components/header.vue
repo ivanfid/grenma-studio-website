@@ -33,6 +33,10 @@ const aboutLink = computed(() =>
     route.path.startsWith("/en") ? "/en/about" : "/about"
 )
 
+const studioLink = computed(() =>
+    route.path.startsWith("/en") ? "/en/studio" : "/studio"
+)
+
 const galleryLink = computed(() =>
     route.path.startsWith("/en") ? "/en/gallery" : "/gallery"
 )
@@ -41,10 +45,12 @@ const contactLink = computed(() =>
     route.path.startsWith("/en") ? "/en/contact" : "/contact"
 )
 
+
 // --- MENU LABELS ---
 const labels = computed(() => ({
   home: isEN.value ? "HOME" : "KEZDŐLAP",
   about: isEN.value ? "ABOUT US" : "RÓLUNK",
+  studio: isEN.value ? "STUDIO" : "STÚDIÓ",
   gallery: isEN.value ? "GALLERY" : "GALÉRIA",
   contact: isEN.value ? "CONTACT" : "KAPCSOLAT"
 }))
@@ -95,6 +101,21 @@ const labels = computed(() => ({
               ]"
             >
               {{ labels.about }}
+            </NuxtLink>
+          </li>
+
+          <!-- STUDIO -->
+          <li>
+            <NuxtLink
+                :to="studioLink"
+                :class="[
+                'relative transition text-white hover:text-[#4fbb9b] ' +
+                'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 ' +
+                'after:bg-[#4fbb9b] after:transition-all after:duration-300 hover:after:w-full',
+                route.path.startsWith(studioLink) ? 'text-[#4fbb9b] after:w-full' : ''
+              ]"
+            >
+              {{ labels.studio }}
             </NuxtLink>
           </li>
 
@@ -188,6 +209,16 @@ const labels = computed(() => ({
               class="text-white hover:text-[#4fbb9b]"
           >
             {{ labels.about }}
+          </NuxtLink>
+        </li>
+
+        <li>
+          <NuxtLink
+              :to="studioLink"
+              @click="mobileOpen = false"
+              class="text-white hover:text-[#4fbb9b]"
+          >
+            {{ labels.studio }}
           </NuxtLink>
         </li>
 
