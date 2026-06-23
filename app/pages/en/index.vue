@@ -29,26 +29,30 @@ const config = useRuntimeConfig()
       "
     ></div>
 
-    <!-- TITLE ONLY -->
-    <div class="relative z-10 text-center px-6 inline-flex flex-col items-center">
+    <section
+        class="relative w-full h-[80vh] flex items-center justify-center bg-cover bg-center"
+        :style="{ backgroundImage: `url(${config.app.baseURL}studio_main_bg.jpg)` }"
+    >
 
-      <div class="inline-flex flex-col items-center w-auto">
-
-        <div class="h-[2px] bg-white/70 w-full translate-y-[4px]"></div>
-
-        <div class="font-oswald text-5xl sm:text-6xl md:text-8xl my-4 text-center">
-          GRENMA STUDIO
-        </div>
-
-        <div class="h-[2px] bg-white/70 w-full"></div>
-
+      <!-- BLUR LOGO HÁTTÉR -->
+      <div
+          class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
+      >
+        <img
+            src="@/assets/studio/studio_main_logo_blur.png"
+            alt="Blur Logo"
+            class="w-[500px] md:w-[650px] lg:w-[800px] opacity-80 blur-2xl"
+        />
       </div>
 
-      <p class="text-lg sm:text-xl md:text-2xl mt-6 text-gray-300">
-        Modern mindset • Professional sound • Inspiring environment
-      </p>
+      <!-- ÉLES LOGO ELŐTÉR -->
+      <img
+          src="@/assets/studio/studio_main_logo.png"
+          alt="Main Logo"
+          class="relative z-10 w-[240px] md:w-[340px] lg:w-[420px]"
+      />
 
-    </div>
+    </section>
 
   </section>
 
@@ -56,13 +60,6 @@ const config = useRuntimeConfig()
   <section class="bg-white text-black py-20 px-6">
 
     <div class="max-w-[900px] mx-auto text-center font-body">
-
-      <!-- LOGO ABOVE TITLE -->
-      <img
-          src="@/assets/studio/studio_main_logo.png"
-          alt="Studio logo"
-          class="w-40 sm:w-48 md:w-56 mx-auto mb-10"
-      />
 
       <!-- UPPERCASE SPLIT TITLE (same size as previous THE STUDIO) -->
       <h2 class="text-4xl font-bold font-oswald leading-tight mb-10 tracking-wide uppercase">
@@ -95,7 +92,7 @@ const config = useRuntimeConfig()
 
   <!-- PARALLAX CTA BLOCK -->
   <section
-      class="relative w-full h-[45vh] bg-cover bg-center flex items-center justify-center md:bg-fixed"
+      class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] bg-cover bg-center flex items-center justify-center md:bg-fixed"
       :style="{ backgroundImage: `url(${config.app.baseURL}studio_main.jpg)` }"
   >
 

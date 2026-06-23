@@ -64,7 +64,7 @@ const contactLink = computed(() =>
 const labels = computed(() => ({
   home: isEN.value ? "HOME" : "KEZDŐLAP",
   about: isEN.value ? "ABOUT US" : "RÓLUNK",
-  gallery: isEN.value ? "REFERENCES" : "REFERENCIÁK",
+  references: isEN.value ? "REFERENCES" : "REFERENCIÁK",
   pricing: isEN.value ? "PRICING" : "ÁRAK",
   contact: isEN.value ? "CONTACT" : "KAPCSOLAT"
 }))
@@ -136,7 +136,7 @@ const labels = computed(() => ({
                   route.path.startsWith(referencesLink) ? 'text-[#4fbb9b] after:w-full' : ''
                 ]"
             >
-              {{ labels.gallery }}
+              {{ labels.references }}
             </NuxtLink>
           </li>
 
@@ -209,7 +209,7 @@ const labels = computed(() => ({
     <!-- MOBILE MENU -->
     <div
         v-if="mobileOpen"
-        class="md:hidden bg-black/95 px-6 py-4"
+        class="md:hidden px-6 py-4"
     >
       <ul class="flex flex-col gap-4 text-lg">
 

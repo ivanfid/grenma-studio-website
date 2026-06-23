@@ -47,10 +47,9 @@ onMounted(async () => {
 
   <!-- HERO BACKGROUND -->
   <div
-      class="w-full h-[50vh] md:h-[45vh] min-h-[300px] bg-cover bg-center md:bg-fixed"
+      class="w-full h-[22vh] sm:h-[30vh] md:h-[45vh] min-h-[300px] bg-cover bg-center md:bg-fixed"
       :style="{ backgroundImage: `url(${config.app.baseURL}studio_references.jpg)` }"
   ></div>
-
 
   <!-- FEHÉR BLOKK – VIDEÓK -->
   <div class="bg-white text-black py-16 md:py-20">
@@ -121,12 +120,11 @@ onMounted(async () => {
 
   <!-- PARALLAX BLOKK A GALÉRIA ELŐTT -->
   <section
-      class="relative w-full h-[40vh] bg-fixed bg-cover bg-center"
+      class="relative w-full h-[22vh] sm:h-[30vh] md:h-[40vh] bg-cover bg-center md:bg-fixed"
       :style="{ backgroundImage: `url(${config.app.baseURL}studio_references.jpg)` }"
   >
     <div class="absolute inset-0 bg-black/50"></div>
   </section>
-
 
   <!-- FEHÉR BLOKK – GALÉRIA -->
   <div class="bg-white text-black py-16 md:py-20">
@@ -163,7 +161,7 @@ onMounted(async () => {
 
   <!-- ALSÓ PARALLAX + CTA -->
   <section
-      class="relative w-full h-[45vh] bg-cover bg-center flex items-center justify-center md:bg-fixed"
+      class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] bg-cover bg-center flex items-center justify-center md:bg-fixed"
       :style="{ backgroundImage: `url(${config.app.baseURL}studio_references.jpg)` }"
   >
 

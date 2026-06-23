@@ -7,7 +7,10 @@ export default {
         extend: {
             fontFamily: {
                 oswald: ["Oswald", "sans-serif"],
-                body: ["Roboto Serif", "serif"],   // ← IDE KELL TENNI
+                body: ["Roboto Serif", "serif"],
+            },
+            colors: {
+                brand: "#4fbb9b", // KÖZPONTI SZIN
             },
         },
     },
