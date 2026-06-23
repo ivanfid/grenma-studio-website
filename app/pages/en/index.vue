@@ -1,6 +1,7 @@
-<script setup lang="ts">
-
+<script setup>
+const config = useRuntimeConfig()
 </script>
+
 
 <template>
 
@@ -98,7 +99,7 @@
   <!-- PARALLAX CTA BLOCK -->
   <section
       class="relative w-full h-[45vh] bg-fixed bg-cover bg-center flex items-center justify-center"
-      style="background-image: url('/studio_main.jpg')"
+      :style="{ backgroundImage: `url(${config.app.baseURL}studio_main.jpg)` }"
   >
     <div class="absolute inset-0 bg-black/60"></div>
 
