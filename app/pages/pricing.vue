@@ -44,9 +44,7 @@ const config = useRuntimeConfig()
 
         <!-- ÁR PANEL (alapból nyitva) -->
         <div class="mt-4 p-6 bg-white/80 backdrop-blur-xl border border-neutral-300 rounded-xl shadow-inner">
-          <p class="text-lg"><strong>Felvétel:</strong> 10.000 Ft / óra</p>
-          <p class="text-lg mt-2"><strong>Dobfelvétel:</strong> 25.000 Ft / óra</p>
-          <p class="text-lg mt-2"><strong>Re-amp:</strong> 5.000 Ft / track</p>
+          <p class="text-lg"><strong>Felvétel:</strong> 12.000 Ft / óra</p>
         </div>
 
       </div>
@@ -70,9 +68,7 @@ const config = useRuntimeConfig()
 
         <!-- ÁR PANEL (alapból nyitva) -->
         <div class="mt-4 p-6 bg-white/80 backdrop-blur-xl border border-neutral-300 rounded-xl shadow-inner">
-          <p class="text-lg"><strong>Mixing:</strong> 25.000 Ft / dal</p>
-          <p class="text-lg mt-2"><strong>Masterelés:</strong> 15.000 Ft / dal</p>
-          <p class="text-lg mt-2"><strong>Stem mixing:</strong> 35.000 Ft / dal</p>
+          <p class="text-lg"><strong>Keverés/Masterelés:</strong> 40.000 Ft / dal</p>
         </div>
 
       </div>

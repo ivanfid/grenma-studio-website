@@ -44,9 +44,7 @@ const config = useRuntimeConfig()
 
         <!-- PRICE PANEL (always open) -->
         <div class="mt-4 p-6 bg-white/80 backdrop-blur-xl border border-neutral-300 rounded-xl shadow-inner">
-          <p class="text-lg"><strong>Recording:</strong> 10.000 Ft / hour</p>
-          <p class="text-lg mt-2"><strong>Drum recording:</strong> 25.000 Ft / hour</p>
-          <p class="text-lg mt-2"><strong>Re-amp:</strong> 5.000 Ft / track</p>
+          <p class="text-lg"><strong>Recording:</strong> 12.000 Ft / hour</p>
         </div>
 
       </div>
@@ -70,9 +68,7 @@ const config = useRuntimeConfig()
 
         <!-- PRICE PANEL (always open) -->
         <div class="mt-4 p-6 bg-white/80 backdrop-blur-xl border border-neutral-300 rounded-xl shadow-inner">
-          <p class="text-lg"><strong>Mixing:</strong> 25.000 Ft / song</p>
-          <p class="text-lg mt-2"><strong>Mastering:</strong> 15.000 Ft / song</p>
-          <p class="text-lg mt-2"><strong>Stem mixing:</strong> 35.000 Ft / song</p>
+          <p class="text-lg"><strong>Mixing/Mastering:</strong> 40.000 Ft / song</p>
         </div>
 
       </div>
