@@ -93,14 +93,12 @@ const config = useRuntimeConfig()
 
   </section>
 
-
-
-
   <!-- PARALLAX CTA BLOCK -->
   <section
-      class="relative w-full h-[45vh] bg-fixed bg-cover bg-center flex items-center justify-center"
+      class="relative w-full h-[45vh] bg-cover bg-center flex items-center justify-center md:bg-fixed"
       :style="{ backgroundImage: `url(${config.app.baseURL}studio_main.jpg)` }"
   >
+
     <div class="absolute inset-0 bg-black/60"></div>
 
     <div class="relative z-10 text-center">
