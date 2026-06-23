@@ -48,8 +48,8 @@ const aboutLink = computed(() =>
     route.path.startsWith("/en") ? "/en/about" : "/about"
 )
 
-const galleryLink = computed(() =>
-    route.path.startsWith("/en") ? "/en/gallery" : "/gallery"
+const referencesLink = computed(() =>
+    route.path.startsWith("/en") ? "/en/references" : "/references"
 )
 
 const pricingLink = computed(() =>
@@ -64,7 +64,7 @@ const contactLink = computed(() =>
 const labels = computed(() => ({
   home: isEN.value ? "HOME" : "KEZDŐLAP",
   about: isEN.value ? "ABOUT US" : "RÓLUNK",
-  gallery: isEN.value ? "GALLERY" : "GALÉRIA",
+  gallery: isEN.value ? "REFERENCES" : "REFERENCIÁK",
   pricing: isEN.value ? "PRICING" : "ÁRAK",
   contact: isEN.value ? "CONTACT" : "KAPCSOLAT"
 }))
@@ -125,15 +125,15 @@ const labels = computed(() => ({
             </NuxtLink>
           </li>
 
-          <!-- GALLERY -->
+          <!-- REFERENCES -->
           <li>
             <NuxtLink
-                :to="galleryLink"
+                :to="referencesLink"
                 :class="[
                   'relative transition text-white hover:text-[#4fbb9b]',
                   'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0',
                   'after:bg-[#4fbb9b] after:transition-all after:duration-300 hover:after:w-full',
-                  route.path.startsWith(galleryLink) ? 'text-[#4fbb9b] after:w-full' : ''
+                  route.path.startsWith(referencesLink) ? 'text-[#4fbb9b] after:w-full' : ''
                 ]"
             >
               {{ labels.gallery }}
@@ -215,7 +215,7 @@ const labels = computed(() => ({
 
         <li><NuxtLink :to="homeLink" @click="mobileOpen = false" class="text-white hover:text-[#4fbb9b]">{{ labels.home }}</NuxtLink></li>
         <li><NuxtLink :to="aboutLink" @click="mobileOpen = false" class="text-white hover:text-[#4fbb9b]">{{ labels.about }}</NuxtLink></li>
-        <li><NuxtLink :to="galleryLink" @click="mobileOpen = false" class="text-white hover:text-[#4fbb9b]">{{ labels.gallery }}</NuxtLink></li>
+        <li><NuxtLink :to="referencesLink" @click="mobileOpen = false" class="text-white hover:text-[#4fbb9b]">{{ labels.references }}</NuxtLink></li>
         <li><NuxtLink :to="pricingLink" @click="mobileOpen = false" class="text-white hover:text-[#4fbb9b]">{{ labels.pricing }}</NuxtLink></li>
         <li><NuxtLink :to="contactLink" @click="mobileOpen = false" class="text-white hover:text-[#4fbb9b]">{{ labels.contact }}</NuxtLink></li>
 
