@@ -34,24 +34,6 @@ const config = useRuntimeConfig()
         :style="{ backgroundImage: `url(${config.app.baseURL}studio_main_bg.jpg)` }"
     >
 
-      <!-- BLUR LOGO HÁTTÉR -->
-      <div
-          class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-      >
-        <img
-            src="@/assets/studio/studio_main_logo_blur.png"
-            alt="Blur Logo"
-            class="w-[500px] md:w-[650px] lg:w-[800px] opacity-80 blur-2xl"
-        />
-      </div>
-
-      <!-- ÉLES LOGO ELŐTÉR -->
-      <img
-          src="@/assets/studio/studio_main_logo.png"
-          alt="Main Logo"
-          class="relative z-10 w-[240px] md:w-[340px] lg:w-[420px]"
-      />
-
     </section>
 
 
@@ -59,19 +41,24 @@ const config = useRuntimeConfig()
 
 
   <!-- WHITE BLOCK – THE STUDIO SECTION -->
-  <section class="bg-white text-black py-20 px-6">
+  <section class="bg-white text-black py-12 px-6">
 
     <div class="max-w-[900px] mx-auto text-center font-body">
 
-      <h2 class="text-4xl font-bold font-oswald leading-tight mb-10 tracking-wide uppercase">
-        <span class="block">
-          EGY MODERN, INSPIRÁLÓ KÖRNYEZET
-        </span>
-              <span class="block mt-2 text-neutral-800">
-          AHOL A KREATIVITÁS TALÁLKOZIK A TECHNIKAI PRECIZITÁSSAL
-        </span>
-      </h2>
+      <img
+          src="@/assets/studio/studio_main_logo.png"
+          alt="Main Logo"
+          class="mx-auto mb-6 w-[160px] md:w-[200px] lg:w-[240px]"
+      />
 
+      <h2 class="text-4xl font-bold font-oswald leading-tight mb-8 tracking-wide uppercase">
+      <span class="block">
+        EGY MODERN, INSPIRÁLÓ KÖRNYEZET
+      </span>
+        <span class="block mt-2 text-neutral-800">
+        AHOL A KREATIVITÁS TALÁLKOZIK A TECHNIKAI PRECIZITÁSSAL
+      </span>
+      </h2>
 
       <p class="text-lg leading-relaxed text-neutral-700 mb-6">
         Akár felvételről, keverésről vagy masterelésről van szó, célunk, hogy minden produkció a lehető legjobb minőségben szólaljon meg.
@@ -89,6 +76,8 @@ const config = useRuntimeConfig()
     </div>
 
   </section>
+
+
 
   <!-- PARALLAX CTA BLOCK -->
   <section

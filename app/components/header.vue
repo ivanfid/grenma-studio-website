@@ -76,8 +76,8 @@ const labels = computed(() => ({
     'w-full fixed top-0 left-0 z-50 transition-all duration-600 ease-[cubic-bezier(0.4,0.0,0.2,1)]',
     'bg-gradient-to-l from-[#b02c07]/20 via-black/80 to-black/95 backdrop-blur-xl border-b border-white/5',
 
-    !mobileOpen && !isScrolled ? 'py-8' : '',
-    !mobileOpen && isScrolled ? 'py-3 shadow-lg' : '',
+    !mobileOpen && !isScrolled ? 'py-4' : '',
+    !mobileOpen && isScrolled ? 'py-1 shadow-lg' : '',
     mobileOpen ? 'py-6' : ''
   ]"
   >
@@ -86,8 +86,13 @@ const labels = computed(() => ({
 
       <!-- LOGO -->
       <NuxtLink :to="homeLink" class="flex items-center">
-        <img src="/logo.png" alt="Logo" class="h-10 w-auto transition-all duration-300"
-             :class="isScrolled ? 'scale-90 opacity-90' : 'scale-100 opacity-100'" />
+        <img
+            src="/logo.png"
+            alt="Logo"
+            class="h-[70px] md:h-[90px] lg:h-[110px] w-auto transition-all duration-300"
+            :class="isScrolled ? 'scale-90 opacity-90' : 'scale-100 opacity-100'"
+        />
+
       </NuxtLink>
 
       <!-- DESKTOP MENU -->

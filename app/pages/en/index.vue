@@ -34,61 +34,46 @@ const config = useRuntimeConfig()
         :style="{ backgroundImage: `url(${config.app.baseURL}studio_main_bg.jpg)` }"
     >
 
-      <!-- BLUR LOGO HÁTTÉR -->
-      <div
-          class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-      >
-        <img
-            src="@/assets/studio/studio_main_logo_blur.png"
-            alt="Blur Logo"
-            class="w-[500px] md:w-[650px] lg:w-[800px] opacity-80 blur-2xl"
-        />
-      </div>
-
-      <!-- ÉLES LOGO ELŐTÉR -->
-      <img
-          src="@/assets/studio/studio_main_logo.png"
-          alt="Main Logo"
-          class="relative z-10 w-[240px] md:w-[340px] lg:w-[420px]"
-      />
-
     </section>
 
   </section>
 
   <!-- WHITE BLOCK – THE STUDIO SECTION (ENGLISH, UPPERCASE SPLIT TITLE) -->
-  <section class="bg-white text-black py-20 px-6">
+  <section class="bg-white text-black py-12 px-6">
 
     <div class="max-w-[900px] mx-auto text-center font-body">
 
-      <!-- UPPERCASE SPLIT TITLE (same size as previous THE STUDIO) -->
-      <h2 class="text-4xl font-bold font-oswald leading-tight mb-10 tracking-wide uppercase">
-  <span class="block">
-    A MODERN, INSPIRING ENVIRONMENT
-  </span>
+      <img
+          src="@/assets/studio/studio_main_logo.png"
+          alt="Main Logo"
+          class="mx-auto mb-6 w-[160px] md:w-[200px] lg:w-[240px]"
+      />
+
+      <h2 class="text-4xl font-bold font-oswald leading-tight mb-8 tracking-wide uppercase">
+      <span class="block">
+        A MODERN, INSPIRING ENVIRONMENT
+      </span>
         <span class="block mt-2 text-neutral-800">
-    WHERE CREATIVITY MEETS TECHNICAL PRECISION
-  </span>
+        WHERE CREATIVITY MEETS TECHNICAL PRECISION
+      </span>
       </h2>
 
-
-      <!-- BODY TEXT -->
       <p class="text-lg leading-relaxed text-neutral-700 mb-6">
-        Whether it's recording, mixing, or mastering, our goal is to ensure every production sounds its absolute best.
+        Whether it’s recording, mixing, or mastering, our goal is to ensure every production sounds as good as it possibly can.
       </p>
 
       <p class="text-lg leading-relaxed text-neutral-700 mb-6">
-        The studio was designed to feel both professional and comfortable. Every instrument, microphone,
-        acoustic element, and piece of equipment is chosen to help artists and performers deliver their best.
+        Our studio is designed to feel both welcoming and professional. Every instrument, microphone, acoustic element, and piece of equipment is chosen to help artists and performers deliver their best.
       </p>
 
       <p class="text-lg leading-relaxed text-neutral-700">
-        From a single vocal track to a full band production, we provide everything needed for exceptional sound quality.
+        From capturing a single vocal track to producing a full band arrangement, we provide everything needed for exceptional sound quality.
       </p>
 
     </div>
 
   </section>
+
 
   <!-- PARALLAX CTA BLOCK -->
   <section
