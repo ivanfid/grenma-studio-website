@@ -10,7 +10,7 @@ export default {
                 body: ["Roboto Serif", "serif"],
             },
             colors: {
-                brand: "#4fbb9b", // KÖZPONTI SZIN
+                brand: "#dd504d", // KÖZPONTI SZIN
             },
         },
     },

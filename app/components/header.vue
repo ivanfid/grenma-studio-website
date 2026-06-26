@@ -7,18 +7,10 @@ const route = useRoute()
 
 // --- SHRINK ON SCROLL ---
 const isScrolled = ref(false)
+const handleScroll = () => { isScrolled.value = window.scrollY > 20 }
 
-const handleScroll = () => {
-  isScrolled.value = window.scrollY > 20
-}
-
-onMounted(() => {
-  window.addEventListener("scroll", handleScroll)
-})
-
-onUnmounted(() => {
-  window.removeEventListener("scroll", handleScroll)
-})
+onMounted(() => window.addEventListener("scroll", handleScroll))
+onUnmounted(() => window.removeEventListener("scroll", handleScroll))
 
 // --- ACTIVE LANGUAGE ---
 const isEN = computed(() => route.path.startsWith("/en"))
@@ -40,30 +32,17 @@ const toHU = computed(() => {
 })
 
 // --- LINKS ---
-const homeLink = computed(() =>
-    route.path.startsWith("/en") ? "/en" : "/"
-)
-
-const aboutLink = computed(() =>
-    route.path.startsWith("/en") ? "/en/about" : "/about"
-)
-
-const referencesLink = computed(() =>
-    route.path.startsWith("/en") ? "/en/references" : "/references"
-)
-
-const pricingLink = computed(() =>
-    route.path.startsWith("/en") ? "/en/pricing" : "/pricing"
-)
-
-const contactLink = computed(() =>
-    route.path.startsWith("/en") ? "/en/contact" : "/contact"
-)
+const homeLink = computed(() => isEN.value ? "/en" : "/")
+const aboutLink = computed(() => isEN.value ? "/en/about" : "/about")
+const studioLink = computed(() => isEN.value ? "/en/studio" : "/studio")
+const referencesLink = computed(() => isEN.value ? "/en/references" : "/references")
+const pricingLink = computed(() => isEN.value ? "/en/pricing" : "/pricing")
+const contactLink = computed(() => isEN.value ? "/en/contact" : "/contact")
 
 // --- MENU LABELS ---
 const labels = computed(() => ({
-  home: isEN.value ? "HOME" : "KEZDŐLAP",
   about: isEN.value ? "ABOUT US" : "RÓLUNK",
+  studio: isEN.value ? "STUDIO" : "STÚDIÓ",
   references: isEN.value ? "REFERENCES" : "REFERENCIÁK",
   pricing: isEN.value ? "PRICING" : "ÁRAK",
   contact: isEN.value ? "CONTACT" : "KAPCSOLAT"
@@ -73,15 +52,13 @@ const labels = computed(() => ({
 <template>
   <header
       :class="[
-    'w-full fixed top-0 left-0 z-50 transition-all duration-600 ease-[cubic-bezier(0.4,0.0,0.2,1)]',
-    'bg-gradient-to-l from-[#b02c07]/20 via-black/80 to-black/95 backdrop-blur-xl border-b border-white/5',
-
-    !mobileOpen && !isScrolled ? 'py-4' : '',
-    !mobileOpen && isScrolled ? 'py-1 shadow-lg' : '',
-    mobileOpen ? 'py-6' : ''
-  ]"
+              'w-full fixed top-0 left-0 z-50 transition-all duration-600 ease-[cubic-bezier(0.4,0.0,0.2,1)]',
+              'bg-gradient-to-l from-[#b02c07]/20 via-black/80 to-black/95 backdrop-blur-xl border-b border-white/5',
+              !mobileOpen && !isScrolled ? 'py-4' : '',
+              !mobileOpen && isScrolled ? 'py-0 shadow-lg' : '',
+              mobileOpen ? 'py-6' : ''
+            ]"
   >
-
     <nav class="max-w-[1200px] mx-auto flex items-center justify-between px-6">
 
       <!-- LOGO -->
@@ -89,44 +66,44 @@ const labels = computed(() => ({
         <img
             src="/logo.png"
             alt="Logo"
-            class="h-[70px] md:h-[90px] lg:h-[110px] w-auto transition-all duration-300"
-            :class="isScrolled ? 'scale-90 opacity-90' : 'scale-100 opacity-100'"
+            class="h-[60px] md:h-[80px] lg:h-[100px] w-auto transition-all duration-300"
+            :class="isScrolled ? 'scale-75 opacity-90' : 'scale-100 opacity-100'"
         />
-
       </NuxtLink>
+
 
       <!-- DESKTOP MENU -->
       <div class="hidden md:flex items-center gap-10">
 
         <ul class="flex items-center gap-8 text-lg">
 
-          <!-- HOME -->
-          <li>
-            <NuxtLink
-                :to="homeLink"
-                :class="[
-                  'relative transition text-white hover:text-[#4fbb9b]',
-                  'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0',
-                  'after:bg-[#4fbb9b] after:transition-all after:duration-300 hover:after:w-full',
-                  route.path === homeLink ? 'text-[#4fbb9b] after:w-full' : ''
-                ]"
-            >
-              {{ labels.home }}
-            </NuxtLink>
-          </li>
-
           <!-- ABOUT -->
           <li>
             <NuxtLink
                 :to="aboutLink"
                 :class="[
-                  'relative transition text-white hover:text-[#4fbb9b]',
-                  'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0',
-                  'after:bg-[#4fbb9b] after:transition-all after:duration-300 hover:after:w-full',
-                  route.path.startsWith(aboutLink) ? 'text-[#4fbb9b] after:w-full' : ''
-                ]"
+                'relative transition text-white hover:text-brand',
+                'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0',
+                'after:bg-brand after:transition-all after:duration-300 hover:after:w-full',
+                route.path.startsWith(aboutLink) ? 'text-brand after:w-full' : ''
+              ]"
             >
               {{ labels.about }}
+            </NuxtLink>
+          </li>
+
+          <!-- STUDIO -->
+          <li>
+            <NuxtLink
+                :to="studioLink"
+                :class="[
+                'relative transition text-white hover:text-brand',
+                'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0',
+                'after:bg-brand after:transition-all after:duration-300 hover:after:w-full',
+                route.path.startsWith(studioLink) ? 'text-brand after:w-full' : ''
+              ]"
+            >
+              {{ labels.studio }}
             </NuxtLink>
           </li>
 
@@ -135,26 +112,26 @@ const labels = computed(() => ({
             <NuxtLink
                 :to="referencesLink"
                 :class="[
-                  'relative transition text-white hover:text-[#4fbb9b]',
-                  'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0',
-                  'after:bg-[#4fbb9b] after:transition-all after:duration-300 hover:after:w-full',
-                  route.path.startsWith(referencesLink) ? 'text-[#4fbb9b] after:w-full' : ''
-                ]"
+                'relative transition text-white hover:text-brand',
+                'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0',
+                'after:bg-brand after:transition-all after:duration-300 hover:after:w-full',
+                route.path.startsWith(referencesLink) ? 'text-brand after:w-full' : ''
+              ]"
             >
               {{ labels.references }}
             </NuxtLink>
           </li>
 
-          <!-- ⭐ PRICING / ÁRAK -->
+          <!-- PRICING -->
           <li>
             <NuxtLink
                 :to="pricingLink"
                 :class="[
-                  'relative transition text-white hover:text-[#4fbb9b]',
-                  'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0',
-                  'after:bg-[#4fbb9b] after:transition-all after:duration-300 hover:after:w-full',
-                  route.path.startsWith(pricingLink) ? 'text-[#4fbb9b] after:w-full' : ''
-                ]"
+                'relative transition text-white hover:text-brand',
+                'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0',
+                'after:bg-brand after:transition-all after:duration-300 hover:after:w-full',
+                route.path.startsWith(pricingLink) ? 'text-brand after:w-full' : ''
+              ]"
             >
               {{ labels.pricing }}
             </NuxtLink>
@@ -165,11 +142,11 @@ const labels = computed(() => ({
             <NuxtLink
                 :to="contactLink"
                 :class="[
-                  'relative transition text-white hover:text-[#4fbb9b]',
-                  'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0',
-                  'after:bg-[#4fbb9b] after:transition-all after:duration-300 hover:after:w-full',
-                  route.path.startsWith(contactLink) ? 'text-[#4fbb9b] after:w-full' : ''
-                ]"
+                'relative transition text-white hover:text-brand',
+                'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0',
+                'after:bg-brand after:transition-all after:duration-300 hover:after:w-full',
+                route.path.startsWith(contactLink) ? 'text-brand after:w-full' : ''
+              ]"
             >
               {{ labels.contact }}
             </NuxtLink>
@@ -177,25 +154,35 @@ const labels = computed(() => ({
 
         </ul>
 
-        <!-- LANGUAGE SWITCHER -->
-        <div class="flex items-center gap-3 text-white text-sm">
+        <!-- LANGUAGE SWITCHER (EGYSÉGESÍTVE) -->
+        <div class="flex items-center gap-3 text-sm">
+
           <NuxtLink
               :to="toHU"
-              class="transition"
-              :class="isHU ? 'text-[#4fbb9b] font-bold' : 'hover:text-[#4fbb9b]'"
+              :class="[
+              'relative transition text-white hover:text-brand',
+              'after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-0',
+              'after:bg-brand after:transition-all after:duration-300 hover:after:w-full',
+              isHU ? 'text-brand after:w-full font-bold' : ''
+            ]"
           >
             HU
           </NuxtLink>
 
-          <span>|</span>
+          <span class="text-white">|</span>
 
           <NuxtLink
               :to="toEN"
-              class="transition"
-              :class="isEN ? 'text-[#4fbb9b] font-bold' : 'hover:text-[#4fbb9b]'"
+              :class="[
+              'relative transition text-white hover:text-brand',
+              'after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-0',
+              'after:bg-brand after:transition-all after:duration-300 hover:after:w-full',
+              isEN ? 'text-brand after:w-full font-bold' : ''
+            ]"
           >
             EN
           </NuxtLink>
+
         </div>
 
       </div>
@@ -212,25 +199,24 @@ const labels = computed(() => ({
     </nav>
 
     <!-- MOBILE MENU -->
-    <div
-        v-if="mobileOpen"
-        class="md:hidden px-6 py-4"
-    >
+    <div v-if="mobileOpen" class="md:hidden px-6 py-4">
+
       <ul class="flex flex-col gap-4 text-lg">
 
-        <li><NuxtLink :to="homeLink" @click="mobileOpen = false" class="text-white hover:text-[#4fbb9b]">{{ labels.home }}</NuxtLink></li>
-        <li><NuxtLink :to="aboutLink" @click="mobileOpen = false" class="text-white hover:text-[#4fbb9b]">{{ labels.about }}</NuxtLink></li>
-        <li><NuxtLink :to="referencesLink" @click="mobileOpen = false" class="text-white hover:text-[#4fbb9b]">{{ labels.references }}</NuxtLink></li>
-        <li><NuxtLink :to="pricingLink" @click="mobileOpen = false" class="text-white hover:text-[#4fbb9b]">{{ labels.pricing }}</NuxtLink></li>
-        <li><NuxtLink :to="contactLink" @click="mobileOpen = false" class="text-white hover:text-[#4fbb9b]">{{ labels.contact }}</NuxtLink></li>
+        <li><NuxtLink :to="aboutLink" @click="mobileOpen = false" class="text-white hover:text-brand">{{ labels.about }}</NuxtLink></li>
+        <li><NuxtLink :to="studioLink" @click="mobileOpen = false" class="text-white hover:text-brand">{{ labels.studio }}</NuxtLink></li>
+        <li><NuxtLink :to="referencesLink" @click="mobileOpen = false" class="text-white hover:text-brand">{{ labels.references }}</NuxtLink></li>
+        <li><NuxtLink :to="pricingLink" @click="mobileOpen = false" class="text-white hover:text-brand">{{ labels.pricing }}</NuxtLink></li>
+        <li><NuxtLink :to="contactLink" @click="mobileOpen = false" class="text-white hover:text-brand">{{ labels.contact }}</NuxtLink></li>
 
       </ul>
 
       <!-- MOBILE LANG SWITCH -->
       <div class="flex items-center gap-4 mt-4 text-white text-lg">
-        <NuxtLink :to="toHU" @click="mobileOpen = false" :class="isHU ? 'text-[#4fbb9b] font-bold' : 'hover:text-[#4fbb9b]'">HU</NuxtLink>
-        <NuxtLink :to="toEN" @click="mobileOpen = false" :class="isEN ? 'text-[#4fbb9b] font-bold' : 'hover:text-[#4fbb9b]'">EN</NuxtLink>
+        <NuxtLink :to="toHU" @click="mobileOpen = false" :class="isHU ? 'text-brand font-bold' : 'hover:text-brand'">HU</NuxtLink>
+        <NuxtLink :to="toEN" @click="mobileOpen = false" :class="isEN ? 'text-brand font-bold' : 'hover:text-brand'">EN</NuxtLink>
       </div>
+
     </div>
 
   </header>

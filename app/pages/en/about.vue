@@ -116,11 +116,11 @@ const config = useRuntimeConfig()
 
       <!-- FŐOLDALI CTA GOMB -->
       <NuxtLink
-          :to="$route.path.startsWith('/en') ? '/en/references' : '/references'"
+          :to="$route.path.startsWith('/en') ? '/en/studio' : '/studio'"
           class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-semibold
-                 transition-all duration-300 hover:bg-[#4fbb9b] hover:border-[#4fbb9b]"
+                 transition-all duration-300 hover:bg-brand/100 hover:border-brand/100"
       >
-        References
+        Studio
       </NuxtLink>
 
     </div>
