@@ -87,11 +87,27 @@ onMounted(async () => {
 
 <template>
 
-  <!-- HERO BACKGROUND -->
-  <div
-      class="w-full h-[22vh] sm:h-[30vh] md:h-[45vh] min-h-[300px] bg-cover bg-center md:bg-fixed"
-      :style="{ backgroundImage: `url(${config.app.baseURL}studio_references.jpg)` }"
-  ></div>
+  <!-- HERO WRAPPER -->
+  <div class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] min-h-[300px]">
+
+    <!-- HERO BACKGROUND -->
+    <div
+        class="w-full h-full bg-cover bg-center md:bg-fixed"
+        :style="{ backgroundImage: `url(${config.app.baseURL}studio_1.jpg)` }"
+    ></div>
+
+    <!-- Micro-grid overlay (csak a hero-ra) -->
+    <div
+        class="absolute inset-0 pointer-events-none opacity-60"
+        style="
+      background-image:
+        linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px);
+      background-size: 5px 5px;
+    "
+    ></div>
+
+  </div>
 
   <!-- FEHÉR BLOKK – STUDIOK -->
   <div class="bg-white text-black py-16 md:py-20">
@@ -122,9 +138,11 @@ onMounted(async () => {
         </div>
 
         <div
-            class="accordion bg-white border border-neutral-300 rounded-xl shadow-inner mt-4"
+            class="accordion bg-white rounded-xl mt-4"
             :style="{ maxHeight: open === 'A' ? '600px' : '0px' }"
         >
+
+
           <div class="p-8">
             <p class="text-neutral-700 leading-relaxed mb-6">
               Itt jön majd a Stúdió A részletes leírása.
@@ -154,9 +172,10 @@ onMounted(async () => {
         </div>
 
         <div
-            class="accordion bg-white border border-neutral-300 rounded-xl shadow-inner mt-4"
+            class="accordion bg-white rounded-xl mt-4"
             :style="{ maxHeight: open === 'B' ? '600px' : '0px' }"
         >
+
           <div class="p-8">
             <p class="text-neutral-700 leading-relaxed mb-6">
               Itt jön majd a Stúdió B részletes leírása.
@@ -186,9 +205,10 @@ onMounted(async () => {
         </div>
 
         <div
-            class="accordion bg-white border border-neutral-300 rounded-xl shadow-inner mt-4"
+            class="accordion bg-white rounded-xl mt-4"
             :style="{ maxHeight: open === 'F' ? '600px' : '0px' }"
         >
+
           <div class="p-8">
             <p class="text-neutral-700 leading-relaxed mb-6">
               Itt jön majd a Feljátszó részletes leírása.
@@ -252,7 +272,7 @@ onMounted(async () => {
   <!-- ALSÓ PARALLAX + CTA -->
   <section
       class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] bg-cover bg-center flex items-center justify-center md:bg-fixed"
-      :style="{ backgroundImage: `url(${config.app.baseURL}studio_references.jpg)` }"
+      :style="{ backgroundImage: `url(${config.app.baseURL}studio_2.jpg)` }"
   >
 
     <div class="absolute inset-0 bg-black/60"></div>
