@@ -4,11 +4,26 @@ const config = useRuntimeConfig()
 
 <template>
 
-  <!-- HERO BACKGROUND -->
-  <div
-      class="w-full h-[22vh] sm:h-[30vh] md:h-[45vh] min-h-[300px] bg-cover bg-center md:bg-fixed"
-      :style="{ backgroundImage: `url(${config.app.baseURL}studio_gallery.jpg)` }"
-  ></div>
+  <!-- HERO WRAPPER -->
+  <div class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] min-h-[300px]">
+
+    <!-- HERO BACKGROUND -->
+    <div
+        class="w-full h-full bg-cover bg-center md:bg-fixed"
+        :style="{ backgroundImage: `url(${config.app.baseURL}studio_pricing.jpg)` }"
+    ></div>
+
+    <!-- Micro-grid overlay (csak a hero-ra!) -->
+    <div
+        class="absolute inset-0 pointer-events-none opacity-50"
+        style="
+      background-image:
+        linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px);
+      background-size: 5px 5px;
+    "
+    ></div>
+  </div>
 
   <!-- WHITE CONTENT -->
   <div class="bg-white text-black py-16 md:py-20">
@@ -74,7 +89,7 @@ const config = useRuntimeConfig()
   <!-- BOTTOM PARALLAX + CTA -->
   <section
       class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] bg-cover bg-center flex items-center justify-center md:bg-fixed"
-      :style="{ backgroundImage: `url(${config.app.baseURL}studio_gallery.jpg)` }"
+      :style="{ backgroundImage: `url(${config.app.baseURL}studio_pricing_2.jpg)` }"
   >
 
     <div class="absolute inset-0 bg-black/60"></div>
