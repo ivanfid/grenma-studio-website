@@ -29,14 +29,6 @@ const config = useRuntimeConfig()
       "
     ></div>
 
-    <section
-        class="relative w-full h-[80vh] flex items-center justify-center bg-cover bg-center"
-        :style="{ backgroundImage: `url(${config.app.baseURL}studio_main_bg.jpg)` }"
-    >
-
-    </section>
-
-
   </section>
 
 
