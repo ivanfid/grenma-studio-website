@@ -1,46 +1,7 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { useRuntimeConfig } from '#imports'
+
 const config = useRuntimeConfig()
-
-// --- GALÉRIA LOGIKA ---
-const imageModules = import.meta.glob('@/assets/gallery/*.jpg', {
-  eager: true,
-  import: 'default'
-})
-
-const images = ref([])
-
-function getImageSize(url) {
-  return new Promise(resolve => {
-    const img = new Image()
-    img.onload = () => resolve({ width: img.width, height: img.height })
-    img.src = url
-  })
-}
-
-onMounted(async () => {
-  for (const path in imageModules) {
-    const src = imageModules[path]
-    const size = await getImageSize(src)
-
-    images.value.push({
-      src,
-      w: size.width,
-      h: size.height
-    })
-  }
-
-  const PhotoSwipeLightbox = (await import('photoswipe/lightbox')).default
-
-  const lightbox = new PhotoSwipeLightbox({
-    gallery: '#gallery',
-    children: 'a',
-    pswpModule: () => import('photoswipe'),
-    imageScaleMethod: 'fit'
-  })
-
-  lightbox.init()
-})
 </script>
 
 <template>
@@ -51,7 +12,7 @@ onMounted(async () => {
       :style="{ backgroundImage: `url(${config.app.baseURL}studio_references.jpg)` }"
   ></div>
 
-  <!-- FEHÉR BLOKK – VIDEÓK -->
+  <!-- WHITE BLOCK – VIDEOS -->
   <div class="bg-white text-black py-16 md:py-20">
 
     <!-- TITLE -->
@@ -62,7 +23,7 @@ onMounted(async () => {
       </p>
     </section>
 
-    <!-- VIDEÓ GRID -->
+    <!-- VIDEO GRID -->
     <section class="px-6 max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-10">
 
       <!-- VIDEO 1 -->
@@ -117,49 +78,7 @@ onMounted(async () => {
 
   </div>
 
-
-  <!-- PARALLAX BLOKK A GALÉRIA ELŐTT -->
-  <section
-      class="relative w-full h-[22vh] sm:h-[30vh] md:h-[40vh] bg-cover bg-center md:bg-fixed"
-      :style="{ backgroundImage: `url(${config.app.baseURL}studio_references.jpg)` }"
-  >
-    <div class="absolute inset-0 bg-black/50"></div>
-  </section>
-
-  <!-- FEHÉR BLOKK – GALÉRIA -->
-  <div class="bg-white text-black py-16 md:py-20">
-
-    <section class="px-6 max-w-[1200px] mx-auto text-center mb-10 font-body">
-      <h2 class="text-4xl font-bold mb-4 font-oswald">FOTÓGALÉRIA</h2>
-    </section>
-
-    <section class="px-6 max-w-[1200px] mx-auto font-body mt-10">
-      <div
-          id="gallery"
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
-      >
-        <a
-            v-for="(img, i) in images"
-            :key="i"
-            :href="img.src"
-            target="_blank"
-            :data-pswp-width="img.w"
-            :data-pswp-height="img.h"
-            class="block overflow-hidden rounded-xl border border-neutral-300 transition fadeThumb"
-            :style="{ animationDelay: `${i * 0.1}s` }"
-        >
-          <img
-              :src="img.src"
-              class="w-full h-64 object-cover hover:scale-105 transition duration-300"
-          />
-        </a>
-      </div>
-    </section>
-
-  </div>
-
-
-  <!-- ALSÓ PARALLAX + CTA -->
+  <!-- BOTTOM PARALLAX + CTA -->
   <section
       class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] bg-cover bg-center flex items-center justify-center md:bg-fixed"
       :style="{ backgroundImage: `url(${config.app.baseURL}studio_references.jpg)` }"
@@ -171,23 +90,11 @@ onMounted(async () => {
       <NuxtLink
           :to="$route.path.startsWith('/en') ? '/en/pricing' : '/pricing'"
           class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-semibold
-               transition-all duration-300 hover:bg-[#4fbb9b] hover:border-[#4fbb9b]"
+               transition-all duration-300 hover:bg-brand/100 hover:border-brand/100"
       >
-        Árak megtekintése
+        ÁRAK MEGTEKINTÉSE
       </NuxtLink>
     </div>
   </section>
 
 </template>
-
-<style>
-@keyframes fadeThumb {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-.fadeThumb {
-  opacity: 0;
-  animation: fadeThumb 1s ease-out forwards;
-}
-</style>

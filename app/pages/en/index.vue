@@ -89,7 +89,7 @@ const config = useRuntimeConfig()
           class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-semibold
            transition-all duration-300 hover:bg-brand/100 hover:border-brand/100"
       >
-        Learn more
+        LEARN MORE
       </NuxtLink>
     </div>
   </section>

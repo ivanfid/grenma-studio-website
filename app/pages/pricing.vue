@@ -10,7 +10,7 @@ const config = useRuntimeConfig()
       :style="{ backgroundImage: `url(${config.app.baseURL}studio_gallery.jpg)` }"
   ></div>
 
-  <!-- FEHÉR TARTALOM -->
+  <!-- WHITE CONTENT -->
   <div class="bg-white text-black py-16 md:py-20">
 
     <!-- HERO TEXT -->
@@ -21,39 +21,35 @@ const config = useRuntimeConfig()
       </p>
     </section>
 
-
-    <!-- KÉT NAGY SZOLGÁLTATÁS CARD -->
+    <!-- TWO MAIN SERVICE CARDS -->
     <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 font-body mt-10">
 
-      <!-- FELVÉTEL CARD -->
-      <div
-          class="bg-white border border-neutral-300 rounded-xl p-10 shadow-sm text-center relative"
-      >
+      <!-- RECORDING -->
+      <div class="bg-white border border-neutral-300 rounded-xl p-10 shadow-sm text-center">
 
-
-      <div class="w-32 h-32 mx-auto mb-6">
+        <div class="w-32 h-32 mx-auto mb-6">
           <img src="@/assets/studio/icon_recording.png" class="w-full h-full object-contain" />
         </div>
 
         <h2 class="text-3xl font-oswald font-bold mb-4">FELVÉTEL</h2>
 
         <p class="text-neutral-700 leading-relaxed mb-6">
-          Sávonkénti, vagy akár egyben játszós felvételek készítése, Re-amp, dobfelvétel, ének, egyéb hangszerek rögzítése.
+          Sávonkénti vagy egyben játszós felvételek készítése, re-amp, dobfelvétel, ének és egyéb hangszerek rögzítése.
         </p>
 
-        <!-- ÁR PANEL (alapból nyitva) -->
-        <div class="mt-4 p-6 bg-white/80 backdrop-blur-xl border border-neutral-300 rounded-xl shadow-inner">
-          <p class="text-lg"><strong>Felvétel:</strong> 12.000 Ft / óra</p>
+        <!-- UPDATED PRICES – NO INNER PANEL -->
+        <div class="space-y-2 text-lg">
+          <p><strong>Óradíj:</strong> 12.000 Ft</p>
+          <p><strong>Napidíj (8 óra):</strong> 80.000 Ft</p>
+          <p><strong>1–3 dal (full):</strong> 120.000 Ft</p>
+          <p><strong>4–6 dal (full):</strong> 100.000 Ft</p>
+          <p><strong>6 dal fölött:</strong> egyéni megállapodás</p>
         </div>
 
       </div>
 
-
-      <!-- MIXING / MASTERELÉS CARD -->
-      <div
-          class="bg-white border border-neutral-300 rounded-xl p-10 shadow-sm text-center relative"
-      >
-
+      <!-- MIXING / MASTERING -->
+      <div class="bg-white border border-neutral-300 rounded-xl p-10 shadow-sm text-center">
 
         <div class="w-32 h-32 mx-auto mb-6">
           <img src="@/assets/studio/icon_mixing.png" class="w-full h-full object-contain" />
@@ -62,12 +58,11 @@ const config = useRuntimeConfig()
         <h2 class="text-3xl font-oswald font-bold mb-4">KEVERÉS / MASTERELÉS</h2>
 
         <p class="text-neutral-700 leading-relaxed mb-6">
-          Akár a nálunk elkészűlt felvételek editálását, keverését, masterelését is kérheted, de hozott anyagból is szívesen dolgozunk.
+          A nálunk készült felvételek editálását, keverését és masterelését is vállaljuk, de hozott anyagból is szívesen dolgozunk.
         </p>
 
-        <!-- ÁR PANEL (alapból nyitva) -->
-        <div class="mt-4 p-6 bg-white/80 backdrop-blur-xl border border-neutral-300 rounded-xl shadow-inner">
-          <p class="text-lg"><strong>Keverés/Masterelés:</strong> 40.000 Ft / dal</p>
+        <div class="text-lg">
+          <p><strong>Keverés / Masterelés:</strong> 50.000 Ft / dal</p>
         </div>
 
       </div>
@@ -76,8 +71,7 @@ const config = useRuntimeConfig()
 
   </div>
 
-
-  <!-- ALSÓ PARALLAX + CTA -->
+  <!-- BOTTOM PARALLAX + CTA -->
   <section
       class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] bg-cover bg-center flex items-center justify-center md:bg-fixed"
       :style="{ backgroundImage: `url(${config.app.baseURL}studio_gallery.jpg)` }"
@@ -87,13 +81,12 @@ const config = useRuntimeConfig()
 
     <div class="relative z-10 text-center">
 
-      <!-- FŐOLDALI CTA GOMB -->
       <NuxtLink
           :to="$route.path.startsWith('/en') ? '/en/contact' : '/contact'"
           class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-semibold
-                 transition-all duration-300 hover:bg-[#4fbb9b] hover:border-[#4fbb9b]"
+           transition-all duration-300 hover:bg-brand hover:border-brand"
       >
-        Foglalás
+        FOGLALÁS
       </NuxtLink>
 
     </div>
