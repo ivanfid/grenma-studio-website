@@ -4,11 +4,31 @@ const config = useRuntimeConfig()
 
 <template>
 
-  <!-- FIX HERO BACKGROUND -->
-  <div
-      class="w-full h-[22vh] sm:h-[30vh] md:h-[45vh] min-h-[300px] bg-cover bg-center md:bg-fixed"
-      :style="{ backgroundImage: `url(${config.app.baseURL}studio_about.jpg)` }"
-  ></div>
+  <div class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] min-h-[300px]">
+
+    <!-- Hero background -->
+    <div
+        class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] min-h-[300px]
+         bg-cover bg-center
+         lg:bg-[center_30%]
+         2xl:bg-[center_80%] 2xl:bg-fixed"
+        :style="{ backgroundImage: `url(${config.app.baseURL}studio_about.jpg)` }"
+    ></div>
+
+    <div class="absolute inset-0 bg-black/60"></div>
+    <!-- Micro-grid overlay (csak a hero-ra!) -->
+    <div
+        class="absolute inset-0 pointer-events-none opacity-60"
+        style="
+      background-image:
+        linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px);
+      background-size: 5px 5px;
+    "
+    ></div>
+
+  </div>
+
 
   <!-- FEHÉR TARTALOM -->
   <div class="bg-white text-black py-20">
@@ -47,44 +67,14 @@ const config = useRuntimeConfig()
       <div class="max-w-[1200px] mx-auto h-[2px] bg-[#851707]/50 my-16"></div>
     </div>
 
-
-    <!-- 2) SZÖVEG – KÉP -->
+    <!-- 2) KÉP – SZÖVEG -->
     <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center font-body">
 
-
-    <div>
-        <h2 class="text-3xl font-bold mb-6 font-oswald">A TECHNIKA</h2>
-        <p class="opacity-80 leading-relaxed">
-          A felszerelésünk Pro Tools alapú, rengeteg plug‑innel és virtuális hangszerrel,
-          bivalyerős Mac Mini, Apogee, Focusrite, Audient, Gainlab, Distressor, WA‑76,
-          Genelec és Dynaudio lehallgatás, Telefunken, AKG, Neumann, Warm Audio,
-          Audio Technica, Shure, Sennheiser, Rode mikrofonok.
-          <br><br>
-          A felvételhez bérelhető hangszerek listája pedig szinte végtelen :)
-        </p>
-      </div>
-
-      <div class="rounded-xl overflow-hidden">
-        <img src="/studio_technika.jpg" class="w-full h-full object-cover" />
-      </div>
-
-    </section>
-
-    <div class="px-6">
-      <div class="max-w-[1200px] mx-auto h-[2px] bg-[#851707]/50 my-16"></div>
-    </div>
-
-
-
-    <!-- 3) KÉP – SZÖVEG -->
-    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center font-body">
-
-
-    <div class="rounded-xl overflow-hidden">
+      <div class="rounded-xl overflow-hidden md:order-2">
         <img src="/matyi_profile.jpg" class="w-full h-full object-cover" />
       </div>
 
-      <div>
+      <div class="md:order-1">
         <h2 class="text-3xl font-bold mb-4 font-oswald">BOTLIK MÁTYÁS</h2>
         <p class="opacity-80 leading-relaxed">
           Matyi 2008 óta készít felvételeket, végtelen türelemmel és odafigyeléssel.
@@ -95,12 +85,36 @@ const config = useRuntimeConfig()
 
     </section>
 
+
+    <div class="px-6">
+      <div class="max-w-[1200px] mx-auto h-[2px] bg-[#851707]/50 my-16"></div>
+    </div>
+
+    <!-- 3) SZÖVEG – KÉP -->
+    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center font-body">
+
+      <div class="md:order-2">
+        <h2 class="text-3xl font-bold mb-6 font-oswald">IVÁNFI DÁNIEL</h2>
+        <p class="opacity-80 leading-relaxed">
+          Dani 2017 óta foglalkozik komolyabban felvétel készítéssel, amikor az éppen aktuális zenekara,
+          a Stubborn nagylemezének felvételin dolgozott. Azóta megállíthatatlan szenvedéllyel tevékenykedik Metal, Punk Rock, HC
+          zenekarok anyagain, legyen szó felvételről, keverésről, editálási feladatkról.
+        </p>
+      </div>
+
+      <div class="rounded-xl overflow-hidden md:order-1">
+        <img src="/dani_profile.jpg" class="w-full h-full object-cover" />
+      </div>
+
+    </section>
+
+
   </div>
 
   <!-- ALSÓ PARALLAX + CTA -->
   <section
       class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] bg-cover bg-center flex items-center justify-center md:bg-fixed"
-      :style="{ backgroundImage: `url(${config.app.baseURL}studio_about.jpg)` }"
+      :style="{ backgroundImage: `url(${config.app.baseURL}studio_about_bottom.jpg)` }"
   >
 
     <div class="absolute inset-0 bg-black/60"></div>
@@ -111,7 +125,7 @@ const config = useRuntimeConfig()
       <NuxtLink
           :to="$route.path.startsWith('/en') ? '/en/studio' : '/studio'"
           class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-semibold
-                 transition-all duration-300 hover:bg-brand/100 hover:border-brand/100"
+                 transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
       >
         A STÚDIÓK
       </NuxtLink>
