@@ -48,12 +48,11 @@ const config = useRuntimeConfig()
 
         <h2 class="text-3xl font-oswald font-bold mb-4">FELVÉTEL</h2>
 
-        <p class="text-neutral-700 leading-relaxed mb-6">
+        <p class="text-neutral-700 leading-relaxed mb-6 text-left">
           Sávonkénti vagy egyben játszós felvételek készítése, re-amp, dobfelvétel, ének és egyéb hangszerek rögzítése.
         </p>
 
-        <!-- UPDATED PRICES – NO INNER PANEL -->
-        <div class="space-y-2 text-lg">
+        <div class="space-y-2 text-lg text-left">
           <p><strong>Óradíj:</strong> 12.000 Ft</p>
           <p><strong>Napidíj (8 óra):</strong> 80.000 Ft</p>
           <p><strong>1–3 dal (full):</strong> 120.000 Ft</p>
@@ -72,11 +71,11 @@ const config = useRuntimeConfig()
 
         <h2 class="text-3xl font-oswald font-bold mb-4">KEVERÉS / MASTERELÉS</h2>
 
-        <p class="text-neutral-700 leading-relaxed mb-6">
+        <p class="text-neutral-700 leading-relaxed mb-6 text-left">
           A nálunk készült felvételek editálását, keverését és masterelését is vállaljuk, de hozott anyagból is szívesen dolgozunk.
         </p>
 
-        <div class="text-lg">
+        <div class="text-lg text-left">
           <p><strong>Keverés / Masterelés:</strong> 50.000 Ft / dal</p>
         </div>
 

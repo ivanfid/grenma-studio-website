@@ -48,17 +48,16 @@ const config = useRuntimeConfig()
 
         <h2 class="text-3xl font-oswald font-bold mb-4">RECORDING</h2>
 
-        <p class="text-neutral-700 leading-relaxed mb-6">
-          Multitrack or live session recording, re-amping, drum tracking, vocals, and all other instruments.
+        <p class="text-neutral-700 leading-relaxed mb-6 text-left">
+          Multitrack or live session recordings, re-amping, drum tracking, vocals, and various instruments — tailored to your project.
         </p>
 
-        <!-- UPDATED PRICES – NO INNER PANEL -->
-        <div class="space-y-2 text-lg">
+        <div class="space-y-2 text-lg text-left">
           <p><strong>Hourly rate:</strong> 12,000 Ft</p>
           <p><strong>Day rate (8 hours):</strong> 80,000 Ft</p>
           <p><strong>1–3 songs (full production):</strong> 120,000 Ft</p>
           <p><strong>4–6 songs (full production):</strong> 100,000 Ft</p>
-          <p><strong>Over 6 songs:</strong> custom agreement</p>
+          <p><strong>More than 6 songs:</strong> custom agreement</p>
         </div>
 
       </div>
@@ -72,11 +71,11 @@ const config = useRuntimeConfig()
 
         <h2 class="text-3xl font-oswald font-bold mb-4">MIXING / MASTERING</h2>
 
-        <p class="text-neutral-700 leading-relaxed mb-6">
-          We offer editing, mixing and mastering for recordings made here, but we are also happy to work with your own material.
+        <p class="text-neutral-700 leading-relaxed mb-6 text-left">
+          We offer editing, mixing, and mastering for projects recorded in our studio — and we’re happy to work with external material as well.
         </p>
 
-        <div class="text-lg">
+        <div class="text-lg text-left">
           <p><strong>Mixing / Mastering:</strong> 50,000 Ft per song</p>
         </div>
 

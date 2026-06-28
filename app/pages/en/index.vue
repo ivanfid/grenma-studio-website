@@ -56,16 +56,17 @@ const config = useRuntimeConfig()
       </span>
       </h2>
 
-      <p class="text-lg leading-relaxed text-neutral-700 mb-6">
-        Whether it’s recording, mixing, or mastering, our goal is to ensure every production sounds as good as it possibly can.
+      <!-- LEFT-ALIGNED PARAGRAPHS -->
+      <p class="text-lg leading-relaxed text-neutral-700 mb-6 text-left">
+        Whether it's recording, mixing, or mastering, our goal is to ensure that every production sounds as good as it possibly can.
       </p>
 
-      <p class="text-lg leading-relaxed text-neutral-700 mb-6">
-        Our studio is designed to feel both welcoming and professional. Every instrument, microphone, acoustic element, and piece of equipment is chosen to help artists and performers deliver their best.
+      <p class="text-lg leading-relaxed text-neutral-700 mb-6 text-left">
+        We designed the studio to feel both welcoming and professional. Every instrument, microphone, acoustic element, and piece of equipment is chosen to help musicians and performers deliver their best.
       </p>
 
-      <p class="text-lg leading-relaxed text-neutral-700">
-        From capturing a single vocal track to producing a full band arrangement, we provide everything needed for exceptional sound quality.
+      <p class="text-lg leading-relaxed text-neutral-700 text-left">
+        From capturing a single vocal track to producing a full band session, we provide everything needed for exceptional sound quality.
       </p>
 
     </div>

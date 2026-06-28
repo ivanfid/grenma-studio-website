@@ -102,7 +102,7 @@
                 target="_blank"
                 class="text-gray-300 hover:text-white underline underline-offset-4"
             >
-              1131 Budapest, Dolmány utca 48.
+              1131 Budapest, Dolmány utca 48
             </a>
           </p>
 

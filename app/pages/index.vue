@@ -58,22 +58,24 @@ const config = useRuntimeConfig()
       </span>
       </h2>
 
-      <p class="text-lg leading-relaxed text-neutral-700 mb-6">
+      <!-- BALRA IGAZÍTOTT BEKEZDÉSEK -->
+      <p class="text-lg leading-relaxed text-neutral-700 mb-6 text-left">
         Akár felvételről, keverésről vagy masterelésről van szó, célunk, hogy minden produkció a lehető legjobb minőségben szólaljon meg.
       </p>
 
-      <p class="text-lg leading-relaxed text-neutral-700 mb-6">
+      <p class="text-lg leading-relaxed text-neutral-700 mb-6 text-left">
         A stúdiót úgy alakítottuk ki, hogy egyszerre legyen otthonos és professzionális. A hangszerek, mikrofonok,
         akusztikai elemek és eszközök mind azt szolgálják, hogy a zenészek és előadók a legjobb formájukat hozhassák.
       </p>
 
-      <p class="text-lg leading-relaxed text-neutral-700">
+      <p class="text-lg leading-relaxed text-neutral-700 text-left">
         Legyen szó egyetlen vokál sáv rögzítéséről vagy egy teljes zenekari produkcióról, nálunk minden adott a kiváló hangzáshoz.
       </p>
 
     </div>
 
   </section>
+
 
 
 
