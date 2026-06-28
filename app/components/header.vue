@@ -52,6 +52,7 @@ const labels = computed(() => ({
 <template>
   <header
       :class="[
+              'font-lato font-semibold',
               'w-full fixed top-0 left-0 z-50 transition-all duration-600 ease-[cubic-bezier(0.4,0.0,0.2,1)]',
               'bg-gradient-to-l from-[#b02c07]/20 via-black/80 to-black/95 backdrop-blur-xl border-b border-white/5',
               !mobileOpen && !isScrolled ? 'py-4' : '',
