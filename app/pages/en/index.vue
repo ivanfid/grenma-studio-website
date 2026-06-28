@@ -8,12 +8,17 @@ const config = useRuntimeConfig()
   <!-- HERO SECTION -->
   <section class="relative h-screen w-full bg-black text-white flex items-center justify-center">
 
-    <!-- Background image -->
-    <img
-        src="/studio_main.jpg"
-        alt="Studio background"
+    <!-- Background video -->
+    <video
+        autoplay
+        loop
+        muted
+        playsinline
         class="absolute inset-0 w-full h-full object-cover opacity-60"
-    />
+    >
+      <!-- később majd ezt tedd első helyre -->
+      <source src="/lowres_video.mp4" type="video/mp4" />
+    </video>
 
     <!-- Dark overlay -->
     <div class="absolute inset-0 bg-black/40"></div>
@@ -22,11 +27,11 @@ const config = useRuntimeConfig()
     <div
         class="absolute inset-0 pointer-events-none opacity-45"
         style="
-        background-image:
-          linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px);
-        background-size: 5px 5px;
-      "
+      background-image:
+        linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px);
+      background-size: 5px 5px;
+    "
     ></div>
 
   </section>
@@ -80,7 +85,7 @@ const config = useRuntimeConfig()
       <NuxtLink
           to="/en/about"
           class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-semibold
-           transition-all duration-300 hover:bg-brand/100 hover:border-brand/100"
+           transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
       >
         LEARN MORE
       </NuxtLink>
