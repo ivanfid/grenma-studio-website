@@ -49,28 +49,29 @@ const config = useRuntimeConfig()
           class="mx-auto mb-6 w-[160px] md:w-[200px] lg:w-[240px]"
       />
 
-      <h2 class="text-4xl font-bold font-oswald leading-tight mb-8 tracking-wide uppercase">
-      <span class="block">
-        EGY MODERN, INSPIRÁLÓ KÖRNYEZET
-      </span>
-        <span class="block mt-2 text-neutral-800">
-        AHOL A KREATIVITÁS TALÁLKOZIK A TECHNIKAI PRECIZITÁSSAL
-      </span>
+      <h2 class="font-muli font-black text-[42px] leading-[46px] tracking-[0.6px] uppercase text-[#404040] mb-8"
+          style="text-shadow: 0 0 0.8px rgba(0,0,0,0.35);">
+        <span class="block">
+            EGY MODERN, INSPIRÁLÓ KÖRNYEZET
+        </span>
+        <span class="block mt-2">
+            AHOL A KREATIVITÁS TALÁLKOZIK A TECHNIKAI PRECIZITÁSSAL
+        </span>
       </h2>
 
-      <!-- BALRA IGAZÍTOTT BEKEZDÉSEK -->
-      <p class="text-lg leading-relaxed text-neutral-700 mb-6 text-left">
+      <p class="font-merriweather text-lg leading-relaxed text-[#404040] mb-6 text-left">
         Akár felvételről, keverésről vagy masterelésről van szó, célunk, hogy minden produkció a lehető legjobb minőségben szólaljon meg.
       </p>
 
-      <p class="text-lg leading-relaxed text-neutral-700 mb-6 text-left">
+      <p class="font-merriweather text-lg leading-relaxed text-[#404040] mb-6 text-left">
         A stúdiót úgy alakítottuk ki, hogy egyszerre legyen otthonos és professzionális. A hangszerek, mikrofonok,
         akusztikai elemek és eszközök mind azt szolgálják, hogy a zenészek és előadók a legjobb formájukat hozhassák.
       </p>
 
-      <p class="text-lg leading-relaxed text-neutral-700 text-left">
+      <p class="font-merriweather text-lg leading-relaxed text-[#404040] text-left">
         Legyen szó egyetlen vokál sáv rögzítéséről vagy egy teljes zenekari produkcióról, nálunk minden adott a kiváló hangzáshoz.
       </p>
+
 
     </div>
 

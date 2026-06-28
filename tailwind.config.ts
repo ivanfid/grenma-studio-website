@@ -8,6 +8,8 @@ export default {
             fontFamily: {
                 oswald: ["Oswald", "sans-serif"],
                 body: ["Roboto Serif", "serif"],
+                muli: ['Muli', 'sans-serif'],
+                merriweather: ['Merriweather', 'serif'],
             },
             colors: {
                 brand: {

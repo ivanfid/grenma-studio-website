@@ -36,7 +36,7 @@ const config = useRuntimeConfig()
 
   </section>
 
-  <!-- WHITE BLOCK – THE STUDIO SECTION (ENGLISH, UPPERCASE SPLIT TITLE) -->
+  <!-- WHITE BLOCK – THE STUDIO SECTION -->
   <section class="bg-white text-black py-12 px-6">
 
     <div class="max-w-[900px] mx-auto text-center font-body">
@@ -47,31 +47,33 @@ const config = useRuntimeConfig()
           class="mx-auto mb-6 w-[160px] md:w-[200px] lg:w-[240px]"
       />
 
-      <h2 class="text-4xl font-bold font-oswald leading-tight mb-8 tracking-wide uppercase">
+      <h2 class="font-muli font-black text-[42px] leading-[46px] tracking-[0.6px] uppercase text-[#404040] mb-8"
+          style="text-shadow: 0 0 0.8px rgba(0,0,0,0.35);">
       <span class="block">
-        A MODERN, INSPIRING ENVIRONMENT
+          A MODERN, INSPIRING ENVIRONMENT
       </span>
-        <span class="block mt-2 text-neutral-800">
-        WHERE CREATIVITY MEETS TECHNICAL PRECISION
+        <span class="block mt-2">
+          WHERE CREATIVITY MEETS TECHNICAL PRECISION
       </span>
       </h2>
 
-      <!-- LEFT-ALIGNED PARAGRAPHS -->
-      <p class="text-lg leading-relaxed text-neutral-700 mb-6 text-left">
-        Whether it's recording, mixing, or mastering, our goal is to ensure that every production sounds as good as it possibly can.
+      <p class="font-merriweather text-lg leading-relaxed text-[#404040] mb-6 text-left">
+        Whether it’s recording, mixing, or mastering, our goal is to ensure that every production sounds its absolute best.
       </p>
 
-      <p class="text-lg leading-relaxed text-neutral-700 mb-6 text-left">
-        We designed the studio to feel both welcoming and professional. Every instrument, microphone, acoustic element, and piece of equipment is chosen to help musicians and performers deliver their best.
+      <p class="font-merriweather text-lg leading-relaxed text-[#404040] mb-6 text-left">
+        The studio was designed to be both welcoming and professional. Every instrument, microphone,
+        acoustic element and piece of equipment serves one purpose: helping musicians and performers deliver their best.
       </p>
 
-      <p class="text-lg leading-relaxed text-neutral-700 text-left">
-        From capturing a single vocal track to producing a full band session, we provide everything needed for exceptional sound quality.
+      <p class="font-merriweather text-lg leading-relaxed text-[#404040] text-left">
+        From capturing a single vocal track to producing a full band arrangement, we provide everything needed for exceptional sound quality.
       </p>
 
     </div>
 
   </section>
+
 
 
   <!-- PARALLAX CTA BLOCK -->
