@@ -95,7 +95,7 @@ onMounted(async () => {
         class="w-full h-full bg-cover bg-center md:bg-fixed"
         :style="{ backgroundImage: `url(${config.app.baseURL}studio_1.jpg)` }"
     ></div>
-
+    <div class="absolute inset-0 bg-black/60"></div>
     <!-- Micro-grid overlay (csak a hero-ra) -->
     <div
         class="absolute inset-0 pointer-events-none opacity-60"
@@ -121,8 +121,8 @@ onMounted(async () => {
       </p>
     </section>
 
-    <section class="px-6 max-w-[1200px] mx-auto space-y-10 font-body">
 
+    <section class="px-6 max-w-[1200px] mx-auto space-y-10 font-body">
       <!-- STUDIO A -->
       <div>
         <div
@@ -130,10 +130,21 @@ onMounted(async () => {
             class="relative h-56 rounded-xl overflow-hidden cursor-pointer group bg-cover bg-center"
             :style="{ backgroundImage: `url(${studioA})` }"
         >
-          <div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition"></div>
+          <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
 
-          <h2 class="absolute inset-0 flex items-center justify-center text-white text-4xl font-oswald font-bold">
+          <h2 class="absolute inset-0 flex flex-col items-center justify-center text-white text-4xl font-oswald font-bold">
             STUDIO A
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="white"
+                class="mt-3 w-[1.9rem] opacity-90 group-hover:opacity-100 transform transition-transform duration-300"
+                :class="{ 'rotate-180': open === 'A' }"
+            >
+              <path d="M12 16.5l-7-7 1.4-1.4L12 13.7l5.6-5.6L19 9.5z"/>
+            </svg>
+
           </h2>
         </div>
 
@@ -141,13 +152,12 @@ onMounted(async () => {
             class="accordion bg-white rounded-xl mt-4"
             :style="{ maxHeight: open === 'A' ? '600px' : '0px' }"
         >
-
           <div class="p-8">
             <p class="text-neutral-700 leading-relaxed mb-6">
-              This is where the detailed description of Studio A will go.
+              This is where the detailed description of Studio A will appear.
             </p>
 
-            <h3 class="text-xl font-semibold mb-2">Equipment list</h3>
+            <h3 class="text-xl font-semibold mb-2">Equipment List</h3>
             <ul class="list-disc pl-6 text-neutral-700">
               <li v-for="(item, i) in equipmentA" :key="i">{{ item }}</li>
             </ul>
@@ -163,10 +173,21 @@ onMounted(async () => {
             class="relative h-56 rounded-xl overflow-hidden cursor-pointer group bg-cover bg-center"
             :style="{ backgroundImage: `url(${studioB})` }"
         >
-          <div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition"></div>
+          <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
 
-          <h2 class="absolute inset-0 flex items-center justify-center text-white text-4xl font-oswald font-bold">
+          <h2 class="absolute inset-0 flex flex-col items-center justify-center text-white text-4xl font-oswald font-bold">
             STUDIO B
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="white"
+                class="mt-3 w-[1.9rem] opacity-90 group-hover:opacity-100 transform transition-transform duration-300"
+                :class="{ 'rotate-180': open === 'B' }"
+            >
+              <path d="M12 16.5l-7-7 1.4-1.4L12 13.7l5.6-5.6L19 9.5z"/>
+            </svg>
+
           </h2>
         </div>
 
@@ -174,13 +195,12 @@ onMounted(async () => {
             class="accordion bg-white rounded-xl mt-4"
             :style="{ maxHeight: open === 'B' ? '600px' : '0px' }"
         >
-
           <div class="p-8">
             <p class="text-neutral-700 leading-relaxed mb-6">
-              This is where the detailed description of Studio B will go.
+              This is where the detailed description of Studio B will appear.
             </p>
 
-            <h3 class="text-xl font-semibold mb-2">Equipment list</h3>
+            <h3 class="text-xl font-semibold mb-2">Equipment List</h3>
             <ul class="list-disc pl-6 text-neutral-700">
               <li v-for="(item, i) in equipmentB" :key="i">{{ item }}</li>
             </ul>
@@ -188,18 +208,28 @@ onMounted(async () => {
         </div>
       </div>
 
-
-      <!-- TRACKING ROOM -->
+      <!-- RECORDING ROOM -->
       <div>
         <div
             @click="toggle('F')"
             class="relative h-56 rounded-xl overflow-hidden cursor-pointer group bg-cover bg-center"
             :style="{ backgroundImage: `url(${studioG})` }"
         >
-          <div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition"></div>
+          <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
 
-          <h2 class="absolute inset-0 flex items-center justify-center text-white text-4xl font-oswald font-bold">
-            TRACKING ROOM
+          <h2 class="absolute inset-0 flex flex-col items-center justify-center text-white text-4xl font-oswald font-bold">
+            RECORDING ROOM
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="white"
+                class="mt-3 w-[1.9rem] opacity-90 group-hover:opacity-100 transform transition-transform duration-300"
+                :class="{ 'rotate-180': open === 'F' }"
+            >
+              <path d="M12 16.5l-7-7 1.4-1.4L12 13.7l5.6-5.6L19 9.5z"/>
+            </svg>
+
           </h2>
         </div>
 
@@ -207,13 +237,12 @@ onMounted(async () => {
             class="accordion bg-white rounded-xl mt-4"
             :style="{ maxHeight: open === 'F' ? '600px' : '0px' }"
         >
-
           <div class="p-8">
             <p class="text-neutral-700 leading-relaxed mb-6">
-              This is where the detailed description of the tracking room will go.
+              This is where the detailed description of the Recording Room will appear.
             </p>
 
-            <h3 class="text-xl font-semibold mb-2">Equipment list</h3>
+            <h3 class="text-xl font-semibold mb-2">Equipment List</h3>
             <ul class="list-disc pl-6 text-neutral-700">
               <li v-for="(item, i) in equipmentF" :key="i">{{ item }}</li>
             </ul>
@@ -228,7 +257,7 @@ onMounted(async () => {
   <!-- PARALLAX BLOCK BEFORE GALLERY -->
   <section
       class="relative w-full h-[22vh] sm:h-[30vh] md:h-[40vh] bg-cover bg-center md:bg-fixed"
-      :style="{ backgroundImage: `url(${config.app.baseURL}studio_references.jpg)` }"
+      :style="{ backgroundImage: `url(${config.app.baseURL}studio_studio_middle.jpg)` }"
   >
     <div class="absolute inset-0 bg-black/50"></div>
   </section>
@@ -269,7 +298,7 @@ onMounted(async () => {
   <!-- BOTTOM PARALLAX + CTA -->
   <section
       class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] bg-cover bg-center flex items-center justify-center md:bg-fixed"
-      :style="{ backgroundImage: `url(${config.app.baseURL}studio_2.jpg)` }"
+      :style="{ backgroundImage: `url(${config.app.baseURL}studio_studio_bottom.jpg)` }"
   >
 
     <div class="absolute inset-0 bg-black/60"></div>
@@ -278,7 +307,7 @@ onMounted(async () => {
       <NuxtLink
           :to="$route.path.startsWith('/en') ? '/en/references' : '/references'"
           class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-semibold
-               transition-all duration-300 hover:bg-brand/100 hover:border-brand/100"
+               transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
       >
         REFERENCES
       </NuxtLink>

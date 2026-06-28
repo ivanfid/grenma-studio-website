@@ -14,7 +14,7 @@ const config = useRuntimeConfig()
         class="w-full h-full bg-cover bg-center md:bg-fixed"
         :style="{ backgroundImage: `url(${config.app.baseURL}studio_references_3.jpg)` }"
     ></div>
-
+    <div class="absolute inset-0 bg-black/60"></div>
     <!-- Micro-grid overlay (csak a hero-ra!) -->
     <div
         class="absolute inset-0 pointer-events-none opacity-60"
@@ -105,7 +105,7 @@ const config = useRuntimeConfig()
       <NuxtLink
           :to="$route.path.startsWith('/en') ? '/en/pricing' : '/pricing'"
           class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-semibold
-               transition-all duration-300 hover:bg-brand/100 hover:border-brand/100"
+               transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
       >
         VIEW PRICING
       </NuxtLink>
