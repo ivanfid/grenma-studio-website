@@ -49,36 +49,31 @@ const config = useRuntimeConfig()
           class="mx-auto mb-6 w-[160px] md:w-[200px] lg:w-[240px]"
       />
 
-      <h2 class="font-muli font-black text-[42px] leading-[46px] tracking-[0.6px] uppercase text-[#404040] mb-8"
-          style="text-shadow: 0 0 0.8px rgba(0,0,0,0.35);">
-        <span class="block">
-            EGY MODERN, INSPIRÁLÓ KÖRNYEZET
-        </span>
-        <span class="block mt-2">
-            AHOL A KREATIVITÁS TALÁLKOZIK A TECHNIKAI PRECIZITÁSSAL
-        </span>
+      <h2 class="font-lato text-[36px] leading-[40px] tracking-[0.2px] uppercase text-[#404040] mb-8">
+      <span class="block font-normal">
+        EGY MODERN, INSPIRÁLÓ KÖRNYEZET
+      </span>
+        <span class="block mt-2 font-black">
+        AHOL A KREATIVITÁS TALÁLKOZIK A TECHNIKAI PRECIZITÁSSAL
+      </span>
       </h2>
 
-      <p class="font-merriweather text-lg leading-relaxed text-[#404040] mb-6 text-left">
+      <p class="font-inter text-lg leading-relaxed text-[#404040] mb-6 text-left">
         Akár felvételről, keverésről vagy masterelésről van szó, célunk, hogy minden produkció a lehető legjobb minőségben szólaljon meg.
       </p>
 
-      <p class="font-merriweather text-lg leading-relaxed text-[#404040] mb-6 text-left">
+      <p class="font-inter text-lg leading-relaxed text-[#404040] mb-6 text-left">
         A stúdiót úgy alakítottuk ki, hogy egyszerre legyen otthonos és professzionális. A hangszerek, mikrofonok,
         akusztikai elemek és eszközök mind azt szolgálják, hogy a zenészek és előadók a legjobb formájukat hozhassák.
       </p>
 
-      <p class="font-merriweather text-lg leading-relaxed text-[#404040] text-left">
+      <p class="font-inter text-lg leading-relaxed text-[#404040] text-left">
         Legyen szó egyetlen vokál sáv rögzítéséről vagy egy teljes zenekari produkcióról, nálunk minden adott a kiváló hangzáshoz.
       </p>
-
 
     </div>
 
   </section>
-
-
-
 
   <!-- PARALLAX CTA BLOCK -->
   <section
@@ -91,7 +86,7 @@ const config = useRuntimeConfig()
     <div class="relative z-10 text-center">
       <NuxtLink
           :to="$route.path.startsWith('/en') ? '/en/about' : '/about'"
-          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-semibold
+          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-lato font-bold
            transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
 
       >

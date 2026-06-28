@@ -47,26 +47,25 @@ const config = useRuntimeConfig()
           class="mx-auto mb-6 w-[160px] md:w-[200px] lg:w-[240px]"
       />
 
-      <h2 class="font-muli font-black text-[42px] leading-[46px] tracking-[0.6px] uppercase text-[#404040] mb-8"
-          style="text-shadow: 0 0 0.8px rgba(0,0,0,0.35);">
-      <span class="block">
-          A MODERN, INSPIRING ENVIRONMENT
-      </span>
-        <span class="block mt-2">
-          WHERE CREATIVITY MEETS TECHNICAL PRECISION
-      </span>
+      <h2 class="font-lato text-[36px] leading-[40px] tracking-[0.2px] uppercase text-[#404040] mb-8">
+          <span class="block font-normal">
+            A MODERN, INSPIRING ENVIRONMENT
+          </span>
+                <span class="block mt-2 font-black">
+            WHERE CREATIVITY MEETS TECHNICAL PRECISION
+          </span>
       </h2>
 
-      <p class="font-merriweather text-lg leading-relaxed text-[#404040] mb-6 text-left">
+      <p class="font-inter text-lg leading-relaxed text-[#404040] mb-6 text-left">
         Whether it’s recording, mixing, or mastering, our goal is to ensure that every production sounds its absolute best.
       </p>
 
-      <p class="font-merriweather text-lg leading-relaxed text-[#404040] mb-6 text-left">
+      <p class="font-inter text-lg leading-relaxed text-[#404040] mb-6 text-left">
         The studio was designed to be both welcoming and professional. Every instrument, microphone,
         acoustic element and piece of equipment serves one purpose: helping musicians and performers deliver their best.
       </p>
 
-      <p class="font-merriweather text-lg leading-relaxed text-[#404040] text-left">
+      <p class="font-inter text-lg leading-relaxed text-[#404040] text-left">
         From capturing a single vocal track to producing a full band arrangement, we provide everything needed for exceptional sound quality.
       </p>
 
@@ -87,7 +86,7 @@ const config = useRuntimeConfig()
     <div class="relative z-10 text-center">
       <NuxtLink
           to="/en/about"
-          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-semibold
+          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-lato font-bold
            transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
       >
         LEARN MORE
