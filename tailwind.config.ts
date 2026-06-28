@@ -7,9 +7,8 @@ export default {
         extend: {
             fontFamily: {
                 oswald: ["Oswald", "sans-serif"],
-                body: ["Roboto Serif", "serif"],
+                body: ["Inter", "sans-serif"],
                 lato: ['Lato', 'sans-serif'],
-                merriweather: ['Merriweather', 'serif'],
                 inter: ['Inter', 'sans-serif'],
             },
             colors: {

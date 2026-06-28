@@ -49,25 +49,25 @@ const config = useRuntimeConfig()
           class="mx-auto mb-6 w-[160px] md:w-[200px] lg:w-[240px]"
       />
 
-      <h2 class="font-lato text-[36px] leading-[40px] tracking-[0.2px] uppercase text-[#404040] mb-8">
-      <span class="block font-normal">
+      <h2>
+      <span>
         EGY MODERN, INSPIRÁLÓ KÖRNYEZET
       </span>
-        <span class="block mt-2 font-black">
+        <span>
         AHOL A KREATIVITÁS TALÁLKOZIK A TECHNIKAI PRECIZITÁSSAL
       </span>
       </h2>
 
-      <p class="font-inter text-lg leading-relaxed text-[#404040] mb-6 text-left">
+      <p>
         Akár felvételről, keverésről vagy masterelésről van szó, célunk, hogy minden produkció a lehető legjobb minőségben szólaljon meg.
       </p>
 
-      <p class="font-inter text-lg leading-relaxed text-[#404040] mb-6 text-left">
+      <p>
         A stúdiót úgy alakítottuk ki, hogy egyszerre legyen otthonos és professzionális. A hangszerek, mikrofonok,
         akusztikai elemek és eszközök mind azt szolgálják, hogy a zenészek és előadók a legjobb formájukat hozhassák.
       </p>
 
-      <p class="font-inter text-lg leading-relaxed text-[#404040] text-left">
+      <p>
         Legyen szó egyetlen vokál sáv rögzítéséről vagy egy teljes zenekari produkcióról, nálunk minden adott a kiváló hangzáshoz.
       </p>
 

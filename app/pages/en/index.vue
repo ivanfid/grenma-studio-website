@@ -47,25 +47,25 @@ const config = useRuntimeConfig()
           class="mx-auto mb-6 w-[160px] md:w-[200px] lg:w-[240px]"
       />
 
-      <h2 class="font-lato text-[36px] leading-[40px] tracking-[0.2px] uppercase text-[#404040] mb-8">
-          <span class="block font-normal">
+      <h2>
+          <span>
             A MODERN, INSPIRING ENVIRONMENT
           </span>
-                <span class="block mt-2 font-black">
+          <span>
             WHERE CREATIVITY MEETS TECHNICAL PRECISION
           </span>
       </h2>
 
-      <p class="font-inter text-lg leading-relaxed text-[#404040] mb-6 text-left">
+      <p>
         Whether it’s recording, mixing, or mastering, our goal is to ensure that every production sounds its absolute best.
       </p>
 
-      <p class="font-inter text-lg leading-relaxed text-[#404040] mb-6 text-left">
+      <p>
         The studio was designed to be both welcoming and professional. Every instrument, microphone,
         acoustic element and piece of equipment serves one purpose: helping musicians and performers deliver their best.
       </p>
 
-      <p class="font-inter text-lg leading-relaxed text-[#404040] text-left">
+      <p>
         From capturing a single vocal track to producing a full band arrangement, we provide everything needed for exceptional sound quality.
       </p>
 

@@ -35,8 +35,8 @@ const config = useRuntimeConfig()
 
     <!-- HERO TEXT -->
     <section class="px-6 max-w-[1200px] mx-auto text-center mb-20 font-body">
-      <h1 class="text-4xl font-bold mb-4 font-oswald">RÓLUNK</h1>
-      <p class="text-lg opacity-80 max-w-2xl mx-auto">
+      <h2>RÓLUNK</h2>
+      <p class="max-w-2xl mx-auto text-center">
         A Grenma Studio egy modern, barátságos és professzionális környezet,
         ahol minden adott ahhoz, hogy a maximumot hozd ki a zenédből.
       </p>
@@ -50,8 +50,8 @@ const config = useRuntimeConfig()
       </div>
 
       <div>
-        <h2 class="text-3xl font-bold mb-4 font-oswald">A STÚDIÓ</h2>
-        <p class="opacity-80 leading-relaxed">
+        <h3>A STÚDIÓ</h3>
+        <p>
           Budapesten, a XIII. kerületben találsz meg minket (Dolmány utca 48.).
           40 m²-es közösségi hely, 3 stúdióhelység (25 m² lehallgató, 35 m² és 20 m² feljátszók),
           konyha, kulturált mellékhelység. Klíma, Wi-Fi, korlátlan kávé- és teafogyasztás,
@@ -75,8 +75,8 @@ const config = useRuntimeConfig()
       </div>
 
       <div class="md:order-1">
-        <h2 class="text-3xl font-bold mb-4 font-oswald">BOTLIK MÁTYÁS</h2>
-        <p class="opacity-80 leading-relaxed">
+        <h3>BOTLIK MÁTYÁS</h3>
+        <p>
           Matyi 2008 óta készít felvételeket, végtelen türelemmel és odafigyeléssel.
           Modern punk, rock, metal, pop, akusztikus, népzenei és elektronikus projektekben
           egyaránt otthonosan mozog.
@@ -98,8 +98,8 @@ const config = useRuntimeConfig()
       </div>
 
       <div class="md:order-2">
-        <h2 class="text-3xl font-bold mb-6 font-oswald">IVÁNFI DÁNIEL</h2>
-        <p class="opacity-80 leading-relaxed">
+        <h3>IVÁNFI DÁNIEL</h3>
+        <p>
           Dani 2017 óta foglalkozik komolyabban felvétel készítéssel, amikor az éppen aktuális zenekara,
           a Stubborn nagylemezének felvételin dolgozott. Azóta megállíthatatlan szenvedéllyel tevékenykedik Metal, Punk Rock, HC
           zenekarok anyagain, legyen szó felvételről, keverésről, editálási feladatkról.
@@ -123,7 +123,7 @@ const config = useRuntimeConfig()
       <!-- FŐOLDALI CTA GOMB -->
       <NuxtLink
           :to="$route.path.startsWith('/en') ? '/en/studio' : '/studio'"
-          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-semibold
+          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-lato font-bold
                  transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
       >
         A STÚDIÓK
