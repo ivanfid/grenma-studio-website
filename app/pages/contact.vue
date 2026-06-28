@@ -94,29 +94,59 @@
 
           <h2 class="text-3xl font-bold mb-6 font-oswald">ELÉRHETŐSÉGEK</h2>
 
+          <!-- Cím -->
           <p class="text-lg mb-4">
-            📍 <span class="text-gray-300">1131 Budapest, Dolmány utca 48.</span>
+            📍
+            <a
+                href="https://www.google.com/maps?q=1131+Budapest,+Dolmány+utca+48"
+                target="_blank"
+                class="text-gray-300 hover:text-white underline underline-offset-4"
+            >
+              1131 Budapest, Dolmány utca 48.
+            </a>
           </p>
 
+          <!-- Email -->
           <p class="text-lg mb-6">
-            ✉️ <span class="text-gray-300">info@grenmastudio.hu</span>
+            ✉️
+            <a
+                href="mailto:info@grenmastudio.hu"
+                class="text-gray-300 hover:text-white underline underline-offset-4"
+            >
+              info@grenmastudio.hu
+            </a>
           </p>
 
+          <!-- Botlik Mátyás -->
           <p class="text-lg mb-2">
             👤 <span class="text-gray-300">Botlik Mátyás</span>
           </p>
           <p class="text-lg mb-6">
-            📞 <span class="text-gray-300">+36 20 828 0908</span>
+            📞
+            <a
+                href="tel:+36208280908"
+                class="text-gray-300 hover:text-white underline underline-offset-4"
+            >
+              +36 20 828 0908
+            </a>
           </p>
 
+          <!-- Ivánfi Dániel -->
           <p class="text-lg mb-2">
             👤 <span class="text-gray-300">Ivánfi Dániel</span>
           </p>
           <p class="text-lg">
-            📞 <span class="text-gray-300">+36 30 825 3143</span>
+            📞
+            <a
+                href="tel:+36308253143"
+                class="text-gray-300 hover:text-white underline underline-offset-4"
+            >
+              +36 30 825 3143
+            </a>
           </p>
 
         </div>
+
 
         <!-- Google Maps (LAST ELEMENT) -->
         <div class="rounded-2xl overflow-hidden shadow-2xl border border-neutral-800">

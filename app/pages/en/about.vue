@@ -93,6 +93,10 @@ const config = useRuntimeConfig()
     <!-- 3) TEXT – IMAGE -->
     <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center font-body">
 
+      <div class="rounded-xl overflow-hidden md:order-1">
+        <img src="/dani_profile.jpg" class="w-full h-full object-cover" />
+      </div>
+
       <div class="md:order-2">
         <h2 class="text-3xl font-bold mb-6 font-oswald">DÁNIEL IVÁNFI</h2>
         <p class="opacity-80 leading-relaxed">
@@ -101,10 +105,6 @@ const config = useRuntimeConfig()
           Since then, he has been passionately working on metal, punk rock and hardcore
           productions — recording, mixing and editing.
         </p>
-      </div>
-
-      <div class="rounded-xl overflow-hidden md:order-1">
-        <img src="/dani_profile.jpg" class="w-full h-full object-cover" />
       </div>
 
     </section>
