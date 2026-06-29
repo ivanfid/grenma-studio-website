@@ -26,59 +26,75 @@ const config = useRuntimeConfig()
   </div>
 
   <!-- WHITE CONTENT -->
-  <div class="bg-white text-black py-16 md:py-20">
+  <div class="bg-white py-16 md:py-20">
 
     <!-- HERO TEXT -->
-    <section class="px-6 max-w-[1200px] mx-auto text-center mb-10 font-body">
-      <h1 class="text-4xl font-bold mb-4 font-oswald">PRICING</h1>
-      <p class="text-lg opacity-80 max-w-2xl mx-auto">
+    <section class="px-6 max-w-[1200px] mx-auto text-center mb-10">
+      <h2>PRICING</h2>
+      <p class="text-lg max-w-2xl mx-auto text-center">
         Recording, mixing, mastering, editing — everything you need on the road to a professional sound.
       </p>
     </section>
 
     <!-- TWO MAIN SERVICE CARDS -->
-    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 font-body mt-10">
+    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mt-10">
 
       <!-- RECORDING -->
-      <div class="bg-white border border-neutral-300 rounded-xl p-10 shadow-sm text-center">
+      <div class="bg-white border border-neutral-300 rounded-xl shadow-sm text-center overflow-hidden">
 
-        <div class="w-32 h-32 mx-auto mb-6">
-          <img src="@/assets/studio/icon_recording.png" class="w-full h-full object-contain" />
+        <!-- KÁRTYA FELSŐ KÉP -->
+        <div class="w-full h-60">
+          <img
+              src="@/assets/studio/card_rec.jpg"
+              class="w-full h-full object-cover"
+          />
         </div>
 
-        <h2 class="text-3xl font-oswald font-bold mb-4">RECORDING</h2>
+        <!-- TARTALOM -->
+        <div class="p-10 pt-0">
 
-        <p class="text-neutral-700 leading-relaxed mb-6 text-left">
-          Multitrack or live session recordings, re-amping, drum tracking, vocals, and various instruments — tailored to your project.
-        </p>
+        <h3>RECORDING</h3>
 
-        <div class="space-y-2 text-lg text-left">
-          <p><strong>Hourly rate:</strong> 12,000 Ft</p>
-          <p><strong>Day rate (8 hours):</strong> 80,000 Ft</p>
-          <p><strong>1–3 songs (full production):</strong> 120,000 Ft</p>
-          <p><strong>4–6 songs (full production):</strong> 100,000 Ft</p>
-          <p><strong>More than 6 songs:</strong> custom agreement</p>
+          <p>
+            Multitrack or live session recordings, re-amping, drum tracking, vocals, and various instruments — tailored to your project.
+          </p>
+
+          <div class="space-y-2 text-lg text-left">
+            <p><strong>Hourly rate:</strong> 12,000 Ft</p>
+            <p><strong>Day rate (8 hours):</strong> 80,000 Ft</p>
+            <p><strong>1–3 songs (full production):</strong> 120,000 Ft</p>
+            <p><strong>4–6 songs (full production):</strong> 100,000 Ft</p>
+            <p><strong>More than 6 songs:</strong> custom agreement</p>
+          </div>
         </div>
 
       </div>
 
+
       <!-- MIXING / MASTERING -->
-      <div class="bg-white border border-neutral-300 rounded-xl p-10 shadow-sm text-center">
+      <div class="bg-white border border-neutral-300 rounded-xl shadow-sm text-center overflow-hidden">
 
-        <div class="w-32 h-32 mx-auto mb-6">
-          <img src="@/assets/studio/icon_mixing.png" class="w-full h-full object-contain" />
+        <!-- KÁRTYA FELSŐ KÉP -->
+        <div class="w-full h-60">
+          <img
+              src="@/assets/studio/card_mix.jpg"
+              class="w-full h-full object-cover"
+          />
         </div>
+        <!-- TARTALOM -->
+        <div class="p-10 pt-0">
 
-        <h2 class="text-3xl font-oswald font-bold mb-4">MIXING / MASTERING</h2>
+        <h3>MIXING / MASTERING</h3>
 
-        <p class="text-neutral-700 leading-relaxed mb-6 text-left">
+        <p>
           We offer editing, mixing, and mastering for projects recorded in our studio — and we’re happy to work with external material as well.
         </p>
 
-        <div class="text-lg text-left">
+        <div class="space-y-2 text-lg text-left">
           <p><strong>Mixing / Mastering:</strong> 50,000 Ft per song</p>
         </div>
 
+        </div>
       </div>
 
     </section>
@@ -97,7 +113,7 @@ const config = useRuntimeConfig()
 
       <NuxtLink
           :to="$route.path.startsWith('/en') ? '/en/contact' : '/contact'"
-          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-semibold
+          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-lato font-bold
            transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
       >
         BOOK NOW

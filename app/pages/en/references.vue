@@ -28,12 +28,12 @@ const config = useRuntimeConfig()
   </div>
 
   <!-- WHITE BLOCK – VIDEOS -->
-  <div class="bg-white text-black py-16 md:py-20">
+  <div class="bg-white py-16 md:py-20">
 
     <!-- TITLE -->
     <section class="px-6 max-w-[1200px] mx-auto text-center mb-10 font-body">
-      <h1 class="text-4xl font-bold mb-4 font-oswald">REFERENCES</h1>
-      <p class="text-lg opacity-80 max-w-2xl mx-auto">
+      <h2>REFERENCES</h2>
+      <p class="text-lg max-w-2xl mx-auto">
         A selection of videos that were created here or are connected to our studio.
       </p>
     </section>
@@ -104,7 +104,7 @@ const config = useRuntimeConfig()
     <div class="relative z-10 text-center">
       <NuxtLink
           :to="$route.path.startsWith('/en') ? '/en/pricing' : '/pricing'"
-          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-semibold
+          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-lato font-bold
                transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
       >
         VIEW PRICING
