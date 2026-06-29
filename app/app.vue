@@ -18,7 +18,7 @@ import 'photoswipe/style.css'
     <Header />
 
     <NuxtLayout>
-      <NuxtPage />
+      <NuxtPage keepalive />
     </NuxtLayout>
 
     <Footer />
