@@ -60,12 +60,13 @@ const config = useRuntimeConfig()
           </p>
 
           <div class="space-y-2 text-lg text-left">
-            <p><strong>Hourly rate:</strong> 12,000 Ft</p>
-            <p><strong>Day rate (8 hours):</strong> 80,000 Ft</p>
-            <p><strong>1–3 songs (full production):</strong> 120,000 Ft</p>
-            <p><strong>4–6 songs (full production):</strong> 100,000 Ft</p>
-            <p><strong>More than 6 songs:</strong> custom agreement</p>
+            <p class="leading-tight"><strong>Hourly rate:</strong> 35 €</p>
+            <p class="leading-tight"><strong>Day rate (8 hours):</strong> 225 €</p>
+            <p class="leading-tight"><strong>1–3 songs (full production):</strong> 340 € / song</p>
+            <p class="leading-tight"><strong>4–6 songs (full production):</strong> 280 € / song</p>
+            <p class="leading-tight"><strong>More than 6 songs:</strong> custom agreement</p>
           </div>
+
         </div>
 
       </div>
@@ -90,9 +91,9 @@ const config = useRuntimeConfig()
           We offer editing, mixing, and mastering for projects recorded in our studio — and we’re happy to work with external material as well.
         </p>
 
-        <div class="space-y-2 text-lg text-left">
-          <p><strong>Mixing / Mastering:</strong> 50,000 Ft per song</p>
-        </div>
+          <div class="space-y-2 text-lg text-left">
+            <p class="leading-tight"><strong>Mixing / Mastering:</strong> 140 € / song</p>
+          </div>
 
         </div>
       </div>

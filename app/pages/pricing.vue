@@ -60,12 +60,13 @@ const config = useRuntimeConfig()
           </p>
 
           <div class="space-y-2 text-lg text-left">
-            <p><strong>Óradíj:</strong> 12 000 Ft</p>
-            <p><strong>Napidíj (8 óra):</strong> 80 000 Ft</p>
-            <p><strong>1–3 dal (teljes produkció):</strong> 120 000 Ft / dal</p>
-            <p><strong>4–6 dal (teljes produkció):</strong> 100 000 Ft / dal</p>
-            <p><strong>6 dal felett:</strong> egyedi megállapodás</p>
+            <p class="leading-tight"><strong>Óradíj:</strong> 12 000 Ft</p>
+            <p class="leading-tight"><strong>Napidíj (8 óra):</strong> 80 000 Ft</p>
+            <p class="leading-tight"><strong>1–3 dal (teljes produkció):</strong> 120 000 Ft / dal</p>
+            <p class="leading-tight"><strong>4–6 dal (teljes produkció):</strong> 100 000 Ft / dal</p>
+            <p class="leading-tight"><strong>6 dal felett:</strong> egyedi megállapodás</p>
           </div>
+
         </div>
 
       </div>
@@ -91,8 +92,11 @@ const config = useRuntimeConfig()
           </p>
 
           <div class="space-y-2 text-lg text-left">
-            <p><strong>Keverés / Masterelés:</strong> 50 000 Ft / dal</p>
+            <p class="leading-tight">
+              <strong>Keverés / Masterelés:</strong> 50 000 Ft / dal
+            </p>
           </div>
+
 
         </div>
       </div>
