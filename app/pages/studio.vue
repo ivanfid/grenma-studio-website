@@ -110,18 +110,18 @@ onMounted(async () => {
   </div>
 
   <!-- FEHÉR BLOKK – STUDIOK -->
-  <div class="bg-white text-black py-16 md:py-20">
+  <div class="bg-white py-16 md:py-20">
 
 
   <!-- TITLE -->
-    <section class="px-6 max-w-[1200px] mx-auto text-center mb-10 font-body">
-      <h1 class="text-4xl font-bold mb-4 font-oswald">STÚDIÓK</h1>
-      <p class="text-lg opacity-80 max-w-2xl mx-auto">
+    <section class="px-6 max-w-[1200px] mx-auto text-center mb-10">
+      <h2>STÚDIÓK</h2>
+      <p class="max-w-2xl mx-auto text-center">
         Itt Bemutatjuk az A, B stúdiót, és a feljátszót is.
       </p>
     </section>
 
-    <section class="px-6 max-w-[1200px] mx-auto space-y-10 font-body">
+    <section class="px-6 max-w-[1200px] mx-auto space-y-10">
 
       <!-- STÚDIÓ A -->
       <div>
@@ -134,7 +134,9 @@ onMounted(async () => {
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
 
           <!-- TITLE + NYÍL -->
-          <h2 class="absolute inset-0 flex flex-col items-center justify-center text-white text-4xl font-oswald font-bold">
+          <h3
+              class="absolute inset-0 flex flex-col items-center justify-center text-white"
+          >
             STÚDIÓ A
 
             <svg
@@ -146,8 +148,8 @@ onMounted(async () => {
             >
               <path d="M12 16.5l-7-7 1.4-1.4L12 13.7l5.6-5.6L19 9.5z"/>
             </svg>
+          </h3>
 
-          </h2>
         </div>
 
         <div
@@ -178,7 +180,9 @@ onMounted(async () => {
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
 
           <!-- TITLE + NYÍL -->
-          <h2 class="absolute inset-0 flex flex-col items-center justify-center text-white text-4xl font-oswald font-bold">
+          <h3
+              class="absolute inset-0 flex flex-col items-center justify-center text-white"
+          >
             STÚDIÓ B
 
             <svg
@@ -190,8 +194,8 @@ onMounted(async () => {
             >
               <path d="M12 16.5l-7-7 1.4-1.4L12 13.7l5.6-5.6L19 9.5z"/>
             </svg>
+          </h3>
 
-          </h2>
         </div>
 
         <div
@@ -222,7 +226,9 @@ onMounted(async () => {
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
 
           <!-- TITLE + NYÍL -->
-          <h2 class="absolute inset-0 flex flex-col items-center justify-center text-white text-4xl font-oswald font-bold">
+          <h3
+              class="absolute inset-0 flex flex-col items-center justify-center text-white"
+          >
             FELJÁTSZÓ
 
             <svg
@@ -234,8 +240,8 @@ onMounted(async () => {
             >
               <path d="M12 16.5l-7-7 1.4-1.4L12 13.7l5.6-5.6L19 9.5z"/>
             </svg>
+          </h3>
 
-          </h2>
         </div>
 
         <div

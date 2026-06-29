@@ -39,7 +39,7 @@ const config = useRuntimeConfig()
 
 
   <!-- WHITE BLOCK – THE STUDIO SECTION -->
-  <section class="bg-white text-black py-12 px-6">
+  <section class="bg-white py-12 px-6">
 
     <div class="max-w-[900px] mx-auto text-center font-body">
 

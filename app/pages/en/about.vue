@@ -32,10 +32,10 @@ const config = useRuntimeConfig()
 
 
   <!-- WHITE CONTENT -->
-  <div class="bg-white text-black py-20">
+  <div class="bg-white py-16 md:py-20">
 
     <!-- HERO TEXT -->
-    <section class="px-6 max-w-[1200px] mx-auto text-center mb-20 font-body">
+    <section class="px-6 max-w-[1200px] mx-auto text-center mb-20">
       <h2>ABOUT US</h2>
       <p class="max-w-2xl mx-auto text-center">
         Grenma Studio is a modern, friendly and professional environment
@@ -44,7 +44,7 @@ const config = useRuntimeConfig()
     </section>
 
     <!-- 1) IMAGE – TEXT -->
-    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center font-body">
+    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center">
 
       <div class="rounded-xl overflow-hidden">
         <img src="/studio_lounge.jpg" class="w-full h-full object-cover" />
@@ -70,7 +70,7 @@ const config = useRuntimeConfig()
     </div>
 
     <!-- 2) IMAGE – TEXT -->
-    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center font-body">
+    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center">
 
       <div class="rounded-xl overflow-hidden md:order-2">
         <img src="/matyi_profile.jpg" class="w-full h-full object-cover" />
@@ -93,7 +93,7 @@ const config = useRuntimeConfig()
     </div>
 
     <!-- 3) TEXT – IMAGE -->
-    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center font-body">
+    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center">
 
       <div class="rounded-xl overflow-hidden md:order-1">
         <img src="/dani_profile.jpg" class="w-full h-full object-cover" />

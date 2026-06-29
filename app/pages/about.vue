@@ -31,10 +31,10 @@ const config = useRuntimeConfig()
 
 
   <!-- FEHÉR TARTALOM -->
-  <div class="bg-white text-black py-20">
+  <div class="bg-white py-16 md:py-20">
 
     <!-- HERO TEXT -->
-    <section class="px-6 max-w-[1200px] mx-auto text-center mb-20 font-body">
+    <section class="px-6 max-w-[1200px] mx-auto text-center mb-20">
       <h2>RÓLUNK</h2>
       <p class="max-w-2xl mx-auto text-center">
         A Grenma Studio egy modern, barátságos és professzionális környezet,
@@ -43,7 +43,7 @@ const config = useRuntimeConfig()
     </section>
 
     <!-- 1) KÉP – SZÖVEG -->
-    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center font-body">
+    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center">
 
       <div class="rounded-xl overflow-hidden">
         <img src="/studio_lounge.jpg" class="w-full h-full object-cover" />
@@ -68,7 +68,7 @@ const config = useRuntimeConfig()
     </div>
 
     <!-- 2) KÉP – SZÖVEG -->
-    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center font-body">
+    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center">
 
       <div class="rounded-xl overflow-hidden md:order-2">
         <img src="/matyi_profile.jpg" class="w-full h-full object-cover" />
@@ -91,7 +91,7 @@ const config = useRuntimeConfig()
     </div>
 
     <!-- 3) SZÖVEG – KÉP -->
-    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center font-body">
+    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center">
 
       <div class="rounded-xl overflow-hidden md:order-1">
         <img src="/dani_profile.jpg" class="w-full h-full object-cover" />
