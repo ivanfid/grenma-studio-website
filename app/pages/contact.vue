@@ -27,7 +27,7 @@
 
     <!-- PAGE TITLE -->
     <div class="relative z-10 w-full max-w-[1200px] mx-auto text-center mt-10 mb-12 md:mb-16">
-      <h1 class="text-4xl font-bold mb-4 font-oswald">KAPCSOLAT</h1>
+      <h1>KAPCSOLAT</h1>
     </div>
 
     <!-- CONTENT WRAPPER -->
