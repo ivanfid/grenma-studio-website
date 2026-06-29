@@ -25,13 +25,11 @@ const equipmentA = [
 ]
 
 const equipmentB = [
-  "mikrofon B",
-  "előfok B",
-  "kábel B",
-  "dob B",
-  "cintányér B",
-  "speciális B eszköz",
-  "gumicukor B"
+  "Pro Tools Studio ami egy Mac Minin fut",
+  "RME Konverter és Hangkártya",
+  "18 premium minőségű előfok",
+  "Sonarworks segíti az Adam A7X hangfalakat",
+  "Pluginek széles választéka"
 ]
 
 const equipmentF = [
@@ -134,11 +132,8 @@ onMounted(async () => {
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
 
           <!-- TITLE + NYÍL -->
-          <h3
-              class="absolute inset-0 flex flex-col items-center justify-center text-white"
-          >
+          <h3  class="absolute inset-0 flex flex-col items-center justify-center text-white">
             STÚDIÓ A
-
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -149,7 +144,6 @@ onMounted(async () => {
               <path d="M12 16.5l-7-7 1.4-1.4L12 13.7l5.6-5.6L19 9.5z"/>
             </svg>
           </h3>
-
         </div>
 
         <div
@@ -157,14 +151,16 @@ onMounted(async () => {
             :style="{ maxHeight: open === 'A' ? '600px' : '0px' }"
         >
           <div class="p-8">
-            <p class="text-neutral-700 leading-relaxed mb-6">
+            <p>
               Ide kerül majd a Stúdió A részletes leírása.
             </p>
 
-            <h3 class="text-xl font-semibold mb-2">Felszerelés lista</h3>
+            <h3 class="text-xl font-semibold mb-2">Eszközlista</h3>
+
             <ul class="list-disc pl-6 text-neutral-700">
               <li v-for="(item, i) in equipmentA" :key="i">{{ item }}</li>
             </ul>
+
           </div>
         </div>
       </div>
@@ -180,11 +176,8 @@ onMounted(async () => {
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
 
           <!-- TITLE + NYÍL -->
-          <h3
-              class="absolute inset-0 flex flex-col items-center justify-center text-white"
-          >
+          <h3  class="absolute inset-0 flex flex-col items-center justify-center text-white">
             STÚDIÓ B
-
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -195,7 +188,6 @@ onMounted(async () => {
               <path d="M12 16.5l-7-7 1.4-1.4L12 13.7l5.6-5.6L19 9.5z"/>
             </svg>
           </h3>
-
         </div>
 
         <div
@@ -203,11 +195,12 @@ onMounted(async () => {
             :style="{ maxHeight: open === 'B' ? '600px' : '0px' }"
         >
           <div class="p-8">
-            <p class="text-neutral-700 leading-relaxed mb-6">
+            <p>
               Itt jön majd a Stúdió B részletes leírása.
             </p>
 
             <h3 class="text-xl font-semibold mb-2">Eszközlista</h3>
+
             <ul class="list-disc pl-6 text-neutral-700">
               <li v-for="(item, i) in equipmentB" :key="i">{{ item }}</li>
             </ul>
@@ -226,11 +219,8 @@ onMounted(async () => {
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
 
           <!-- TITLE + NYÍL -->
-          <h3
-              class="absolute inset-0 flex flex-col items-center justify-center text-white"
-          >
+          <h3  class="absolute inset-0 flex flex-col items-center justify-center text-white">
             FELJÁTSZÓ
-
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -241,7 +231,6 @@ onMounted(async () => {
               <path d="M12 16.5l-7-7 1.4-1.4L12 13.7l5.6-5.6L19 9.5z"/>
             </svg>
           </h3>
-
         </div>
 
         <div
@@ -249,22 +238,19 @@ onMounted(async () => {
             :style="{ maxHeight: open === 'F' ? '600px' : '0px' }"
         >
           <div class="p-8">
-            <p class="text-neutral-700 leading-relaxed mb-6">
+            <p>
               Itt jön majd a Feljátszó részletes leírása.
             </p>
 
             <h3 class="text-xl font-semibold mb-2">Eszközlista</h3>
+
             <ul class="list-disc pl-6 text-neutral-700">
               <li v-for="(item, i) in equipmentF" :key="i">{{ item }}</li>
             </ul>
           </div>
         </div>
       </div>
-
-
     </section>
-
-
 
   </div>
 
@@ -280,7 +266,7 @@ onMounted(async () => {
   <div class="bg-white text-black py-16 md:py-20">
 
     <section class="px-6 max-w-[1200px] mx-auto text-center mb-10 font-body">
-      <h2 class="text-4xl font-bold mb-4 font-oswald">KÉPEK</h2>
+      <h2>KÉPEK</h2>
     </section>
 
     <section class="px-6 max-w-[1200px] mx-auto font-body mt-10">
@@ -320,7 +306,7 @@ onMounted(async () => {
     <div class="relative z-10 text-center">
       <NuxtLink
           :to="$route.path.startsWith('/en') ? '/en/references' : '/references'"
-          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-semibold
+          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-lato font-bold
                transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
       >
         REFERENCIÁK

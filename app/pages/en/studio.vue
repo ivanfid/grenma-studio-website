@@ -25,13 +25,11 @@ const equipmentA = [
 ]
 
 const equipmentB = [
-  "Microphone B",
-  "Preamp B",
-  "Cable B",
-  "Drums B",
-  "Cymbals B",
-  "Special B gear",
-  "Gummy bears B"
+  "Pro Tools Studio running on a Mac Mini",
+  "RME converter and audio interface",
+  "18 premium‑quality preamps",
+  "Sonarworks calibration for the Adam A7X monitors",
+  "A wide selection of plugins"
 ]
 
 const equipmentF = [
@@ -123,6 +121,7 @@ onMounted(async () => {
 
 
     <section class="px-6 max-w-[1200px] mx-auto space-y-10">
+
       <!-- STUDIO A -->
       <div>
         <div
@@ -160,6 +159,7 @@ onMounted(async () => {
             </p>
 
             <h3 class="text-xl font-semibold mb-2">Equipment List</h3>
+
             <ul class="list-disc pl-6 text-neutral-700">
               <li v-for="(item, i) in equipmentA" :key="i">{{ item }}</li>
             </ul>
@@ -205,6 +205,7 @@ onMounted(async () => {
             </p>
 
             <h3 class="text-xl font-semibold mb-2">Equipment List</h3>
+
             <ul class="list-disc pl-6 text-neutral-700">
               <li v-for="(item, i) in equipmentB" :key="i">{{ item }}</li>
             </ul>
@@ -249,6 +250,7 @@ onMounted(async () => {
             </p>
 
             <h3 class="text-xl font-semibold mb-2">Equipment List</h3>
+
             <ul class="list-disc pl-6 text-neutral-700">
               <li v-for="(item, i) in equipmentF" :key="i">{{ item }}</li>
             </ul>
@@ -272,7 +274,7 @@ onMounted(async () => {
   <div class="bg-white text-black py-16 md:py-20">
 
     <section class="px-6 max-w-[1200px] mx-auto text-center mb-10 font-body">
-      <h2 class="text-4xl font-bold mb-4 font-oswald">PHOTOS</h2>
+      <h2>PHOTOS</h2>
     </section>
 
     <section class="px-6 max-w-[1200px] mx-auto font-body mt-10">
@@ -312,7 +314,7 @@ onMounted(async () => {
     <div class="relative z-10 text-center">
       <NuxtLink
           :to="$route.path.startsWith('/en') ? '/en/references' : '/references'"
-          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-semibold
+          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-lato font-bold
                transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
       >
         REFERENCES
