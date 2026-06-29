@@ -21,7 +21,7 @@ const config = useRuntimeConfig()
     </video>
 
     <!-- Dark overlay -->
-    <div class="absolute inset-0 bg-black/40"></div>
+    <!-- <div class="absolute inset-0 bg-black/40"></div>-->
 
     <!-- Micro‑grid overlay -->
     <div
