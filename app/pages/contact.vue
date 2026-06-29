@@ -27,14 +27,14 @@
 
     <!-- PAGE TITLE -->
     <div class="relative z-10 w-full max-w-[1200px] mx-auto text-center mt-10 mb-12 md:mb-16">
-      <h1>KAPCSOLAT</h1>
+      <h2 class="text-white">KAPCSOLAT</h2>
     </div>
 
     <!-- CONTENT WRAPPER -->
     <div class="relative z-10 w-full max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
 
       <!-- LEFT COLUMN – FORM -->
-      <div class="bg-neutral-900/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-neutral-800 font-serif">
+      <div class="bg-neutral-900/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-neutral-800 font-body">
 
         <p class="text-gray-300 mb-10 text-center text-lg">
           Írj nekünk, és 48 órán belül válaszolunk.
@@ -76,8 +76,8 @@
           <div class="flex justify-center">
             <button
                 type="submit"
-                class="px-12 py-4 border-2 border-white text-white rounded-xl text-xl font-semibold font-oswald
-                       transition-all duration-300 hover:bg-brand hover:border-brand"
+                class="px-12 py-4 border-2 border-white text-white rounded-xl text-xl font-lato font-bold
+                       transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
             >
               ÜZENET KÜLDÉSE
             </button>
@@ -90,9 +90,9 @@
       <div class="flex flex-col gap-8">
 
         <!-- Contact Info -->
-        <div class="bg-neutral-900/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-neutral-800 font-serif">
+        <div class="bg-neutral-900/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-neutral-800 font-body">
 
-          <h2 class="text-3xl font-bold mb-6 font-oswald">ELÉRHETŐSÉGEK</h2>
+          <h3 class="text-white font-inter">ELÉRHETŐSÉGEK</h3>
 
           <!-- Cím -->
           <p class="text-lg mb-4">
@@ -169,10 +169,14 @@
 </template>
 
 <style scoped>
+
 p,
 label,
+input,
+textarea,
 input::placeholder,
 textarea::placeholder {
-  @apply font-serif;
+  @apply font-body;
 }
+
 </style>
