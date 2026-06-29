@@ -3,9 +3,9 @@
 </script>
 
 <template>
-  <section class="relative min-h-screen bg-black text-white px-4 pt-40 pb-20 font-oswald">
+  <section class="relative min-h-screen bg-black text-white px-4 pt-24 md:pt-40 pb-20">
 
-    <!-- Background image -->
+  <!-- Background image -->
     <img
         src="/studio_contact.jpg"
         class="absolute inset-0 w-full h-full object-cover opacity-40"
