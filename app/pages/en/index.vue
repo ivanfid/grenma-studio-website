@@ -1,5 +1,17 @@
 <script setup>
 const config = useRuntimeConfig()
+
+import { ref, onActivated } from 'vue'
+
+const heroVideo = ref()
+
+onActivated(() => {
+  setTimeout(async () => {
+    try {
+      await heroVideo.value?.play()
+    } catch (e) {}
+  }, 50)
+})
 </script>
 
 
@@ -10,10 +22,12 @@ const config = useRuntimeConfig()
 
     <!-- Background video -->
     <video
+        ref="heroVideo"
         autoplay
         loop
         muted
         playsinline
+        @ended="e => e.target.play()"
         class="absolute inset-0 w-full h-full object-cover opacity-60"
     >
       <!-- később majd ezt tedd első helyre -->

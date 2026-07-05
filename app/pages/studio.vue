@@ -9,7 +9,7 @@ const toggle = (panel) => {
 
 const studioA = new URL('@/assets/studio/studio_a.jpg', import.meta.url).href
 const studioB = new URL('@/assets/studio/studio_b.jpg', import.meta.url).href
-const studioG = new URL('@/assets/studio/studio_f.jpg', import.meta.url).href
+const studioF = new URL('@/assets/studio/studio_f.jpg', import.meta.url).href
 
 const equipmentA = {
   daw: [
@@ -52,21 +52,107 @@ const equipmentA = {
   ]
 }
 
-const equipmentB = [
-  "Pro Tools Studio ami egy Mac Minin fut",
-  "RME Konverter és Hangkártya",
-  "18 premium minőségű előfok",
-  "Sonarworks segíti az Adam A7X hangfalakat",
-  "Pluginek széles választéka"
-]
+const equipmentB = {
+  daw: [
+    "Mac Mini M2 16GB",
+    "RME Fireface UC",
+    "RME ADI 2",
+    "Pro Tools Studio",
+    "FabFilter pluginek",
+    "Steven Slate All Access",
+    "SSL Complete Access",
+    "Celemony Melodyne 5",
+    "És még sok minden más..."
+  ],
 
-const equipmentF = [
-  "feljátszó mikrofon",
-  "feljátszó kábel",
-  "feljátszó interfész",
-  "feljátszó monitor",
-  "feljátszó extra eszköz"
-]
+  monitors: [
+    "ADAM A7X (pár)",
+    "Audient Nero monitorvezérlő",
+    "SoundID Reference",
+    "AKG K701"
+  ],
+
+  outboard: [
+    "Great River ME-1NV",
+    "Heritage Audio HA-73 Elite",
+    "Midas XL48",
+    "Warm Audio WA-412",
+    "Black Lion Audio Auteur mk2"
+  ]
+}
+
+const equipmentF = {
+  monitors: [
+    "Behringer Powerplay személyi monitorrendszer (P16 x3)",
+    "Beyerdynamic DT770 PRO x5",
+    "VIC FIRTH SIH 1",
+    "Sony MDR-7506",
+    "Yamaha DXR12 x2"
+  ],
+
+  microphones: [
+    "AKG C414 XLII",
+    "Audio Technica AT4050",
+    "Audix D6",
+    "Audix D2 x2",
+    "Audix D4",
+    "Audix i5",
+    "Audix ADX51 x2",
+    "Earthworks DM20 Gen-2",
+    "Neumann KM184 x2",
+    "RODE TF-5 x2",
+    "RODE NT5 x2",
+    "sE Electronics sE8 x2",
+    "sE Electronics V7x x2",
+    "Sennheiser e614",
+    "Sennheiser MD421 x4",
+    "Sennheiser e604 x3",
+    "Sennheiser e609",
+    "Sennheiser e602 II",
+    "Shure Beta 91",
+    "Shure SM7B x3",
+    "Shure SM57 x2",
+    "Shure SM58 x2",
+    "Slate Digital ML-2",
+    "Warm Audio WA87 x2 (U87 stílusú)",
+    "Warm Audio WA-47jr"
+  ],
+
+  drums: [
+    "DW Collector’s Maple shell (24” lábdob, 10-12-14-16” tamok)",
+    "FG Custom Ash shell (22” lábdob, 12-14” tamok)",
+    "Tama Starclassic Birch (22” lábdob, 10-12-16” tamok)",
+    "DW Performance Steel pergő (14x8)",
+    "FG Custom Bubinga pergő (13x6,5)",
+    "Tama Starphonic Brass pergő (14x6)",
+    "Tama SLP Black Brass pergő (14x6.5)",
+    "Zildjian K Dark cintányér szett (15” light lábcin, 17-19” Dark Thin beütők, 20” Dark kísérő/beütő)",
+    "Zultan Caz Series cintányérok",
+    "Istanbul Agop cintányérok"
+  ],
+
+  amplifiers: [
+    "Kemper Profiler",
+    "VOX AC30",
+    "Marshall JCM 900",
+    "Fender Bassbreaker 15",
+    "Marshall 1960 4x12",
+    "Blackstar Debut 2x12",
+    "Tech21 SansAmp Bass DI",
+    "Tech21 Dug Pinnick DP-3X",
+    "Radial Pro RMP passzív reamper"
+  ],
+
+  instruments: [
+    "PRS Mira",
+    "Schecter PT Fastback",
+    "Fender Precision Bass",
+    "Schecter Baron-H",
+    "Takamine akusztikus gitárok",
+    "Gretsch akusztikus gitárok",
+    "Roland FP10 digitális zongora"
+  ]
+}
 
 const config = useRuntimeConfig()
 
@@ -233,18 +319,41 @@ onMounted(async () => {
 
         <div
             class="accordion bg-white rounded-xl mt-4"
-            :style="{ maxHeight: open === 'B' ? '600px' : '0px' }"
+            :style="{ maxHeight: open === 'B' ? '1200px' : '0px' }"
         >
           <div class="p-8">
-            <p>
-              Itt jön majd a Stúdió B részletes leírása.
+            <p class="mb-6">
+              20 m²-es akusztikailag kezelt lehallgató helyiség.
             </p>
 
-            <h3 class="text-xl font-semibold mb-2">Eszközlista</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-            <ul class="list-disc pl-6 text-neutral-700">
-              <li v-for="(item, i) in equipmentB" :key="i">{{ item }}</li>
-            </ul>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">DAW</h3>
+                <ul class="list-disc pl-6 text-neutral-700 mb-6">
+                  <li v-for="(item, i) in equipmentB.daw" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Monitorok</h3>
+                <ul class="list-disc pl-6 text-neutral-700 mb-6">
+                  <li v-for="(item, i) in equipmentB.monitors" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+
+                <h3 class="text-xl font-semibold mb-2">Előfokok / Külső eszközök</h3>
+                <ul class="list-disc pl-6 text-neutral-700">
+                  <li v-for="(item, i) in equipmentB.outboard" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
@@ -254,7 +363,7 @@ onMounted(async () => {
         <div
             @click="toggle('F')"
             class="relative h-56 rounded-xl overflow-hidden cursor-pointer group bg-cover bg-center"
-            :style="{ backgroundImage: `url(${studioG})` }"
+            :style="{ backgroundImage: `url(${studioF})` }"
         >
           <!-- ALAP SÖTÉTÍTÉS → HOVERRE FINOM VILÁGOSODÁS -->
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
@@ -276,18 +385,54 @@ onMounted(async () => {
 
         <div
             class="accordion bg-white rounded-xl mt-4"
-            :style="{ maxHeight: open === 'F' ? '600px' : '0px' }"
+            :style="{ maxHeight: open === 'F' ? '2000px' : '0px' }"
         >
           <div class="p-8">
-            <p>
-              Itt jön majd a Feljátszó részletes leírása.
+            <p class="mb-6">
+              35 m²-es akusztikailag kezelt feljátszó helyiség, kényelmes akár egy teljes zenekar együtt játszásához is.
             </p>
 
-            <h3 class="text-xl font-semibold mb-2">Eszközlista</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-            <ul class="list-disc pl-6 text-neutral-700">
-              <li v-for="(item, i) in equipmentF" :key="i">{{ item }}</li>
-            </ul>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Lehallgatás</h3>
+                <ul class="list-disc pl-6 text-neutral-700 mb-6">
+                  <li v-for="(item, i) in equipmentF.monitors" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+
+                <h3 class="text-xl font-semibold mb-2">Mikrofonok</h3>
+                <ul class="list-disc pl-6 text-neutral-700">
+                  <li v-for="(item, i) in equipmentF.microphones" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Dobok</h3>
+                <ul class="list-disc pl-6 text-neutral-700 mb-6">
+                  <li v-for="(item, i) in equipmentF.drums" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+
+                <h3 class="text-xl font-semibold mb-2">Erősítők</h3>
+                <ul class="list-disc pl-6 text-neutral-700 mb-6">
+                  <li v-for="(item, i) in equipmentF.amplifiers" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+
+                <h3 class="text-xl font-semibold mb-2">Hangszerek</h3>
+                <ul class="list-disc pl-6 text-neutral-700">
+                  <li v-for="(item, i) in equipmentF.instruments" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>

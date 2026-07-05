@@ -9,7 +9,7 @@ const toggle = (panel) => {
 
 const studioA = new URL('@/assets/studio/studio_a.jpg', import.meta.url).href
 const studioB = new URL('@/assets/studio/studio_b.jpg', import.meta.url).href
-const studioG = new URL('@/assets/studio/studio_f.jpg', import.meta.url).href
+const studioF = new URL('@/assets/studio/studio_f.jpg', import.meta.url).href
 
 const equipmentA = {
   daw: [
@@ -52,21 +52,107 @@ const equipmentA = {
   ]
 }
 
-const equipmentB = [
-  "Pro Tools Studio running on a Mac Mini",
-  "RME converter and audio interface",
-  "18 premium‑quality preamps",
-  "Sonarworks calibration for the Adam A7X monitors",
-  "A wide selection of plugins"
-]
+const equipmentB = {
+  daw: [
+    "Mac Mini M2 16GB",
+    "RME Fireface UC",
+    "RME ADI-2",
+    "Pro Tools Studio",
+    "FabFilter Plug-ins",
+    "Steven Slate All Access",
+    "SSL Complete Access",
+    "Celemony Melodyne 5",
+    "And much more..."
+  ],
 
-const equipmentF = [
-  "Tracking microphone",
-  "Tracking cable",
-  "Tracking interface",
-  "Tracking monitor",
-  "Extra tracking gear"
-]
+  monitors: [
+    "ADAM A7X (pair)",
+    "Audient Nero Monitor Controller",
+    "SoundID Reference",
+    "AKG K701"
+  ],
+
+  outboard: [
+    "Great River ME-1NV",
+    "Heritage Audio HA-73 Elite",
+    "Midas XL48",
+    "Warm Audio WA-412",
+    "Black Lion Audio Auteur MKII"
+  ]
+}
+
+const equipmentF = {
+  monitors: [
+    "Behringer Powerplay Monitoring System (P16 x3)",
+    "Beyerdynamic DT770 PRO x5",
+    "VIC FIRTH SIH 1",
+    "Sony MDR-7506",
+    "Yamaha DXR12 x2"
+  ],
+
+  microphones: [
+    "AKG C414 XLII",
+    "Audio Technica AT4050",
+    "Audix D6",
+    "Audix D2 x2",
+    "Audix D4",
+    "Audix i5",
+    "Audix ADX51 x2",
+    "Earthworks DM20 Gen-2",
+    "Neumann KM184 x2",
+    "RODE TF-5 x2",
+    "RODE NT5 x2",
+    "sE Electronics sE8 x2",
+    "sE Electronics V7x x2",
+    "Sennheiser e614",
+    "Sennheiser MD421 x4",
+    "Sennheiser e604 x3",
+    "Sennheiser e609",
+    "Sennheiser e602 II",
+    "Shure Beta 91",
+    "Shure SM7B x3",
+    "Shure SM57 x2",
+    "Shure SM58 x2",
+    "Slate Digital ML-2",
+    "Warm Audio WA87 x2 (U87-style)",
+    "Warm Audio WA-47jr"
+  ],
+
+  drums: [
+    "DW Collector’s Maple Shell Kit (24” kick, 10-12-14-16” toms)",
+    "FG Custom Ash Shell Kit (22” kick, 12-14” toms)",
+    "Tama Starclassic Birch Kit (22” kick, 10-12-16” toms)",
+    "DW Performance Steel Snare (14x8)",
+    "FG Custom Bubinga Snare (13x6.5)",
+    "Tama Starphonic Brass Snare (14x6)",
+    "Tama SLP Black Brass Snare (14x6.5)",
+    "Zildjian K Dark Cymbal Set (15” Light Hi-Hats, 17-19” Dark Thin Crashes, 20” Dark Crash/Ride)",
+    "Zultan Caz Series Cymbals",
+    "Istanbul Agop Cymbals"
+  ],
+
+  amplifiers: [
+    "Kemper Profiler",
+    "VOX AC30",
+    "Marshall JCM 900",
+    "Fender Bassbreaker 15",
+    "Marshall 1960 4x12 Cabinet",
+    "Blackstar Debut 2x12 Cabinet",
+    "Tech21 SansAmp Bass DI",
+    "Tech21 Dug Pinnick DP-3X",
+    "Radial Pro RMP Passive Reamper"
+  ],
+
+  instruments: [
+    "PRS Mira",
+    "Schecter PT Fastback",
+    "Fender Precision Bass",
+    "Schecter Baron-H",
+    "Takamine Acoustic Guitars",
+    "Gretsch Acoustic Guitars",
+    "Roland FP10 Digital Piano"
+  ]
+}
 
 const config = useRuntimeConfig()
 
@@ -239,18 +325,41 @@ onMounted(async () => {
 
         <div
             class="accordion bg-white rounded-xl mt-4"
-            :style="{ maxHeight: open === 'B' ? '600px' : '0px' }"
+            :style="{ maxHeight: open === 'B' ? '1200px' : '0px' }"
         >
           <div class="p-8">
-            <p class="text-neutral-700 leading-relaxed mb-6">
-              This is where the detailed description of Studio B will appear.
+            <p class="mb-6">
+              20 m² acoustically treated control room.
             </p>
 
-            <h3 class="text-xl font-semibold mb-2">Equipment List</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-            <ul class="list-disc pl-6 text-neutral-700">
-              <li v-for="(item, i) in equipmentB" :key="i">{{ item }}</li>
-            </ul>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">DAW</h3>
+                <ul class="list-disc pl-6 text-neutral-700 mb-6">
+                  <li v-for="(item, i) in equipmentB.daw" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Monitors</h3>
+                <ul class="list-disc pl-6 text-neutral-700 mb-6">
+                  <li v-for="(item, i) in equipmentB.monitors" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+
+                <h3 class="text-xl font-semibold mb-2">Outboard</h3>
+                <ul class="list-disc pl-6 text-neutral-700">
+                  <li v-for="(item, i) in equipmentB.outboard" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
@@ -260,7 +369,7 @@ onMounted(async () => {
         <div
             @click="toggle('F')"
             class="relative h-56 rounded-xl overflow-hidden cursor-pointer group bg-cover bg-center"
-            :style="{ backgroundImage: `url(${studioG})` }"
+            :style="{ backgroundImage: `url(${studioF})` }"
         >
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
 
@@ -284,18 +393,55 @@ onMounted(async () => {
 
         <div
             class="accordion bg-white rounded-xl mt-4"
-            :style="{ maxHeight: open === 'F' ? '600px' : '0px' }"
+            :style="{ maxHeight: open === 'F' ? '2000px' : '0px' }"
         >
           <div class="p-8">
-            <p class="text-neutral-700 leading-relaxed mb-6">
-              This is where the detailed description of the Recording Room will appear.
+            <p class="mb-6">
+              35 m² acoustically treated live room, spacious enough for a full band to perform together comfortably.
             </p>
 
-            <h3 class="text-xl font-semibold mb-2">Equipment List</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-            <ul class="list-disc pl-6 text-neutral-700">
-              <li v-for="(item, i) in equipmentF" :key="i">{{ item }}</li>
-            </ul>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Monitors</h3>
+                <ul class="list-disc pl-6 text-neutral-700 mb-6">
+                  <li v-for="(item, i) in equipmentF.monitors" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+
+                <h3 class="text-xl font-semibold mb-2">Microphones</h3>
+                <ul class="list-disc pl-6 text-neutral-700">
+                  <li v-for="(item, i) in equipmentF.microphones" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Drums</h3>
+                <ul class="list-disc pl-6 text-neutral-700 mb-6">
+                  <li v-for="(item, i) in equipmentF.drums" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+
+                <h3 class="text-xl font-semibold mb-2">Amplifiers</h3>
+                <ul class="list-disc pl-6 text-neutral-700 mb-6">
+                  <li v-for="(item, i) in equipmentF.amplifiers" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+
+                <h3 class="text-xl font-semibold mb-2">Instruments</h3>
+                <ul class="list-disc pl-6 text-neutral-700">
+                  <li v-for="(item, i) in equipmentF.instruments" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
