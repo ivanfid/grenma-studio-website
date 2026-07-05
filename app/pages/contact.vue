@@ -76,7 +76,7 @@
           <div class="flex justify-center">
             <button
                 type="submit"
-                class="px-12 py-4 border-2 border-white text-white rounded-xl text-xl font-lato font-bold
+                class="px-12 py-4 border-2 border-white text-white rounded-xl text-xl font-prompt font-semibold
                        transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
             >
               ÜZENET KÜLDÉSE
@@ -92,7 +92,7 @@
         <!-- Contact Info -->
         <div class="bg-neutral-900/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-neutral-800 font-body">
 
-          <h3 class="text-white font-inter">ELÉRHETŐSÉGEK</h3>
+          <h3 class="text-white">ELÉRHETŐSÉGEK</h3>
 
           <!-- Cím -->
           <p class="text-lg mb-4">

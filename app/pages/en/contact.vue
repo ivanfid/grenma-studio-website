@@ -76,7 +76,7 @@
           <div class="flex justify-center">
             <button
                 type="submit"
-                class="px-12 py-4 border-2 border-white text-white rounded-xl text-xl font-lato font-bold
+                class="px-12 py-4 border-2 border-white text-white rounded-xl text-xl font-prompt font-semibold
                        transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
             >
               SEND MESSAGE

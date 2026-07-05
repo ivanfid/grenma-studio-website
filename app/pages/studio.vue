@@ -11,18 +11,46 @@ const studioA = new URL('@/assets/studio/studio_a.jpg', import.meta.url).href
 const studioB = new URL('@/assets/studio/studio_b.jpg', import.meta.url).href
 const studioG = new URL('@/assets/studio/studio_f.jpg', import.meta.url).href
 
-const equipmentA = [
-  "mikrofon",
-  "előfok",
-  "kábel",
-  "konténer",
-  "dob",
-  "cintányér",
-  "még több kábel",
-  "ez egy jó hosszú nevű eszköz ki tudja",
-  "gumicukor",
-  "csin"
-]
+const equipmentA = {
+  daw: [
+    "Mac Mini 2018 i7/32GB",
+    "Avid Artist Mix DAW vezérlő",
+    "Apogee Ensemble Thunderbolt",
+    "Pro Tools Studio",
+    "Reaper",
+    "FabFilter Total Bundle",
+    "Steven Slate All Access",
+    "SSL Complete Access",
+    "Celemony Melodyne",
+    "Waves plug-inek",
+    "iZotope Ozone",
+    "Mixwave",
+    "Get Good Drums",
+    "SSD4",
+    "STL Tones",
+    "Tonality",
+    "És még sok minden más..."
+  ],
+
+  monitors: [
+    "Genelec 1032A (pár)",
+    "Dynaudio BM5A (pár)",
+    "Heritage Audio Baby RAM monitorvezérlő",
+    "Sennheiser HD580"
+  ],
+
+  outboard: [
+    "Focusrite ISA 828",
+    "Audient ASP 880",
+    "Apogee Ensemble",
+    "Focusrite ISA 220",
+    "Gainlab Audio Bishop",
+    "Kemper Profiler",
+    "Empirical Labs Distressor",
+    "DBX 160",
+    "Warm Audio WA76 Mod x2 (1176 stílus)"
+  ]
+}
 
 const equipmentB = [
   "Pro Tools Studio ami egy Mac Minin fut",
@@ -110,15 +138,6 @@ onMounted(async () => {
   <!-- FEHÉR BLOKK – STUDIOK -->
   <div class="bg-white py-16 md:py-20">
 
-
-  <!-- TITLE -->
-    <section class="px-6 max-w-[1200px] mx-auto text-center mb-10">
-      <h2>STÚDIÓK</h2>
-      <p class="max-w-2xl mx-auto text-center">
-        Itt Bemutatjuk az A, B stúdiót, és a feljátszót is.
-      </p>
-    </section>
-
     <section class="px-6 max-w-[1200px] mx-auto space-y-10">
 
       <!-- STÚDIÓ A -->
@@ -148,19 +167,41 @@ onMounted(async () => {
 
         <div
             class="accordion bg-white rounded-xl mt-4"
-            :style="{ maxHeight: open === 'A' ? '600px' : '0px' }"
+            :style="{ maxHeight: open === 'A' ? '2000px' : '0px' }"
         >
           <div class="p-8">
-            <p>
-              Ide kerül majd a Stúdió A részletes leírása.
+            <p class="mb-6">
+              25 m²-es akusztikailag kezelt lehallgató helyiség.
             </p>
 
-            <h3 class="text-xl font-semibold mb-2">Eszközlista</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-            <ul class="list-disc pl-6 text-neutral-700">
-              <li v-for="(item, i) in equipmentA" :key="i">{{ item }}</li>
-            </ul>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">DAW</h3>
+                <ul class="list-disc pl-6 text-neutral-700">
+                  <li v-for="(item, i) in equipmentA.daw" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
 
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Monitorok</h3>
+                <ul class="list-disc pl-6 text-neutral-700 mb-6">
+                  <li v-for="(item, i) in equipmentA.monitors" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+
+                <h3 class="text-xl font-semibold mb-2">Előfokok / Külső eszközök</h3>
+                <ul class="list-disc pl-6 text-neutral-700">
+                  <li v-for="(item, i) in equipmentA.outboard" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
@@ -306,7 +347,7 @@ onMounted(async () => {
     <div class="relative z-10 text-center">
       <NuxtLink
           :to="$route.path.startsWith('/en') ? '/en/references' : '/references'"
-          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-lato font-bold
+          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-prompt font-semibold
                transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
       >
         REFERENCIÁK

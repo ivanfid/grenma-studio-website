@@ -11,18 +11,46 @@ const studioA = new URL('@/assets/studio/studio_a.jpg', import.meta.url).href
 const studioB = new URL('@/assets/studio/studio_b.jpg', import.meta.url).href
 const studioG = new URL('@/assets/studio/studio_f.jpg', import.meta.url).href
 
-const equipmentA = [
-  "Microphone",
-  "Preamp",
-  "Cable",
-  "Rack",
-  "Drums",
-  "Cymbals",
-  "More cables",
-  "This is a long equipment name, who knows",
-  "Gummy bears",
-  "Stuff"
-]
+const equipmentA = {
+  daw: [
+    "Mac Mini 2018 i7/32GB",
+    "Avid Artist Mix DAW Controller",
+    "Apogee Ensemble Thunderbolt",
+    "Pro Tools Studio",
+    "Reaper",
+    "FabFilter Total Bundle",
+    "Steven Slate All Access",
+    "SSL Complete Access",
+    "Celemony Melodyne",
+    "Waves Plug-ins",
+    "iZotope Ozone",
+    "Mixwave",
+    "Get Good Drums",
+    "SSD4",
+    "STL Tones",
+    "Tonality",
+    "And much more..."
+  ],
+
+  monitors: [
+    "Genelec 1032A (pair)",
+    "Dynaudio BM5A (pair)",
+    "Heritage Audio Baby RAM Monitor Controller",
+    "Sennheiser HD580"
+  ],
+
+  outboard: [
+    "Focusrite ISA 828",
+    "Audient ASP 880",
+    "Apogee Ensemble",
+    "Focusrite ISA 220",
+    "Gainlab Audio Bishop",
+    "Kemper Profiler",
+    "Empirical Labs Distressor",
+    "DBX 160",
+    "Warm Audio WA76 Mod x2 (1176 style)"
+  ]
+}
 
 const equipmentB = [
   "Pro Tools Studio running on a Mac Mini",
@@ -111,15 +139,6 @@ onMounted(async () => {
   <!-- WHITE BLOCK – STUDIOS -->
   <div class="bg-white text-black py-16 md:py-20">
 
-    <!-- TITLE -->
-    <section class="px-6 max-w-[1200px] mx-auto text-center mb-10 ">
-      <h2>STUDIOS</h2>
-      <p class="max-w-2xl mx-auto text-center">
-        Here we present Studio A, Studio B and the tracking room.
-      </p>
-    </section>
-
-
     <section class="px-6 max-w-[1200px] mx-auto space-y-10">
 
       <!-- STUDIO A -->
@@ -151,18 +170,41 @@ onMounted(async () => {
 
         <div
             class="accordion bg-white rounded-xl mt-4"
-            :style="{ maxHeight: open === 'A' ? '600px' : '0px' }"
+            :style="{ maxHeight: open === 'A' ? '2000px' : '0px' }"
         >
           <div class="p-8">
-            <p class="text-neutral-700 leading-relaxed mb-6">
-              This is where the detailed description of Studio A will appear.
+            <p class="mb-6">
+              25 m² acoustically treated control room.
             </p>
 
-            <h3 class="text-xl font-semibold mb-2">Equipment List</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-            <ul class="list-disc pl-6 text-neutral-700">
-              <li v-for="(item, i) in equipmentA" :key="i">{{ item }}</li>
-            </ul>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">DAW</h3>
+                <ul class="list-disc pl-6 text-neutral-700">
+                  <li v-for="(item, i) in equipmentA.daw" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Monitors</h3>
+                <ul class="list-disc pl-6 text-neutral-700 mb-6">
+                  <li v-for="(item, i) in equipmentA.monitors" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+
+                <h3 class="text-xl font-semibold mb-2">Preamp / Outboard</h3>
+                <ul class="list-disc pl-6 text-neutral-700">
+                  <li v-for="(item, i) in equipmentA.outboard" :key="i">
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
@@ -314,7 +356,7 @@ onMounted(async () => {
     <div class="relative z-10 text-center">
       <NuxtLink
           :to="$route.path.startsWith('/en') ? '/en/references' : '/references'"
-          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-lato font-bold
+          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-prompt font-semibold
                transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
       >
         REFERENCES

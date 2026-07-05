@@ -28,13 +28,13 @@ import 'photoswipe/style.css'
 <style>
 /* GLOBAL HEADINGS  */
 h1 {
-  @apply font-lato font-black uppercase text-[48px] leading-[52px] tracking-[0.2px] text-[#404040] mb-10;
+  @apply font-prompt font-bold uppercase text-[48px] leading-[52px] tracking-[0.2px] text-[#404040] mb-10;
 }
 h2 {
-  @apply font-lato font-black uppercase text-[36px] leading-[40px] tracking-[0.2px] text-[#404040] mb-8;
+  @apply font-prompt font-bold uppercase text-[36px] leading-[40px] tracking-[0.2px] text-[#404040] mb-8;
 }
 h3 {
-  @apply font-lato font-black uppercase text-[28px] leading-[32px] tracking-[0.2px] text-[#404040] mb-6;
+  @apply font-prompt font-bold uppercase text-[28px] leading-[32px] tracking-[0.2px] text-[#404040] mb-6;
 }
 p {
   @apply text-lg leading-relaxed text-[#404040] mb-6 text-left;
@@ -46,6 +46,6 @@ h2 span:first-child {
 }
 
 h2 span:last-child {
-  @apply block mt-2 font-black;
+  @apply block mt-2 font-bold;
 }
 </style>

@@ -86,7 +86,7 @@ const config = useRuntimeConfig()
     <div class="relative z-10 text-center">
       <NuxtLink
           to="/en/about"
-          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-lato font-bold
+          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-prompt font-semibold
            transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
       >
         LEARN MORE
