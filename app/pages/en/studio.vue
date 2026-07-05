@@ -223,7 +223,7 @@ onMounted(async () => {
 
 
   <!-- WHITE BLOCK – STUDIOS -->
-  <div class="bg-white text-black py-16 md:py-20">
+  <div class="bg-white py-16 md:py-20">
 
     <section class="px-6 max-w-[1200px] mx-auto space-y-10">
 
@@ -336,7 +336,7 @@ onMounted(async () => {
 
               <div>
                 <h3 class="text-xl font-semibold mb-2">DAW</h3>
-                <ul class="list-disc pl-6 text-neutral-700 mb-6">
+                <ul class="list-disc pl-6 text-neutral-700">
                   <li v-for="(item, i) in equipmentB.daw" :key="i">
                     {{ item }}
                   </li>
@@ -345,7 +345,7 @@ onMounted(async () => {
 
               <div>
                 <h3 class="text-xl font-semibold mb-2">Monitors</h3>
-                <ul class="list-disc pl-6 text-neutral-700">
+                <ul class="list-disc pl-6 text-neutral-700 mb-6">
                   <li v-for="(item, i) in equipmentB.monitors" :key="i">
                     {{ item }}
                   </li>
