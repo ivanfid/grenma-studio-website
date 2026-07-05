@@ -330,7 +330,7 @@ onMounted(async () => {
 
               <div>
                 <h3 class="text-xl font-semibold mb-2">DAW</h3>
-                <ul class="list-disc pl-6 text-neutral-700 mb-6">
+                <ul class="list-disc pl-6 text-neutral-700">
                   <li v-for="(item, i) in equipmentB.daw" :key="i">
                     {{ item }}
                   </li>
