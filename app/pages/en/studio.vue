@@ -393,7 +393,7 @@ onMounted(async () => {
 
         <div
             class="accordion bg-white rounded-xl mt-4"
-            :style="{ maxHeight: open === 'F' ? '2000px' : '0px' }"
+            :style="{ maxHeight: open === 'F' ? '2300px' : '0px' }"
         >
           <div class="p-8">
             <p class="mb-6">
