@@ -32,7 +32,7 @@ const config = useRuntimeConfig()
 
 
   <!-- WHITE CONTENT -->
-  <div class="bg-white py-16 md:py-20">
+  <div class="about-page bg-white py-16 md:py-20">
 
     <!-- 1) IMAGE – TEXT -->
     <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 items-center">
@@ -125,3 +125,9 @@ const config = useRuntimeConfig()
   </section>
 
 </template>
+
+<style scoped>
+.about-page p {
+  margin-bottom: 0;
+}
+</style>

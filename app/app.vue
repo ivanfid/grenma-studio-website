@@ -37,7 +37,7 @@ h3 {
   @apply font-lato font-black uppercase text-[28px] leading-[32px] tracking-[0.2px] text-[#404040] mb-6;
 }
 p {
-  @apply text-lg leading-relaxed text-[#404040] text-left;
+  @apply text-lg leading-relaxed text-[#404040] mb-6 text-left;
 }
 
 /* Two-line H2 structure */
