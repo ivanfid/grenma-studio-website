@@ -33,17 +33,8 @@ const config = useRuntimeConfig()
   <!-- FEHÉR TARTALOM -->
   <div class="bg-white py-16 md:py-20">
 
-    <!-- HERO TEXT -->
-    <section class="px-6 max-w-[1200px] mx-auto text-center mb-20">
-      <h2>RÓLUNK</h2>
-      <p class="max-w-2xl mx-auto text-center">
-        A Grenma Studio egy modern, barátságos és professzionális környezet,
-        ahol minden adott ahhoz, hogy a maximumot hozd ki a zenédből.
-      </p>
-    </section>
-
     <!-- 1) KÉP – SZÖVEG -->
-    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center">
+    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 items-center">
 
       <div class="rounded-xl overflow-hidden">
         <img src="/studio_lounge.jpg" class="w-full h-full object-cover" />
@@ -53,9 +44,9 @@ const config = useRuntimeConfig()
         <h3>A STÚDIÓ</h3>
         <p>
           Budapesten, a XIII. kerületben találsz meg minket (Dolmány utca 48.).
-          40 m²-es közösségi hely, 3 stúdióhelység (25 m² lehallgató, 35 m² és 20 m² feljátszók),
-          konyha, kulturált mellékhelység. Klíma, Wi-Fi, korlátlan kávé- és teafogyasztás,
-          énekeseknek, izgulósoknak hűtött Jägermeister :)
+          40 m²-es közösségi hely, 3 szeparált stúdió (20, 25 és 35 m² helyiség),
+          konyha, kulturált mellékhelyiség. Klíma, Wi-Fi, korlátlan kávé- és teafogyasztás,
+          énekeseknek, izgulósoknak hűtött Jägermeister:)
           <br><br>
           Mindent megteszünk annak érdekében, hogy otthonosan érezd magad nálunk.
         </p>
@@ -68,7 +59,7 @@ const config = useRuntimeConfig()
     </div>
 
     <!-- 2) KÉP – SZÖVEG -->
-    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center">
+    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 items-center">
 
       <div class="rounded-xl overflow-hidden md:order-2">
         <img src="/matyi_profile.jpg" class="w-full h-full object-cover" />
@@ -77,9 +68,8 @@ const config = useRuntimeConfig()
       <div class="md:order-1">
         <h3>BOTLIK MÁTYÁS</h3>
         <p>
-          Matyi 2008 óta készít felvételeket, végtelen türelemmel és odafigyeléssel.
-          Modern punk, rock, metal, pop, akusztikus, népzenei és elektronikus projektekben
-          egyaránt otthonosan mozog.
+          Matyi, a Grenma Studio stúdióvezetője 2008 óta készít felvételeket. Végtelen türelemmel és nagy odafigyeléssel dolgozik, a zenészekből a maximumot kihozva.
+          Az elmúlt években a modern punk, rock, metal, pop produkciók mellett akusztikus, népzenei és elektronikus zenei projekteken is dolgozott, és nyitott minden stílus irányába.
         </p>
       </div>
 
@@ -91,7 +81,7 @@ const config = useRuntimeConfig()
     </div>
 
     <!-- 3) SZÖVEG – KÉP -->
-    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center">
+    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 items-center">
 
       <div class="rounded-xl overflow-hidden md:order-1">
         <img src="/dani_profile.jpg" class="w-full h-full object-cover" />
@@ -100,7 +90,7 @@ const config = useRuntimeConfig()
       <div class="md:order-2">
         <h3>IVÁNFI DÁNIEL</h3>
         <p>
-          Dani 2017 óta foglalkozik komolyabban felvétel készítéssel, amikor az éppen aktuális zenekara,
+          Dani 2017 óta foglalkozik felvétel készítéssel, amikor az éppen aktuális zenekara,
           a Stubborn nagylemezének felvételin dolgozott. Azóta megállíthatatlan szenvedéllyel tevékenykedik Metal, Punk Rock, HC
           zenekarok anyagain, legyen szó felvételről, keverésről, editálási feladatkról.
         </p>

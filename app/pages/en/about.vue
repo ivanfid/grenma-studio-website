@@ -34,17 +34,8 @@ const config = useRuntimeConfig()
   <!-- WHITE CONTENT -->
   <div class="bg-white py-16 md:py-20">
 
-    <!-- HERO TEXT -->
-    <section class="px-6 max-w-[1200px] mx-auto text-center mb-20">
-      <h2>ABOUT US</h2>
-      <p class="max-w-2xl mx-auto text-center">
-        Grenma Studio is a modern, friendly and professional environment
-        designed to help you get the absolute best out of your music.
-      </p>
-    </section>
-
     <!-- 1) IMAGE – TEXT -->
-    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center">
+    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 items-center">
 
       <div class="rounded-xl overflow-hidden">
         <img src="/studio_lounge.jpg" class="w-full h-full object-cover" />
@@ -53,13 +44,12 @@ const config = useRuntimeConfig()
       <div>
         <h3>THE STUDIO</h3>
         <p>
-          You can find us in Budapest, District XIII (Dolmány utca 48).
-          A 40 m² community area, 3 studio rooms (a 25 m² control room,
-          and two live rooms of 35 m² and 20 m²), kitchen, clean restroom,
-          air conditioning, Wi‑Fi, unlimited coffee and tea —
-          and for singers or the nervous ones, chilled Jägermeister :)
+          You can find us in Budapest's 13th district (48 Dolmány Street).
+          A 40 m² creative space featuring 3 separate studios (20, 25, and 35 m² rooms),
+          a kitchen, and clean restroom facilities. Air conditioning, Wi-Fi,
+          unlimited coffee and tea, and for singers or nervous performers, chilled Jägermeister :)
           <br><br>
-          We do everything we can to make you feel at home while working with us.
+          We do everything we can to make you feel at home.
         </p>
       </div>
 
@@ -70,7 +60,7 @@ const config = useRuntimeConfig()
     </div>
 
     <!-- 2) IMAGE – TEXT -->
-    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center">
+    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 items-center">
 
       <div class="rounded-xl overflow-hidden md:order-2">
         <img src="/matyi_profile.jpg" class="w-full h-full object-cover" />
@@ -79,21 +69,21 @@ const config = useRuntimeConfig()
       <div class="md:order-1">
         <h3>MÁTYÁS BOTLIK</h3>
         <p>
-          Matyi has been recording since 2008, always with endless patience
-          and attention to detail. He feels at home in modern punk, rock, metal,
-          pop, acoustic, folk and electronic projects alike.
+          Matyi, the studio manager of Grenma Studio, has been recording music since 2008.
+          He works with endless patience and great attention to detail, always bringing out the best in musicians.
+          Over the years, he has worked on modern punk, rock, metal, and pop productions, as well as acoustic,
+          folk, and electronic music projects, and remains open to every musical style.
         </p>
       </div>
 
     </section>
-
 
     <div class="px-6">
       <div class="max-w-[1200px] mx-auto h-[2px] bg-[#851707]/50 my-16"></div>
     </div>
 
     <!-- 3) TEXT – IMAGE -->
-    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mb-12 md:mb-24 items-center">
+    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 items-center">
 
       <div class="rounded-xl overflow-hidden md:order-1">
         <img src="/dani_profile.jpg" class="w-full h-full object-cover" />
@@ -102,10 +92,9 @@ const config = useRuntimeConfig()
       <div class="md:order-2">
         <h3>DÁNIEL IVÁNFI</h3>
         <p>
-          Dani has been working seriously with recording since 2017,
-          when he worked on the debut album of his band Stubborn.
-          Since then, he has been passionately involved in metal, punk rock
-          and hardcore productions — recording, mixing and editing.
+          Dani has been involved in audio recording since 2017, when he worked on the recording sessions
+          for his band Stubborn's full-length album. Since then, he has been passionately working on projects
+          for Metal, Punk Rock, and Hardcore bands, covering recording, mixing, and editing tasks.
         </p>
       </div>
 
