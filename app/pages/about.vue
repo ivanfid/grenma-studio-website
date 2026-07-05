@@ -92,7 +92,7 @@ const config = useRuntimeConfig()
         <p>
           Dani 2017 óta foglalkozik felvétel készítéssel, amikor az éppen aktuális zenekara,
           a Stubborn nagylemezének felvételin dolgozott. Azóta megállíthatatlan szenvedéllyel tevékenykedik Metal, Punk Rock, HC
-          zenekarok anyagain, legyen szó felvételről, keverésről, editálási feladatkról.
+          zenekarok anyagain, legyen szó felvételről, keverésről, editálási feladatokról.
         </p>
       </div>
 
