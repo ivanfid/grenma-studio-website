@@ -32,15 +32,32 @@ const config = useRuntimeConfig()
 
     <!-- TITLE -->
     <section class="px-6 max-w-[1200px] mx-auto text-center mb-10 font-body">
-      <h2>REFERENCIÁK</h2>
       <p class="text-lg max-w-2xl mx-auto">
-        Néhány videó, amelyek nálunk készültek vagy a stúdióhoz kapcsolódnak.
+        Ízelítő a nálunk készült több száz előadó, zenekar munkáiból...
       </p>
+    </section>
+
+    <section class="px-6 max-w-[1200px] mx-auto mb-12">
+      <div class="rounded-xl overflow-hidden shadow-lg">
+        <iframe
+            data-testid="embed-iframe"
+            style="border-radius:12px"
+            src="https://open.spotify.com/embed/playlist/7DmKFDZyynkUmoKF3nkuGp?utm_source=generator&theme=0&si=ff92d276b2b14954"
+            width="100%"
+            height="500"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+
+    <section class="px-6 max-w-[1200px] mx-auto text-center mb-10 font-body">
+      <h2>KLIPEK</h2>
     </section>
 
     <!-- VIDEO GRID -->
     <section class="px-6 max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-10">
-
       <!-- VIDEO 1 -->
       <div class="w-full aspect-video rounded-xl overflow-hidden shadow-lg">
         <iframe
