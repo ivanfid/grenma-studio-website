@@ -48,7 +48,7 @@ const equipmentA = {
     "Kemper Profiler",
     "Empirical Labs Distressor",
     "DBX 160",
-    "Warm Audio WA76 Mod x2 (1176 stílus)"
+    "Warm Audio WA76 Mod ×2 (1176 stílus)"
   ]
 }
 
@@ -83,38 +83,38 @@ const equipmentB = {
 
 const equipmentF = {
   monitors: [
-    "Behringer Powerplay személyi monitorrendszer (P16 x3)",
-    "Beyerdynamic DT770 PRO x5",
+    "Behringer Powerplay személyi monitorrendszer (P16 ×3)",
+    "Beyerdynamic DT770 PRO ×3",
     "VIC FIRTH SIH 1",
     "Sony MDR-7506",
-    "Yamaha DXR12 x2"
+    "Yamaha DXR12 ×2"
   ],
 
   microphones: [
     "AKG C414 XLII",
     "Audio Technica AT4050",
     "Audix D6",
-    "Audix D2 x2",
+    "Audix D2 ×2",
     "Audix D4",
     "Audix i5",
-    "Audix ADX51 x2",
+    "Audix ADX51 ×2",
     "Earthworks DM20 Gen-2",
-    "Neumann KM184 x2",
-    "RODE TF-5 x2",
-    "RODE NT5 x2",
-    "sE Electronics sE8 x2",
-    "sE Electronics V7x x2",
+    "Neumann KM184 ×2",
+    "RODE TF-5 ×2",
+    "RODE NT5 ×2",
+    "sE Electronics sE8 ×2",
+    "sE Electronics V7x ×2",
     "Sennheiser e614",
-    "Sennheiser MD421 x4",
-    "Sennheiser e604 x3",
+    "Sennheiser MD421 ×4",
+    "Sennheiser e604 ×3",
     "Sennheiser e609",
     "Sennheiser e602 II",
     "Shure Beta 91",
-    "Shure SM7B x3",
-    "Shure SM57 x2",
-    "Shure SM58 x2",
+    "Shure SM7B ×3",
+    "Shure SM57 ×2",
+    "Shure SM58 ×2",
     "Slate Digital ML-2",
-    "Warm Audio WA87 x2 (U87 stílusú)",
+    "Warm Audio WA87 ×2 (U87 stílusú)",
     "Warm Audio WA-47jr"
   ],
 
