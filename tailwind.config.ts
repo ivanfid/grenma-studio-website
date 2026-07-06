@@ -6,8 +6,9 @@ export default {
     theme: {
         extend: {
             fontFamily: {
+                body: ["Inter", "sans-serif"],
                 inter: ['Inter', 'sans-serif'],
-                prompt: ['Prompt', 'sans-serif']
+                prompt: ['Prompt', 'sans-serif'],
             },
             colors: {
                 brand: {
