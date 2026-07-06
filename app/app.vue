@@ -1,4 +1,12 @@
 <script setup>
+
+useSeoMeta({
+  title: 'Grenma Studio',
+  description: 'Professional recording, mixing and mastering studio in Budapest.',
+  ogTitle: 'Grenma Studio',
+  ogDescription: 'Professional recording, mixing and mastering studio in Budapest.'
+})
+
 useHead({
   link: [
     {
