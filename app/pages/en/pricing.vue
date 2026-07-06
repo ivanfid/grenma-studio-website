@@ -30,19 +30,21 @@ const config = useRuntimeConfig()
 
     <!-- HERO TEXT -->
     <section class="px-6 max-w-[1200px] mx-auto text-center mb-10">
-      <h2>PRICING</h2>
       <p class="text-lg max-w-2xl mx-auto text-center">
-        Recording, mixing, mastering, editing — everything you need on the road to a professional sound.
+        In most cases, we work with fixed project rates that include virtually unlimited studio time.
+        We believe that recording is just as much a creative process as songwriting itself, and its value
+        shouldn't necessarily be measured in hours. Since every project is unique, the prices below are
+        intended as a general guide. Get in touch, tell us about your project, and we'll work out the details together.
       </p>
     </section>
 
-    <!-- TWO MAIN SERVICE CARDS -->
-    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mt-10">
+    <!-- THREE MAIN SERVICE CARDS -->
+    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-3 gap-8 mt-10">
 
       <!-- RECORDING -->
       <div class="bg-white border border-neutral-300 rounded-xl shadow-sm text-center overflow-hidden">
 
-        <!-- KÁRTYA FELSŐ KÉP -->
+        <!-- CARD IMAGE -->
         <div class="w-full h-60">
           <img
               src="@/assets/studio/card_rec.jpg"
@@ -50,49 +52,83 @@ const config = useRuntimeConfig()
           />
         </div>
 
-        <!-- TARTALOM -->
+        <!-- CONTENT -->
         <div class="p-10 pt-0">
 
-        <h3>RECORDING</h3>
+          <h3>RECORDING</h3>
 
           <p>
-            Multitrack or live session recordings, re-amping, drum tracking, vocals, and various instruments — tailored to your project.
+            Vocal and instrument recording, multitrack recording, and live session recording.
           </p>
 
           <div class="space-y-2 text-lg text-left">
-            <p class="leading-tight"><strong>Hourly rate:</strong> 35 €</p>
-            <p class="leading-tight"><strong>Day rate (8 hours):</strong> 225 €</p>
-            <p class="leading-tight"><strong>1–3 songs (full production):</strong> 340 € / song</p>
-            <p class="leading-tight"><strong>4–6 songs (full production):</strong> 280 € / song</p>
-            <p class="leading-tight"><strong>More than 6 songs:</strong> custom agreement</p>
+            <p class="leading-tight"><strong>Hourly rate:</strong> 12,000 HUF</p>
+            <p class="leading-tight"><strong>Day rate (8 hours):</strong> 80,000 HUF</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- FULL PRODUCTION -->
+      <div class="bg-white border border-neutral-300 rounded-xl shadow-sm text-center overflow-hidden">
+
+        <!-- CARD IMAGE -->
+        <div class="w-full h-60">
+          <img
+              src="@/assets/studio/card_fullprod.jpg"
+              class="w-full h-full object-cover"
+          />
+        </div>
+
+        <div class="p-10 pt-0">
+
+          <h3>FULL PRODUCTION</h3>
+
+          <p>
+            The entire production process in one place – instrument and vocal recording, mixing, and mastering.
+          </p>
+
+          <div class="space-y-2 text-lg text-left">
+            <p class="leading-tight">
+              <strong>1–3 songs:</strong> 120,000 HUF / song
+            </p>
+            <p class="leading-tight">
+              <strong>4–6 songs:</strong> 100,000 HUF / song
+            </p>
+            <p class="leading-tight">
+              <strong>6+ songs:</strong> custom pricing available
+            </p>
           </div>
 
         </div>
 
       </div>
 
-
       <!-- MIXING / MASTERING -->
       <div class="bg-white border border-neutral-300 rounded-xl shadow-sm text-center overflow-hidden">
 
-        <!-- KÁRTYA FELSŐ KÉP -->
+        <!-- CARD IMAGE -->
         <div class="w-full h-60">
           <img
               src="@/assets/studio/card_mix.jpg"
               class="w-full h-full object-cover"
           />
         </div>
-        <!-- TARTALOM -->
+
+        <!-- CONTENT -->
         <div class="p-10 pt-0">
 
-        <h3>MIXING / MASTERING</h3>
+          <h3>MIXING & MASTERING</h3>
 
-        <p>
-          We offer editing, mixing, and mastering for projects recorded in our studio — and we’re happy to work with external material as well.
-        </p>
+          <p>
+            We're happy to work with recordings made elsewhere. We offer editing, mixing, and mastering services.
+            Send us your tracks, and we'll help them reach their full potential.
+          </p>
 
           <div class="space-y-2 text-lg text-left">
-            <p class="leading-tight"><strong>Mixing / Mastering:</strong> 140 € / song</p>
+            <p class="leading-tight">
+              From 50,000 HUF / song
+            </p>
           </div>
 
         </div>

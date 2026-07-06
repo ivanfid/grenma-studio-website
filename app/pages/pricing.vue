@@ -30,14 +30,15 @@ const config = useRuntimeConfig()
 
     <!-- HERO TEXT -->
     <section class="px-6 max-w-[1200px] mx-auto text-center mb-10">
-      <h2>ÁRAK</h2>
       <p class="text-lg max-w-2xl mx-auto text-center">
-        Felvétel, keverés, masterelés, editálás — minden, ami a professzionális hangzásig vezet.
+        Az esetek többségében fix árakkal dolgozunk, amelyekhez szinte korlátlan stúdióidő tartozik.
+        Hiszünk abban, hogy a stúdiózás ugyanolyan alkotófolyamat, mint maga a dalszerzés – az értékét nem feltétlenül órákban érdemes mérni.
+        Mivel minden projekt egyedi, az alábbi árak tájékoztató jellegűek. Írj vagy hívj, mondd el, mit szeretnél felvenni, és megbeszéljük a részleteket.
       </p>
     </section>
 
-    <!-- KÉT FŐ SZOLGÁLTATÁSI KÁRTYA -->
-    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 mt-10">
+    <!-- HÁROM FŐ SZOLGÁLTATÁSI KÁRTYA -->
+    <section class="px-6 max-w-[1200px] mx-auto grid md:grid-cols-3 gap-8 mt-10">
 
       <!-- RECORDING -->
       <div class="bg-white border border-neutral-300 rounded-xl shadow-sm text-center overflow-hidden">
@@ -56,20 +57,52 @@ const config = useRuntimeConfig()
           <h3>FELVÉTEL</h3>
 
           <p>
-            Multisávos vagy élő session felvételek, reampelés, dob-, vokál- és hangszerfelvételek — teljes mértékben a projekted igényeire szabva.
+            Ének- és hangszer felvételek, soksávos és live session felvételek.
           </p>
 
           <div class="space-y-2 text-lg text-left">
             <p class="leading-tight"><strong>Óradíj:</strong> 12 000 Ft</p>
             <p class="leading-tight"><strong>Napidíj (8 óra):</strong> 80 000 Ft</p>
-            <p class="leading-tight"><strong>1–3 dal (teljes produkció):</strong> 120 000 Ft / dal</p>
-            <p class="leading-tight"><strong>4–6 dal (teljes produkció):</strong> 100 000 Ft / dal</p>
-            <p class="leading-tight"><strong>6 dal felett:</strong> egyedi megállapodás</p>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- TELJES PRODUKCIÓ -->
+      <div class="bg-white border border-neutral-300 rounded-xl shadow-sm text-center overflow-hidden">
+
+        <!-- KÁRTYA FELSŐ KÉP -->
+        <div class="w-full h-60">
+          <img
+              src="@/assets/studio/card_fullprod.jpg"
+              class="w-full h-full object-cover"
+          />
+        </div>
+
+        <div class="p-10 pt-0">
+          <h3>TELJES PRODUKCIÓ</h3>
+
+          <p>
+            A teljes folyamat egy helyen – hangszerek, ének felvétele, keverés és mastering.
+          </p>
+
+          <div class="space-y-2 text-lg text-left">
+            <p class="leading-tight">
+              <strong>1–3 dal:</strong> 120 000 Ft / dal
+            </p>
+            <p class="leading-tight">
+              <strong>4–6 dal:</strong> 100 000 Ft / dal
+            </p>
+            <p class="leading-tight">
+              <strong>6 dal felett:</strong> egyedi megállapodás alapján
+            </p>
           </div>
 
         </div>
 
       </div>
+
 
       <!-- MIXING / MASTERING -->
       <div class="bg-white border border-neutral-300 rounded-xl shadow-sm text-center overflow-hidden">
@@ -85,15 +118,15 @@ const config = useRuntimeConfig()
         <!-- TARTALOM -->
         <div class="p-10 pt-0">
 
-          <h3>KEVERÉS / MASTERELÉS</h3>
+          <h3>KEVERÉS & MASTERING</h3>
 
           <p>
-            Vállalunk editálást, keverést és masterelést a nálunk rögzített anyagokhoz — de külső felvételekkel is szívesen dolgozunk.
+            Külső felvételekkel is szívesen dolgozunk. Vállalunk editálást, keverést és masterelést. Küldd el a sávokat, mi pedig kihozzuk belőlük a legjobbat!
           </p>
 
           <div class="space-y-2 text-lg text-left">
             <p class="leading-tight">
-              <strong>Keverés / Masterelés:</strong> 50 000 Ft / dal
+              50 000 Ft-tól / dal
             </p>
           </div>
 
