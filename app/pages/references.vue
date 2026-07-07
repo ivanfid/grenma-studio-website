@@ -33,7 +33,7 @@ const config = useRuntimeConfig()
     <!-- TITLE -->
     <section class="px-6 max-w-[1200px] mx-auto text-center mb-10 font-body">
       <p class="text-lg max-w-2xl mx-auto">
-        Ízelítő a nálunk készült több száz előadó, zenekar munkáiból...
+        Ízelítő a nálunk készült több száz előadó, zenekar munkáiból
       </p>
     </section>
 
