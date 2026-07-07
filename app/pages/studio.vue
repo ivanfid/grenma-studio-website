@@ -84,7 +84,7 @@ const equipmentB = {
 const equipmentF = {
   monitors: [
     "Behringer Powerplay személyi monitorrendszer (P16 ×3)",
-    "Beyerdynamic DT770 PRO ×3",
+    "Beyerdynamic DT770 PRO ×5",
     "VIC FIRTH SIH 1",
     "Sony MDR-7506",
     "Yamaha DXR12 ×2"
@@ -122,10 +122,10 @@ const equipmentF = {
     "DW Collector’s Maple shell (24” lábdob, 10-12-14-16” tamok)",
     "FG Custom Ash shell (22” lábdob, 12-14” tamok)",
     "Tama Starclassic Birch (22” lábdob, 10-12-16” tamok)",
-    "DW Performance Steel pergő (14x8)",
-    "FG Custom Bubinga pergő (13x6,5)",
-    "Tama Starphonic Brass pergő (14x6)",
-    "Tama SLP Black Brass pergő (14x6.5)",
+    "DW Performance Steel pergő (14x8”)",
+    "FG Custom Bubinga pergő (13x6,5”)",
+    "Tama Starphonic Brass pergő (14x6”)",
+    "Tama SLP Black Brass pergő (14x6,5”)",
     "Zildjian K Dark cintányér szett (15” light lábcin, 17-19” Dark Thin beütők, 20” Dark kísérő/beütő)",
     "Zultan Caz Series cintányérok",
     "Istanbul Agop cintányérok"
@@ -148,8 +148,8 @@ const equipmentF = {
     "Schecter PT Fastback",
     "Fender Precision Bass",
     "Schecter Baron-H",
-    "Takamine akusztikus gitárok",
-    "Gretsch akusztikus gitárok",
+    "Takamine akusztikus gitár",
+    "Gretsch akusztikus gitár",
     "Roland FP10 digitális zongora"
   ]
 }

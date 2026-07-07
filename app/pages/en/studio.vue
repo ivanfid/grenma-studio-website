@@ -48,7 +48,7 @@ const equipmentA = {
     "Kemper Profiler",
     "Empirical Labs Distressor",
     "DBX 160",
-    "Warm Audio WA76 Mod x2 (1176 style)"
+    "Warm Audio WA76 Mod ×2 (1176 style)"
   ]
 }
 
@@ -122,10 +122,10 @@ const equipmentF = {
     "DW Collector’s Maple Shell Kit (24” kick, 10-12-14-16” toms)",
     "FG Custom Ash Shell Kit (22” kick, 12-14” toms)",
     "Tama Starclassic Birch Kit (22” kick, 10-12-16” toms)",
-    "DW Performance Steel Snare (14x8)",
-    "FG Custom Bubinga Snare (13x6.5)",
-    "Tama Starphonic Brass Snare (14x6)",
-    "Tama SLP Black Brass Snare (14x6.5)",
+    "DW Performance Steel Snare (14x8”)",
+    "FG Custom Bubinga Snare (13x6.5”)",
+    "Tama Starphonic Brass Snare (14x6”)",
+    "Tama SLP Black Brass Snare (14x6.5”)",
     "Zildjian K Dark Cymbal Set (15” Light Hi-Hats, 17-19” Dark Thin Crashes, 20” Dark Crash/Ride)",
     "Zultan Caz Series Cymbals",
     "Istanbul Agop Cymbals"
@@ -148,8 +148,8 @@ const equipmentF = {
     "Schecter PT Fastback",
     "Fender Precision Bass",
     "Schecter Baron-H",
-    "Takamine Acoustic Guitars",
-    "Gretsch Acoustic Guitars",
+    "Takamine Acoustic Guitar",
+    "Gretsch Acoustic Guitar",
     "Roland FP10 Digital Piano"
   ]
 }
