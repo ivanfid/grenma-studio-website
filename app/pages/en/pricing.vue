@@ -30,7 +30,7 @@ const config = useRuntimeConfig()
 
     <!-- HERO TEXT -->
     <section class="px-6 max-w-[1200px] mx-auto text-center mb-10">
-      <p class="text-lg max-w-2xl mx-auto text-center">
+      <p class="text-lg max-w-3xl mx-auto text-center">
         In most cases, we work with fixed project rates that include virtually unlimited studio time.
         We believe that recording is just as much a creative process as songwriting itself, and its value
         shouldn't necessarily be measured in hours. Since every project is unique, the prices below are

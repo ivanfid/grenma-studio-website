@@ -30,7 +30,7 @@ const config = useRuntimeConfig()
 
     <!-- HERO TEXT -->
     <section class="px-6 max-w-[1200px] mx-auto text-center mb-10">
-      <p class="text-lg max-w-2xl mx-auto text-center">
+      <p class="text-lg max-w-3xl mx-auto text-center">
         Az esetek többségében fix árakkal dolgozunk, amelyekhez szinte korlátlan stúdióidő tartozik.
         Hiszünk abban, hogy a stúdiózás ugyanolyan alkotófolyamat, mint maga a dalszerzés – az értékét nem feltétlenül órákban érdemes mérni.
         Mivel minden projekt egyedi, az alábbi árak tájékoztató jellegűek. Írj vagy hívj, mondd el, mit szeretnél felvenni, és megbeszéljük a részleteket.

@@ -45,7 +45,7 @@ h3 {
   @apply font-prompt font-bold uppercase text-[28px] leading-[32px] tracking-[0.2px] text-[#404040] mb-6;
 }
 p {
-  @apply text-lg leading-relaxed text-[#404040] mb-6 text-left;
+  @apply text-base md:text-lg leading-8 text-neutral-600 mb-5 text-left;
 }
 
 /* Two-line H2 structure */

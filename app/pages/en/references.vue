@@ -32,8 +32,8 @@ const config = useRuntimeConfig()
 
     <!-- TITLE -->
     <section class="px-6 max-w-[1200px] mx-auto text-center mb-10 font-body">
-      <p class="text-lg max-w-2xl mx-auto">
-        A small showcase featuring some of the hundreds of artists and bands we've had the pleasure of working with.
+      <p class="text-lg max-w-3xl mx-auto text-center">
+        A selection of work produced at Grenma Studio. This playlist features artists and bands from various genres that we've had the pleasure of working with over the years.
       </p>
     </section>
 
@@ -44,7 +44,7 @@ const config = useRuntimeConfig()
             style="border-radius:12px"
             src="https://open.spotify.com/embed/playlist/7DmKFDZyynkUmoKF3nkuGp?utm_source=generator&theme=0&si=ff92d276b2b14954"
             width="100%"
-            height="500"
+            height="400"
             allowfullscreen=""
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
@@ -52,61 +52,40 @@ const config = useRuntimeConfig()
       </div>
     </section>
 
+    <section class="px-6 max-w-[1200px] mx-auto mb-12">
+      <div class="rounded-xl overflow-hidden shadow-lg">
+        <iframe
+            data-testid="embed-iframe"
+            style="border-radius:12px"
+            src="https://open.spotify.com/embed/playlist/0sYzHXOfjwnxXtsg3nfPHZ?utm_source=generator&theme=0"
+            width="100%"
+            height="400"
+            frameborder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+
+
     <section class="px-6 max-w-[1200px] mx-auto text-center mb-10 font-body">
       <h2>MUSIC VIDEOS</h2>
     </section>
 
-    <!-- VIDEO GRID -->
-    <section class="px-6 max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-10">
-
-      <!-- VIDEO 1 -->
-      <div class="w-full aspect-video rounded-xl overflow-hidden shadow-lg">
+    <section class="px-6 max-w-[1200px] mx-auto mb-12">
+      <div class="rounded-xl overflow-hidden shadow-lg">
         <iframe
-            class="w-full h-full"
-            src="https://www.youtube.com/embed/2oDzGbp0duY?si=RBR-or3x2PN_CNWh&start=11"
-            title="YouTube video player"
+            class="w-full"
+            height="600"
+            src="https://www.youtube.com/embed/videoseries?si=ikYWpUh9Y9o_wbSz&list=PLcP9qeQqGLtc"
+            title="Grenma Studio Playlist"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
         ></iframe>
       </div>
-
-      <!-- VIDEO 2 -->
-      <div class="w-full aspect-video rounded-xl overflow-hidden shadow-lg">
-        <iframe
-            class="w-full h-full"
-            src="https://www.youtube.com/embed/XjHfhxRI3PM?si=nVhEhYo3ffPXIrpj&start=11"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-        ></iframe>
-      </div>
-
-      <!-- VIDEO 3 -->
-      <div class="w-full aspect-video rounded-xl overflow-hidden shadow-lg">
-        <iframe
-            class="w-full h-full"
-            src="https://www.youtube.com/embed/oTCn_e62ck8?si=BWx6-9ef75Q-cSGI&start=152"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-        ></iframe>
-      </div>
-
-      <!-- VIDEO 4 -->
-      <div class="w-full aspect-video rounded-xl overflow-hidden shadow-lg">
-        <iframe
-            class="w-full h-full"
-            src="https://www.youtube.com/embed/lAFssMaouFg?si=zAeCe__ltHafNBFq&start=152"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-        ></iframe>
-      </div>
-
     </section>
 
   </div>
