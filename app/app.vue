@@ -45,15 +45,16 @@ h3 {
   @apply font-prompt font-bold uppercase text-[28px] leading-[32px] tracking-[0.2px] text-[#404040] mb-6;
 }
 p {
-  @apply text-base md:text-lg leading-8 text-neutral-600 mb-5 text-left;
+  @apply text-lg leading-relaxed text-[#404040] mb-6 text-left
+  md:leading-8 md:text-neutral-600 md:mb-5;
 }
 
 /* Two-line H2 structure */
-h2 span:first-child {
+h3 span:first-child {
   @apply block font-normal;
 }
 
-h2 span:last-child {
+h3 span:last-child {
   @apply block mt-2 font-bold;
 }
 </style>

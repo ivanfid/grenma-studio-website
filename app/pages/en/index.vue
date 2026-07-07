@@ -61,14 +61,14 @@ onActivated(() => {
           class="mx-auto mb-6 w-[160px] md:w-[200px] lg:w-[240px]"
       />
 
-      <h2>
+      <h3>
           <span>
             A MODERN, INSPIRING ENVIRONMENT
           </span>
           <span>
             WHERE CREATIVITY MEETS TECHNICAL PRECISION
           </span>
-      </h2>
+      </h3>
 
       <p>
         Whether it’s recording, mixing, or mastering, our goal is to ensure that every production sounds its absolute best.

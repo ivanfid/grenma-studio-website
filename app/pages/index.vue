@@ -63,14 +63,14 @@ onActivated(() => {
           class="mx-auto mb-6 w-[160px] md:w-[200px] lg:w-[240px]"
       />
 
-      <h2>
+      <h3>
       <span>
         EGY MODERN, INSPIRÁLÓ KÖRNYEZET
       </span>
       <span>
         AHOL A KREATIVITÁS TALÁLKOZIK A TECHNIKAI PRECIZITÁSSAL
       </span>
-      </h2>
+      </h3>
 
       <p>
         Akár felvételről, keverésről vagy masterelésről van szó, célunk, hogy minden produkció a lehető legjobb minőségben szólaljon meg.

@@ -61,9 +61,9 @@ const config = useRuntimeConfig()
             Vocal and instrument recording, multitrack recording, and live session recording.
           </p>
 
-          <div class="space-y-2 text-lg text-left">
-            <p class="leading-tight"><strong>Hourly rate:</strong> 12,000 HUF</p>
-            <p class="leading-tight"><strong>Day rate (8 hours):</strong> 80,000 HUF</p>
+          <div class="space-y-2 text-lg text-left text-neutral-600">
+            <div><strong>Hourly rate:</strong> 12,000 HUF</div>
+            <div><strong>Day rate (8 hours):</strong> 80,000 HUF</div>
           </div>
 
         </div>
@@ -88,16 +88,10 @@ const config = useRuntimeConfig()
             The entire production process in one place – instrument and vocal recording, mixing, and mastering.
           </p>
 
-          <div class="space-y-2 text-lg text-left">
-            <p class="leading-tight">
-              <strong>1–3 songs:</strong> 120,000 HUF / song
-            </p>
-            <p class="leading-tight">
-              <strong>4–6 songs:</strong> 100,000 HUF / song
-            </p>
-            <p class="leading-tight">
-              <strong>6+ songs:</strong> custom pricing available
-            </p>
+          <div class="space-y-2 text-lg text-left text-neutral-600">
+            <div><strong>1–3 songs:</strong> 120,000 HUF / song</div>
+            <div><strong>4–6 songs:</strong> 100,000 HUF / song</div>
+            <div><strong>6+ songs:</strong> custom pricing available</div>
           </div>
 
         </div>
@@ -125,10 +119,8 @@ const config = useRuntimeConfig()
             Send us your tracks, and we'll help them reach their full potential.
           </p>
 
-          <div class="space-y-2 text-lg text-left">
-            <p class="leading-tight">
-              From 50,000 HUF / song
-            </p>
+          <div class="space-y-2 text-lg text-left text-neutral-600">
+            <div>From 50,000 HUF/ song</div>
           </div>
 
         </div>

@@ -60,11 +60,10 @@ const config = useRuntimeConfig()
             Ének- és hangszer felvételek, soksávos és live session felvételek.
           </p>
 
-          <div class="space-y-2 text-lg text-left">
-            <p class="leading-tight"><strong>Óradíj:</strong> 12 000 Ft</p>
-            <p class="leading-tight"><strong>Napidíj (8 óra):</strong> 80 000 Ft</p>
+          <div class="space-y-2 text-lg text-left text-neutral-600">
+            <div><strong>Óradíj:</strong> 12 000 Ft</div>
+            <div><strong>Napidíj (8 óra):</strong> 80 000 Ft</div>
           </div>
-
 
         </div>
       </div>
@@ -87,16 +86,10 @@ const config = useRuntimeConfig()
             A teljes folyamat egy helyen – hangszerek, ének felvétele, keverés és mastering.
           </p>
 
-          <div class="space-y-2 text-lg text-left">
-            <p class="leading-tight">
-              <strong>1–3 dal:</strong> 120 000 Ft / dal
-            </p>
-            <p class="leading-tight">
-              <strong>4–6 dal:</strong> 100 000 Ft / dal
-            </p>
-            <p class="leading-tight">
-              <strong>6 dal felett:</strong> egyedi megállapodás alapján
-            </p>
+          <div class="space-y-2 text-lg text-left text-neutral-600">
+            <div><strong>1–3 dal:</strong> 120 000 Ft / dal</div>
+            <div><strong>4–6 dal:</strong> 100 000 Ft / dal</div>
+            <div><strong>6 dal felett:</strong> egyedi megállapodás alapján</div>
           </div>
 
         </div>
@@ -124,12 +117,9 @@ const config = useRuntimeConfig()
             Külső felvételekkel is szívesen dolgozunk. Vállalunk editálást, keverést és masterelést. Küldd el a sávokat, mi pedig kihozzuk belőlük a legjobbat!
           </p>
 
-          <div class="space-y-2 text-lg text-left">
-            <p class="leading-tight">
-              50 000 Ft-tól / dal
-            </p>
+          <div class="space-y-2 text-lg text-left text-neutral-600">
+            <div>50 000 Ft-tól / dal</div>
           </div>
-
 
         </div>
       </div>

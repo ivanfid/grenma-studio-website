@@ -25,13 +25,8 @@
       "
     ></div>
 
-    <!-- PAGE TITLE -->
-    <div class="relative z-10 w-full max-w-[1200px] mx-auto text-center mt-10 mb-12 md:mb-16">
-      <h2 class="text-white">CONTACT</h2>
-    </div>
-
     <!-- CONTENT WRAPPER -->
-    <div class="relative z-10 w-full max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div class="relative z-10 w-full max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 pt-10 md:pt-16">
 
       <!-- LEFT COLUMN – FORM -->
       <div class="bg-neutral-900/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-neutral-800 font-body">
