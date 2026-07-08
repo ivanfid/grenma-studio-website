@@ -11,6 +11,14 @@ const studioA = new URL('@/assets/studio/studio_a.jpg', import.meta.url).href
 const studioB = new URL('@/assets/studio/studio_b.jpg', import.meta.url).href
 const studioF = new URL('@/assets/studio/studio_f.jpg', import.meta.url).href
 
+useHead({
+  link: [
+    { rel: 'preload', as: 'image', href: studioA },
+    { rel: 'preload', as: 'image', href: studioB },
+    { rel: 'preload', as: 'image', href: studioF }
+  ]
+})
+
 const equipmentA = {
   daw: [
     "Mac Mini 2018 i7/32GB",
