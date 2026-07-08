@@ -1,12 +1,12 @@
 <template>
-  <main class="w-full pt-40 pb-20">
+  <main class="w-full pt-32 md:pt-56 pb-20">
     <div class="max-w-[1200px] mx-auto px-6">
 
       <div class="max-w-4xl">
 
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        <h2 class="text-3xl md:text-3xl font-bold mb-6">
           Adatkezelési tájékoztató
-        </h1>
+        </h2>
 
         <div class="w-24 h-px bg-[#b02c07] mb-10"></div>
 
@@ -134,3 +134,5 @@
     </div>
   </main>
 </template>
+<script setup lang="ts">
+</script>
