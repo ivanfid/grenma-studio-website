@@ -109,9 +109,25 @@ const contactLink = computed(() => isEN.value ? '/en/contact' : '/contact')
         </a>
       </div>
 
-      <p class="text-center text-white/40 text-xs mt-6">
-        © 2026 Grenma Studio
-      </p>
+      <div class="text-center text-white/40 text-xs mt-6 space-x-4">
+        <span>© 2026 Grenma Studio</span>
+
+        <NuxtLink
+            :to="isEN ? '/en/privacy' : '/privacy'"
+            class="hover:text-white transition"
+        >
+          {{ isEN ? 'Privacy Policy' : 'Adatkezelési tájékoztató' }}
+        </NuxtLink>
+
+        <button
+            class="hover:text-white transition"
+            @click="openCookieSettings"
+        >
+          {{ isEN ? 'Cookie Settings' : 'Cookie beállítások' }}
+        </button>
+      </div>
+
+
 
     </div>
   </footer>
