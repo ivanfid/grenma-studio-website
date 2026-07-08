@@ -11,6 +11,11 @@ export default defineNuxtConfig({
     head: {
       link: [
         {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/grenma-studio-website/favicon.ico'
+        },
+        {
           rel: 'preload',
           as: 'image',
           href: '/grenma-studio-website/studio_about.jpg'
