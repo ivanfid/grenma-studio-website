@@ -11,6 +11,31 @@ export default defineNuxtConfig({
     head: {
       link: [
         {
+          rel: 'preload',
+          as: 'image',
+          href: '/grenma-studio-website/studio_about.jpg'
+        },
+        {
+          rel: 'preload',
+          as: 'image',
+          href: '/grenma-studio-website/studio_1.jpg'
+        },
+        {
+          rel: 'preload',
+          as: 'image',
+          href: '/grenma-studio-website/studio_references_3.jpg'
+        },
+        {
+          rel: 'preload',
+          as: 'image',
+          href: '/grenma-studio-website/studio_pricing.jpg'
+        },
+        {
+          rel: 'preload',
+          as: 'image',
+          href: '/grenma-studio-website/studio_pricing.jpg'
+        },
+        {
           rel: "stylesheet",
           href: "https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;700;900&display=swap"
 

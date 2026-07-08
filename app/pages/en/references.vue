@@ -68,7 +68,7 @@ const config = useRuntimeConfig()
       </div>
     </section>
 
-
+    <!-- KLIPEK
     <section class="px-6 max-w-[1200px] mx-auto text-center mb-10 font-body">
       <h2>MUSIC VIDEOS</h2>
     </section>
@@ -86,7 +86,7 @@ const config = useRuntimeConfig()
             allowfullscreen
         ></iframe>
       </div>
-    </section>
+    </section>-->
 
   </div>
 

@@ -8,6 +8,7 @@
   <!-- Background image -->
     <img
         src="/studio_contact.jpg"
+        fetchpriority="high"
         class="absolute inset-0 w-full h-full object-cover opacity-40"
     />
 
