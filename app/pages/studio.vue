@@ -464,7 +464,6 @@ onMounted(async () => {
             v-for="(img, i) in images"
             :key="i"
             :href="img.src"
-            target="_blank"
             :data-pswp-width="img.w"
             :data-pswp-height="img.h"
             class="block overflow-hidden rounded-xl border border-neutral-300 transition fadeThumb"
