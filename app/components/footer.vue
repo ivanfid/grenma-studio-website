@@ -93,17 +93,17 @@ const contactLink = computed(() => isEN.value ? '/en/contact' : '/contact')
           class="mt-10 pt-6 border-t border-white/10
              flex items-center justify-center gap-8"
       >
-        <a href="https://facebook.com" target="_blank"
+        <a href="https://www.facebook.com/grenmastudio" target="_blank"
            class="text-white text-2xl hover:text-blue-400 transition">
           <i class="fa-brands fa-facebook"></i>
         </a>
 
-        <a href="https://youtube.com" target="_blank"
+        <a href="https://www.youtube.com/playlist?list=PLcP9qeQqGLtc" target="_blank"
         class="text-white text-2xl hover:text-red-500 transition">
         <i class="fa-brands fa-youtube"></i>
         </a>
 
-        <a href="https://instagram.com" target="_blank"
+        <a href="https://www.instagram.com/grenmastudio/" target="_blank"
            class="text-white text-2xl hover:text-pink-400 transition">
           <i class="fa-brands fa-instagram"></i>
         </a>
