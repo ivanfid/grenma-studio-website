@@ -4,41 +4,22 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: ['@nuxtjs/tailwindcss'],
 
-  ssr: false, // <-- GitHub Pages miatt kell
+  ssr: true,
 
   app: {
-    baseURL: '/grenma-studio-website/', // <-- A repo neve KÖTELEZŐ ide
+    // baseURL: '/grenma-studio-website/', // <-- ez csak github pageshez kell
+    baseURL: '/',
     head: {
       link: [
         {
           rel: 'icon',
           type: 'image/x-icon',
-          href: '/grenma-studio-website/favicon.ico'
+          href: '/favicon.ico'
         },
         {
           rel: 'preload',
           as: 'image',
-          href: '/grenma-studio-website/studio_about.jpg'
-        },
-        {
-          rel: 'preload',
-          as: 'image',
-          href: '/grenma-studio-website/studio_1.jpg'
-        },
-        {
-          rel: 'preload',
-          as: 'image',
-          href: '/grenma-studio-website/studio_references_3.jpg'
-        },
-        {
-          rel: 'preload',
-          as: 'image',
-          href: '/grenma-studio-website/studio_pricing.jpg'
-        },
-        {
-          rel: 'preload',
-          as: 'image',
-          href: '/grenma-studio-website/studio_pricing.jpg'
+          href: '/studio_main.jpg'
         },
         {
           rel: "stylesheet",
@@ -57,9 +38,9 @@ export default defineNuxtConfig({
     'photoswipe/style.css'
   ],
 
-  nitro: {
+  /*nitro: {
     preset: 'github-pages' // <-- Ez teszi statikussá a buildet
-  },
+  },*/
 
   vite: {
     optimizeDeps: {

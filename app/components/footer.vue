@@ -33,7 +33,7 @@ const contactLink = computed(() => isEN.value ? '/en/contact' : '/contact')
               class="font-prompt font-bold tracking-[0.2em]
          text-white text-lg"
           >
-            {{ isEN ? 'GRENMA STUDIO' : 'GRENMA STÚDIÓ' }}
+            {{ isEN ? 'GRENMA STUDIO' : 'GRENMA STUDIO' }}
           </h3>
 
           <p class="text-white/50 text-sm mt-3 max-w-xs">
@@ -118,13 +118,6 @@ const contactLink = computed(() => isEN.value ? '/en/contact' : '/contact')
         >
           {{ isEN ? 'Privacy Policy' : 'Adatkezelési tájékoztató' }}
         </NuxtLink>
-
-        <button
-            class="hover:text-white transition"
-            @click="openCookieSettings"
-        >
-          {{ isEN ? 'Cookie Settings' : 'Cookie beállítások' }}
-        </button>
       </div>
 
 

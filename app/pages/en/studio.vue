@@ -1,4 +1,11 @@
 <script setup>
+
+useSeoMeta({
+  title: 'Studio | Grenma Studio',
+  description:
+      'Professional recording, mixing and mastering services in Budapest.'
+})
+
 import { ref, onMounted } from 'vue'
 
 const open = ref(null) // 'A', 'B', 'F' or null
@@ -7,9 +14,9 @@ const toggle = (panel) => {
   open.value = open.value === panel ? null : panel
 }
 
-const studioA = new URL('@/assets/studio/studio_a.jpg', import.meta.url).href
-const studioB = new URL('@/assets/studio/studio_b.jpg', import.meta.url).href
-const studioF = new URL('@/assets/studio/studio_f.jpg', import.meta.url).href
+import studioA from '@/assets/studio/studio_a.jpg'
+import studioB from '@/assets/studio/studio_b.jpg'
+import studioF from '@/assets/studio/studio_f.jpg'
 
 const equipmentA = {
   daw: [
@@ -204,20 +211,15 @@ onMounted(async () => {
 
     <!-- HERO BACKGROUND -->
     <div
-        class="w-full h-full bg-cover bg-center md:bg-fixed"
+        class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] min-h-[300px]
+         bg-cover bg-[center_5%]
+         lg:bg-[center_30%]
+         2xl:bg-[center_80%] 2xl:bg-fixed"
         :style="{ backgroundImage: `url(${config.app.baseURL}studio_1.jpg)` }"
     ></div>
     <div class="absolute inset-0 bg-black/60"></div>
     <!-- Micro-grid overlay (csak a hero-ra) -->
-    <div
-        class="absolute inset-0 pointer-events-none opacity-60"
-        style="
-      background-image:
-        linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px);
-      background-size: 5px 5px;
-    "
-    ></div>
+    <div class="absolute inset-0 pointer-events-none opacity-60 micro-grid"></div>
 
   </div>
 
@@ -452,7 +454,9 @@ onMounted(async () => {
 
   <!-- PARALLAX BLOCK BEFORE GALLERY -->
   <section
-      class="relative w-full h-[22vh] sm:h-[30vh] md:h-[40vh] bg-cover bg-center md:bg-fixed"
+      class="relative w-full h-[22vh] sm:h-[30vh] md:h-[40vh]
+         bg-cover bg-center
+         xl:bg-fixed"
       :style="{ backgroundImage: `url(${config.app.baseURL}studio_studio_middle.jpg)` }"
   >
     <div class="absolute inset-0 bg-black/50"></div>
@@ -492,7 +496,10 @@ onMounted(async () => {
 
   <!-- BOTTOM PARALLAX + CTA -->
   <section
-      class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] bg-cover bg-center flex items-center justify-center md:bg-fixed"
+      class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh]
+         bg-cover bg-center
+         flex items-center justify-center
+         xl:bg-fixed"
       :style="{ backgroundImage: `url(${config.app.baseURL}studio_studio_bottom.jpg)` }"
   >
 
@@ -525,5 +532,12 @@ onMounted(async () => {
 .accordion {
   overflow: hidden;
   transition: max-height 0.6s ease-out;
+}
+
+.micro-grid {
+  background-image:
+      linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: 5px 5px;
 }
 </style>

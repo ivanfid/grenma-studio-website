@@ -47,7 +47,6 @@
           <ul class="list-disc pl-6 space-y-2">
             <li>Name</li>
             <li>Email address</li>
-            <li>Phone number</li>
             <li>Technical and usage data</li>
             <li>Anonymous statistical information</li>
           </ul>
@@ -134,3 +133,13 @@
     </div>
   </main>
 </template>
+
+<script setup lang="ts">
+
+useSeoMeta({
+  title: 'Adatkezelési tájékoztató | Grenma Studio',
+  description:
+      'A Grenma Studio adatkezelési tájékoztatója.'
+})
+
+</script>

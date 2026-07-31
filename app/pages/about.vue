@@ -1,4 +1,9 @@
 <script setup>
+useSeoMeta({
+  title: 'Rólunk | Grenma Studio',
+  description:
+      'Ismerd meg a Grenma Studio történetét és szolgáltatásait.'
+})
 const config = useRuntimeConfig()
 </script>
 
@@ -16,16 +21,9 @@ const config = useRuntimeConfig()
     ></div>
 
     <div class="absolute inset-0 bg-black/60"></div>
+
     <!-- Micro-grid overlay (csak a hero-ra!) -->
-    <div
-        class="absolute inset-0 pointer-events-none opacity-60"
-        style="
-      background-image:
-        linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px);
-      background-size: 5px 5px;
-    "
-    ></div>
+    <div class="absolute inset-0 pointer-events-none opacity-60 micro-grid"></div>
 
   </div>
 
@@ -102,9 +100,13 @@ const config = useRuntimeConfig()
 
   <!-- ALSÓ PARALLAX + CTA -->
   <section
-      class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] bg-cover bg-center flex items-center justify-center md:bg-fixed"
+      class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh]
+         bg-cover bg-center
+         flex items-center justify-center
+         xl:bg-fixed"
       :style="{ backgroundImage: `url(${config.app.baseURL}studio_about_bottom.jpg)` }"
   >
+
 
     <div class="absolute inset-0 bg-black/60"></div>
 
@@ -129,6 +131,13 @@ const config = useRuntimeConfig()
 <style scoped>
 .about-page p {
   margin-bottom: 0;
+}
+
+.micro-grid {
+  background-image:
+      linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: 5px 5px;
 }
 </style>
 

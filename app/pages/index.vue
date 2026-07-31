@@ -1,4 +1,11 @@
 <script setup>
+
+useSeoMeta({
+  title: 'Grenma Studio | Recording Studio Budapest',
+  description:
+      'Professional recording, mixing and mastering studio in Budapest.'
+})
+
 const config = useRuntimeConfig()
 
 import { ref, onActivated } from 'vue'
@@ -12,7 +19,6 @@ onActivated(() => {
     } catch (e) {}
   }, 50)
 })
-
 </script>
 
 
@@ -41,13 +47,7 @@ onActivated(() => {
 
     <!-- Micro‑grid overlay -->
     <div
-        class="absolute inset-0 pointer-events-none opacity-45"
-        style="
-      background-image:
-        linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px);
-      background-size: 5px 5px;
-    "
+        class="absolute inset-0 pointer-events-none opacity-45 hero-grid"
     ></div>
 
   </section>
@@ -91,9 +91,13 @@ onActivated(() => {
 
   <!-- PARALLAX CTA BLOCK -->
   <section
-      class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] bg-cover bg-center flex items-center justify-center md:bg-fixed"
+      class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh]
+         bg-cover bg-center
+         flex items-center justify-center
+         xl:bg-fixed"
       :style="{ backgroundImage: `url(${config.app.baseURL}studio_main.jpg)` }"
   >
+
 
     <div class="absolute inset-0 bg-black/60"></div>
 
@@ -113,5 +117,11 @@ onActivated(() => {
 </template>
 
 <style scoped>
+.hero-grid {
+  background-image:
+      linear-gradient(rgba(255, 255, 255, 0.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.10) 1px, transparent 1px);
 
+  background-size: 5px 5px;
+}
 </style>

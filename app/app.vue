@@ -1,17 +1,23 @@
-<script setup>
 
+<script setup>
 useSeoMeta({
-  title: 'Grenma Studio',
-  description: 'Professional recording, mixing and mastering studio in Budapest.',
-  ogTitle: 'Grenma Studio',
-  ogDescription: 'Professional recording, mixing and mastering studio in Budapest.'
+  ogImage: 'https://grenmastudio.hu/og-image.jpg',
+  ogUrl: 'https://grenmastudio.hu',
+  ogType: 'website',
+
+  twitterCard: 'summary_large_image',
+  twitterImage: 'https://grenmastudio.hu/og-image.jpg'
 })
 
 useHead({
   link: [
     {
-      rel: "stylesheet",
-      href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel: 'canonical',
+      href: 'https://grenmastudio.hu'
+    },
+    {
+      rel: 'stylesheet',
+      href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css'
     }
   ]
 })
@@ -20,8 +26,8 @@ useHead({
 import 'photoswipe/style.css'
 </script>
 
+
 <template>
-  <!-- GLOBAL FONT SYSTEM: Inter Medium -->
   <div class="font-body font-medium">
     <Header />
 
@@ -30,6 +36,8 @@ import 'photoswipe/style.css'
     </NuxtLayout>
 
     <Footer />
+
+    <CookieBanner />
   </div>
 </template>
 

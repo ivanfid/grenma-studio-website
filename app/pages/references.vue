@@ -1,4 +1,11 @@
 <script setup>
+
+useSeoMeta({
+  title: 'Referenciák | Grenma Studio',
+  description:
+      'Hallgasd meg a Grenma Studio korábbi munkáit és referenciáit.'
+})
+
 import { useRuntimeConfig } from '#imports'
 
 const config = useRuntimeConfig()
@@ -11,20 +18,15 @@ const config = useRuntimeConfig()
 
     <!-- HERO BACKGROUND -->
     <div
-        class="w-full h-full bg-cover bg-center md:bg-fixed"
+         class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] min-h-[300px]
+         bg-cover bg-[center_10%]
+         lg:bg-[center_30%]
+         2xl:bg-[center_80%] 2xl:bg-fixed"
         :style="{ backgroundImage: `url(${config.app.baseURL}studio_references_3.jpg)` }"
     ></div>
     <div class="absolute inset-0 bg-black/60"></div>
     <!-- Micro-grid overlay (csak a hero-ra!) -->
-    <div
-        class="absolute inset-0 pointer-events-none opacity-60"
-        style="
-      background-image:
-        linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px);
-      background-size: 5px 5px;
-    "
-    ></div>
+    <div class="absolute inset-0 pointer-events-none opacity-60 micro-grid"></div>
   </div>
 
   <!-- WHITE BLOCK – VIDEOS -->
@@ -98,7 +100,10 @@ const config = useRuntimeConfig()
 
   <!-- BOTTOM PARALLAX + CTA -->
   <section
-      class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] bg-cover bg-center flex items-center justify-center md:bg-fixed"
+      class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh]
+         bg-cover bg-center
+         flex items-center justify-center
+         xl:bg-fixed"
       :style="{ backgroundImage: `url(${config.app.baseURL}studio_references_2.jpg)` }"
   >
 
@@ -116,3 +121,12 @@ const config = useRuntimeConfig()
   </section>
 
 </template>
+
+<style>
+.micro-grid {
+  background-image:
+      linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: 5px 5px;
+}
+</style>
