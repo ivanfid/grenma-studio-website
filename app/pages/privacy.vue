@@ -10,112 +10,34 @@
 
         <div class="w-24 h-px bg-[#b02c07] mb-10"></div>
 
-        <p class="mb-10 opacity-70">
-          Hatálybalépés dátuma: 2026. július 8.
-        </p>
-
-        <p class="mb-10 leading-8">
-          A Grenma Studio (a továbbiakban: „Adatkezelő”) tiszteletben tartja a
-          weboldal látogatóinak személyes adatait, és elkötelezett azok
-          biztonságos kezelése mellett.
-        </p>
-
         <section class="mb-12">
-          <h2 class="text-2xl font-semibold mb-4">
-            1. Az adatkezelő adatai
-          </h2>
-
-          <p>
-            <strong>Név:</strong> Grenma Studio
+          <p class="leading-8 mb-6">
+            A Grenma Studio weboldala a látogatottság mérésére Google Analytics
+            szolgáltatást használ.
           </p>
 
-          <p>
-            <strong>E-mail:</strong> info@grenmastudio.hu
-          </p>
-        </section>
-
-        <section class="mb-12">
-          <h2 class="text-2xl font-semibold mb-4">
-            2. Kezelt adatok köre
-          </h2>
-
-          <p class="mb-4">
-            A weboldal használata során az alábbi adatok kerülhetnek kezelésre:
+          <p class="leading-8 mb-6">
+            A Google Analytics kizárólag a látogató hozzájárulását követően
+            aktiválódik. A szolgáltatás sütik segítségével anonim statisztikai
+            adatokat gyűjthet a weboldal használatáról, például a meglátogatott
+            oldalakról, az oldalon eltöltött időről, az eszköz típusáról és a
+            hozzávetőleges földrajzi helyről.
           </p>
 
-          <ul class="list-disc pl-6 space-y-2">
-            <li>Név</li>
-            <li>E-mail cím</li>
-            <li>Technikai és használati adatok</li>
-            <li>Anonim statisztikai adatok</li>
-          </ul>
-        </section>
-
-        <section class="mb-12">
-          <h2 class="text-2xl font-semibold mb-4">
-            3. Az adatkezelés célja
-          </h2>
-
-          <ul class="list-disc pl-6 space-y-2">
-            <li>Kapcsolatfelvételi megkeresések kezelése</li>
-            <li>Ügyfélkommunikáció</li>
-            <li>A weboldal működtetése</li>
-            <li>A felhasználói élmény javítása</li>
-            <li>Statisztikai elemzések készítése</li>
-          </ul>
-        </section>
-
-        <section class="mb-12">
-          <h2 class="text-2xl font-semibold mb-4">
-            4. Google Analytics
-          </h2>
-
-          <p class="leading-8 mb-4">
-            A weboldal Google Analytics szolgáltatást használhat a
-            látogatottság elemzésére. A szolgáltatás sütik segítségével
-            információkat gyűjthet a weboldal használatáról, például a
-            meglátogatott oldalakról, az oldalon eltöltött időről, az eszköz
-            típusáról és a látogatók hozzávetőleges földrajzi helyéről.
+          <p class="leading-8 mb-6">
+            Az összegyűjtött adatok kizárólag a weboldal működésének és
+            felhasználói élményének javítását szolgálják.
           </p>
 
           <p class="leading-8">
-            A Google Analytics csak a látogató hozzájárulását követően kerül
-            aktiválásra.
+            A sütik használatához adott hozzájárulás bármikor visszavonható a
+            böngésző beállításain keresztül.
           </p>
-        </section>
-
-        <section class="mb-12">
-          <h2 class="text-2xl font-semibold mb-4">
-            5. Adattovábbítás
-          </h2>
-
-          <p class="leading-8">
-            Az adatok kizárólag a weboldal működéséhez szükséges szolgáltatók
-            részére kerülhetnek továbbításra.
-          </p>
-        </section>
-
-        <section class="mb-12">
-          <h2 class="text-2xl font-semibold mb-4">
-            6. Az érintettek jogai
-          </h2>
-
-          <p class="mb-4">
-            Ön jogosult:
-          </p>
-
-          <ul class="list-disc pl-6 space-y-2">
-            <li>Tájékoztatást kérni személyes adatairól</li>
-            <li>Személyes adatai helyesbítését kérni</li>
-            <li>Személyes adatai törlését kérni</li>
-            <li>Az adatkezelés korlátozását kérni</li>
-            <li>Tiltakozni az adatkezelés ellen</li>
-          </ul>
         </section>
 
         <section>
           <h2 class="text-2xl font-semibold mb-4">
-            7. Kapcsolat
+            Kapcsolat
           </h2>
 
           <p class="leading-8">

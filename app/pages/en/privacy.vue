@@ -10,117 +10,37 @@
 
         <div class="w-24 h-px bg-[#b02c07] mb-10"></div>
 
-        <p class="mb-10 opacity-70">
-          Effective Date: July 8, 2026
-        </p>
-
-        <p class="mb-10 leading-8">
-          Grenma Studio (hereinafter referred to as the "Data Controller")
-          respects the privacy of website visitors and is committed to handling
-          personal data responsibly and securely.
-        </p>
-
         <section class="mb-12">
-          <h2 class="text-2xl font-semibold mb-4">
-            1. Data Controller Information
-          </h2>
-
-          <p>
-            <strong>Name:</strong> Grenma Studio
+          <p class="leading-8 mb-6">
+            Grenma Studio uses Google Analytics to measure website traffic and
+            better understand how visitors use the website.
           </p>
 
-          <p>
-            <strong>Email:</strong> info@grenmastudio.hu
-          </p>
-        </section>
-
-        <section class="mb-12">
-          <h2 class="text-2xl font-semibold mb-4">
-            2. Data We May Collect
-          </h2>
-
-          <p class="mb-4">
-            While using this website, the following types of data may be
-            processed:
+          <p class="leading-8 mb-6">
+            Google Analytics is only activated after the visitor has given consent
+            through the cookie banner. The service may collect anonymous statistical
+            information about website usage, such as visited pages, time spent on the
+            website, device type, and approximate geographic location.
           </p>
 
-          <ul class="list-disc pl-6 space-y-2">
-            <li>Name</li>
-            <li>Email address</li>
-            <li>Technical and usage data</li>
-            <li>Anonymous statistical information</li>
-          </ul>
-        </section>
-
-        <section class="mb-12">
-          <h2 class="text-2xl font-semibold mb-4">
-            3. Purpose of Data Processing
-          </h2>
-
-          <ul class="list-disc pl-6 space-y-2">
-            <li>Responding to inquiries</li>
-            <li>Customer communication</li>
-            <li>Operating and maintaining the website</li>
-            <li>Improving user experience</li>
-            <li>Preparing statistical analyses</li>
-          </ul>
-        </section>
-
-        <section class="mb-12">
-          <h2 class="text-2xl font-semibold mb-4">
-            4. Google Analytics
-          </h2>
-
-          <p class="leading-8 mb-4">
-            This website may use Google Analytics to measure traffic and analyze
-            visitor behavior. The service uses cookies to collect information
-            about website usage, including visited pages, time spent on the site,
-            device type, and the visitor’s approximate geographic location.
+          <p class="leading-8 mb-6">
+            The collected data is used solely to improve the website's performance
+            and user experience.
           </p>
 
           <p class="leading-8">
-            Google Analytics is activated only after the visitor has provided
-            consent.
+            Consent to the use of cookies can be withdrawn at any time through your
+            browser settings.
           </p>
-        </section>
-
-        <section class="mb-12">
-          <h2 class="text-2xl font-semibold mb-4">
-            5. Data Transfers
-          </h2>
-
-          <p class="leading-8">
-            Personal data may be shared only with service providers necessary for
-            the operation of the website.
-          </p>
-        </section>
-
-        <section class="mb-12">
-          <h2 class="text-2xl font-semibold mb-4">
-            6. Your Rights
-          </h2>
-
-          <p class="mb-4">
-            You have the right to:
-          </p>
-
-          <ul class="list-disc pl-6 space-y-2">
-            <li>Request information about your personal data</li>
-            <li>Request correction of your personal data</li>
-            <li>Request deletion of your personal data</li>
-            <li>Request restriction of data processing</li>
-            <li>Object to data processing where applicable</li>
-          </ul>
         </section>
 
         <section>
           <h2 class="text-2xl font-semibold mb-4">
-            7. Contact
+            Contact
           </h2>
 
           <p class="leading-8">
-            If you have any questions regarding data protection or privacy,
-            please contact us at:
+            If you have any questions regarding data processing, please contact us at:
           </p>
 
           <p class="mt-4 font-semibold">
