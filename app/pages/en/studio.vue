@@ -131,6 +131,7 @@ const equipmentF = {
     "Tama Starclassic Birch Kit (22” kick, 10-12-16” toms)",
     "DW Performance Steel Snare (14x8”)",
     "FG Custom Bubinga Snare (13x6.5”)",
+    "Ludwig Black Beauty Snare (14x6,5”)",
     "Tama Starphonic Brass Snare (14x6”)",
     "Tama SLP Black Brass Snare (14x6.5”)",
     "Zildjian K Dark Cymbal Set (15” Light Hi-Hats, 17-19” Dark Thin Crashes, 20” Dark Crash/Ride)",

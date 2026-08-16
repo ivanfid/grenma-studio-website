@@ -131,6 +131,7 @@ const equipmentF = {
     "Tama Starclassic Birch (22” lábdob, 10-12-16” tamok)",
     "DW Performance Steel pergő (14x8”)",
     "FG Custom Bubinga pergő (13x6,5”)",
+    "Ludwig Black Beauty pergő (14x6,5”)",
     "Tama Starphonic Brass pergő (14x6”)",
     "Tama SLP Black Brass pergő (14x6,5”)",
     "Zildjian K Dark cintányér szett (15” light lábcin, 17-19” Dark Thin beütők, 20” Dark kísérő/beütő)",
