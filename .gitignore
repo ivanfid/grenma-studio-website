@@ -22,3 +22,9 @@ logs
 .env
 .env.*
 !.env.example
+
+# Admin felület: a repo publikus, ezért a teljes admin/ mappa (belépő oldal,
+# szerkesztő logika, titkos config, élő tartalom-adatbázis) csak FTP-vel megy
+# fel a szerverre, sosem git-tracked — hogy a belépési pont és a logika ne
+# legyen nyilvánosan látható/kereshető a GitHubon.
+/admin/
