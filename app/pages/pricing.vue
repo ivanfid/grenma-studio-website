@@ -1,9 +1,15 @@
+
 <script setup>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const isEN = computed(() => route.path.startsWith('/en'))
+const t = computed(() => useSiteContent('pricing', isEN.value ? 'en' : 'hu'))
 
 useSeoMeta({
-  title: 'Árak | Grenma Studio',
-  description:
-      'Felvétel, keverés és mastering árak a Grenma Studióban.'
+  title: computed(() => t.value.seoTitle),
+  description: computed(() => t.value.seoDescription)
 })
 
 const config = useRuntimeConfig()
@@ -17,10 +23,10 @@ const config = useRuntimeConfig()
     <!-- HERO BACKGROUND -->
     <div
         class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] min-h-[300px]
-         bg-cover bg-[center_5%]
+         bg-black bg-cover bg-[center_5%]
          lg:bg-[center_30%]
          2xl:bg-[center_80%] 2xl:bg-fixed"
-        :style="{ backgroundImage: `url(${config.app.baseURL}studio_pricing.jpg)` }"
+        :style="{ backgroundImage: `url(${config.app.baseURL}images/studio_pricing.jpg)` }"
     ></div>
     <div class="absolute inset-0 bg-black/60"></div>
     <!-- Micro-grid overlay (csak a hero-ra!) -->
@@ -32,11 +38,7 @@ const config = useRuntimeConfig()
 
     <!-- HERO TEXT -->
     <section class="px-6 max-w-[1200px] mx-auto text-center mb-10">
-      <p class="text-lg max-w-3xl mx-auto text-center">
-        Az esetek többségében fix árakkal dolgozunk, amelyekhez szinte korlátlan stúdióidő tartozik.
-        Hiszünk abban, hogy a stúdiózás ugyanolyan alkotófolyamat, mint maga a dalszerzés – az értékét nem feltétlenül órákban érdemes mérni.
-        Mivel minden projekt egyedi, az alábbi árak tájékoztató jellegűek. Írj vagy hívj, mondd el, mit szeretnél felvenni, és megbeszéljük a részleteket.
-      </p>
+      <p class="text-lg max-w-3xl mx-auto text-center">{{ t.intro }}</p>
     </section>
 
     <!-- HÁROM FŐ SZOLGÁLTATÁSI KÁRTYA -->
@@ -45,26 +47,23 @@ const config = useRuntimeConfig()
       <!-- RECORDING -->
       <div class="bg-white border border-neutral-300 rounded-xl shadow-sm text-center overflow-hidden">
 
-        <!-- KÁRTYA FELSŐ KÉP -->
         <div class="w-full h-60">
           <img
-              src="@/assets/studio/card_rec.jpg"
+              :src="`${config.app.baseURL}images/card_rec.jpg`"
+              :alt="t.recTitle"
               class="w-full h-full object-cover"
           />
         </div>
 
-        <!-- TARTALOM -->
         <div class="p-10 pt-0">
 
-          <h3>FELVÉTEL</h3>
+          <h3>{{ t.recTitle }}</h3>
 
-          <p>
-            Ének- és hangszer felvételek, soksávos és live session felvételek.
-          </p>
+          <p>{{ t.recDesc }}</p>
 
           <div class="space-y-2 text-lg text-left text-neutral-600">
-            <div><strong>Óradíj:</strong> 12 000 Ft</div>
-            <div><strong>Napidíj (8 óra):</strong> 80 000 Ft</div>
+            <div><strong>{{ t.recHourly }}</strong> {{ t.recHourlyValue }}</div>
+            <div><strong>{{ t.recDaily }}</strong> {{ t.recDailyValue }}</div>
           </div>
 
         </div>
@@ -73,25 +72,23 @@ const config = useRuntimeConfig()
       <!-- TELJES PRODUKCIÓ -->
       <div class="bg-white border border-neutral-300 rounded-xl shadow-sm text-center overflow-hidden">
 
-        <!-- KÁRTYA FELSŐ KÉP -->
         <div class="w-full h-60">
           <img
-              src="@/assets/studio/card_fullprod.jpg"
+              :src="`${config.app.baseURL}images/card_fullprod.jpg`"
+              :alt="t.prodTitle"
               class="w-full h-full object-cover"
           />
         </div>
 
         <div class="p-10 pt-0">
-          <h3>TELJES PRODUKCIÓ</h3>
+          <h3>{{ t.prodTitle }}</h3>
 
-          <p>
-            A teljes folyamat egy helyen – hangszerek, ének felvétele, keverés és mastering.
-          </p>
+          <p>{{ t.prodDesc }}</p>
 
           <div class="space-y-2 text-lg text-left text-neutral-600">
-            <div><strong>1–3 dal:</strong> 120 000 Ft / dal</div>
-            <div><strong>4–6 dal:</strong> 100 000 Ft / dal</div>
-            <div><strong>6 dal felett:</strong> egyedi megállapodás alapján</div>
+            <div><strong>{{ t.prod1to3 }}</strong> {{ t.prod1to3Value }}</div>
+            <div><strong>{{ t.prod4to6 }}</strong> {{ t.prod4to6Value }}</div>
+            <div><strong>{{ t.prod6plus }}</strong> {{ t.prod6plusValue }}</div>
           </div>
 
         </div>
@@ -102,25 +99,22 @@ const config = useRuntimeConfig()
       <!-- MIXING / MASTERING -->
       <div class="bg-white border border-neutral-300 rounded-xl shadow-sm text-center overflow-hidden">
 
-        <!-- KÁRTYA FELSŐ KÉP -->
         <div class="w-full h-60">
           <img
-              src="@/assets/studio/card_mix.jpg"
+              :src="`${config.app.baseURL}images/card_mix.jpg`"
+              :alt="t.mixTitle"
               class="w-full h-full object-cover"
           />
         </div>
 
-        <!-- TARTALOM -->
         <div class="p-10 pt-0">
 
-          <h3>KEVERÉS & MASTERING</h3>
+          <h3>{{ t.mixTitle }}</h3>
 
-          <p>
-            Külső felvételekkel is szívesen dolgozunk. Vállalunk editálást, keverést és masterelést. Küldd el a sávokat, mi pedig kihozzuk belőlük a legjobbat!
-          </p>
+          <p>{{ t.mixDesc }}</p>
 
           <div class="space-y-2 text-lg text-left text-neutral-600">
-            <div>50 000 Ft-tól / dal</div>
+            <div>{{ t.mixValue }}</div>
           </div>
 
         </div>
@@ -134,10 +128,10 @@ const config = useRuntimeConfig()
   <!-- BOTTOM PARALLAX + CTA -->
   <section
       class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh]
-         bg-cover bg-center
+         bg-black bg-cover bg-center
          flex items-center justify-center
          xl:bg-fixed"
-      :style="{ backgroundImage: `url(${config.app.baseURL}studio_pricing_2.jpg)` }"
+      :style="{ backgroundImage: `url(${config.app.baseURL}images/studio_pricing_2.jpg)` }"
   >
 
     <div class="absolute inset-0 bg-black/60"></div>
@@ -145,11 +139,11 @@ const config = useRuntimeConfig()
     <div class="relative z-10 text-center">
 
       <NuxtLink
-          :to="$route.path.startsWith('/en') ? '/en/contact' : '/contact'"
+          :to="isEN ? '/en/contact' : '/contact'"
           class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-prompt font-semibold
            transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
       >
-        FOGLALÁS
+        {{ t.ctaLabel }}
       </NuxtLink>
 
     </div>

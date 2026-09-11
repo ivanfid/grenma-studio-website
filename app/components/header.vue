@@ -65,7 +65,7 @@ const labels = computed(() => ({
       <!-- LOGO -->
       <NuxtLink :to="homeLink" class="flex items-center">
         <img
-            src="/logo.png"
+            src="/images/logo.png"
             alt="Logo"
             class="h-[60px] md:h-[80px] lg:h-[100px] w-auto transition-all duration-300"
             :class="isScrolled ? 'scale-75 opacity-90' : 'scale-100 opacity-100'"
@@ -191,6 +191,7 @@ const labels = computed(() => ({
       <!-- MOBILE MENU BUTTON -->
       <button
           class="md:hidden text-white text-3xl"
+          :aria-label="isEN ? (mobileOpen ? 'Close menu' : 'Open menu') : (mobileOpen ? 'Menü bezárása' : 'Menü megnyitása')"
           @click="mobileOpen = !mobileOpen"
       >
         <span v-if="!mobileOpen">☰</span>

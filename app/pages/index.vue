@@ -1,14 +1,18 @@
+
 <script setup>
+import { ref, computed, onActivated } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const isEN = computed(() => route.path.startsWith('/en'))
+const content = computed(() => useSiteContent('index', isEN.value ? 'en' : 'hu'))
 
 useSeoMeta({
-  title: 'Grenma Studio | Recording Studio Budapest',
-  description:
-      'Professional recording, mixing and mastering studio in Budapest.'
+  title: computed(() => content.value.seoTitle),
+  description: computed(() => content.value.seoDescription)
 })
 
 const config = useRuntimeConfig()
-
-import { ref, onActivated } from 'vue'
 
 const heroVideo = ref()
 
@@ -38,7 +42,7 @@ onActivated(() => {
         class="absolute inset-0 w-full h-full object-cover opacity-60"
     >
 
-    <source src="/lowres_video.mp4" type="video/mp4" />
+    <source src="/images/lowres_video.mp4" type="video/mp4" />
     </video>
 
 
@@ -58,32 +62,25 @@ onActivated(() => {
     <div class="max-w-[900px] mx-auto text-center font-body">
 
       <img
-          src="@/assets/studio/studio_main_logo.png"
+          :src="`${config.app.baseURL}images/studio_main_logo.png`"
           alt="Main Logo"
           class="mx-auto mb-6 w-[160px] md:w-[200px] lg:w-[240px]"
       />
 
       <h3>
       <span>
-        EGY MODERN, INSPIRÁLÓ KÖRNYEZET
+        {{ content.heroLine1 }}
       </span>
       <span>
-        AHOL A KREATIVITÁS TALÁLKOZIK A TECHNIKAI PRECIZITÁSSAL
+        {{ content.heroLine2 }}
       </span>
       </h3>
 
-      <p>
-        Akár felvételről, keverésről vagy masterelésről van szó, célunk, hogy minden produkció a lehető legjobb minőségben szólaljon meg.
-      </p>
+      <p style="white-space: pre-line">{{ content.paragraph1 }}</p>
 
-      <p>
-        A stúdiót úgy alakítottuk ki, hogy egyszerre legyen otthonos és professzionális. A hangszerek, mikrofonok,
-        akusztikai elemek és eszközök mind azt szolgálják, hogy a zenészek és előadók a legjobb formájukat hozhassák.
-      </p>
+      <p style="white-space: pre-line">{{ content.paragraph2 }}</p>
 
-      <p>
-        Legyen szó egyetlen vokál sáv rögzítéséről vagy egy teljes zenekari produkcióról, nálunk minden adott a kiváló hangzáshoz.
-      </p>
+      <p style="white-space: pre-line">{{ content.paragraph3 }}</p>
 
     </div>
 
@@ -92,10 +89,10 @@ onActivated(() => {
   <!-- PARALLAX CTA BLOCK -->
   <section
       class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh]
-         bg-cover bg-center
+         bg-black bg-cover bg-center
          flex items-center justify-center
          xl:bg-fixed"
-      :style="{ backgroundImage: `url(${config.app.baseURL}studio_main.jpg)` }"
+      :style="{ backgroundImage: `url(${config.app.baseURL}images/studio_main.jpg)` }"
   >
 
 
@@ -103,12 +100,12 @@ onActivated(() => {
 
     <div class="relative z-10 text-center">
       <NuxtLink
-          :to="$route.path.startsWith('/en') ? '/en/about' : '/about'"
+          :to="isEN ? '/en/about' : '/about'"
           class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-prompt font-semibold
            transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
 
       >
-        {{ $route.path.startsWith('/en') ? 'LEARN MORE' : 'TUDJ MEG TÖBBET' }}
+        {{ content.ctaLabel }}
       </NuxtLink>
     </div>
 

@@ -1,12 +1,16 @@
+
 <script setup>
+import { ref, computed, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const isEN = computed(() => route.path.startsWith('/en'))
+const content = computed(() => useSiteContent('studio', isEN.value ? 'en' : 'hu'))
 
 useSeoMeta({
-  title: 'Stúdió | Grenma Studio',
-  description:
-      'Professzionális felvétel, keverés és mastering Budapesten.'
+  title: computed(() => content.value.seoTitle),
+  description: computed(() => content.value.seoDescription)
 })
-
-import { ref, onMounted } from 'vue'
 
 const open = ref(null) // 'A', 'B', 'F' vagy null
 
@@ -14,182 +18,65 @@ const toggle = (panel) => {
   open.value = open.value === panel ? null : panel
 }
 
-import studioA from '@/assets/studio/studio_a.jpg'
-import studioB from '@/assets/studio/studio_b.jpg'
-import studioF from '@/assets/studio/studio_f.jpg'
-
-const equipmentA = {
-  daw: [
-    "Mac Mini 2018 i7/32GB",
-    "Avid Artist Mix DAW vezérlő",
-    "Apogee Ensemble Thunderbolt",
-    "Pro Tools Studio",
-    "Reaper",
-    "FabFilter Total Bundle",
-    "Steven Slate All Access",
-    "SSL Complete Access",
-    "Celemony Melodyne",
-    "Waves plug-inek",
-    "iZotope Ozone",
-    "Mixwave",
-    "Get Good Drums",
-    "SSD4",
-    "STL Tones",
-    "Tonality",
-    "És még sok minden más..."
-  ],
-
-  monitors: [
-    "Genelec 1032A (pár)",
-    "Dynaudio BM5A (pár)",
-    "Heritage Audio Baby RAM monitorvezérlő",
-    "Sennheiser HD580"
-  ],
-
-  outboard: [
-    "Focusrite ISA 828",
-    "Audient ASP 880",
-    "Apogee Ensemble",
-    "Focusrite ISA 220",
-    "Gainlab Audio Bishop",
-    "Kemper Profiler",
-    "Empirical Labs Distressor",
-    "DBX 160",
-    "Warm Audio WA76 Mod ×2 (1176 stílus)"
-  ]
-}
-
-const equipmentB = {
-  daw: [
-    "Mac Mini M2 16GB",
-    "RME Fireface UC",
-    "RME ADI 2",
-    "Pro Tools Studio",
-    "FabFilter pluginek",
-    "Steven Slate All Access",
-    "SSL Complete Access",
-    "Celemony Melodyne 5",
-    "És még sok minden más..."
-  ],
-
-  monitors: [
-    "ADAM A7X (pár)",
-    "Audient Nero monitorvezérlő",
-    "SoundID Reference",
-    "AKG K701"
-  ],
-
-  outboard: [
-    "Great River ME-1NV",
-    "Heritage Audio HA-73 Elite",
-    "Midas XL48",
-    "Warm Audio WA-412",
-    "Black Lion Audio Auteur mk2"
-  ]
-}
-
-const equipmentF = {
-  monitors: [
-    "Behringer Powerplay személyi monitorrendszer (P16 ×3)",
-    "Beyerdynamic DT770 PRO ×5",
-    "VIC FIRTH SIH 1",
-    "Sony MDR-7506",
-    "Yamaha DXR12 ×2"
-  ],
-
-  microphones: [
-    "AKG C414 XLII",
-    "Audio Technica AT4050",
-    "Audix D6",
-    "Audix D2 ×2",
-    "Audix D4",
-    "Audix i5",
-    "Audix ADX51 ×2",
-    "Earthworks DM20 Gen-2",
-    "Neumann KM184 ×2",
-    "RODE TF-5 ×2",
-    "RODE NT5 ×2",
-    "sE Electronics sE8 ×2",
-    "sE Electronics V7x ×2",
-    "Sennheiser e614",
-    "Sennheiser MD421 ×4",
-    "Sennheiser e604 ×3",
-    "Sennheiser e609",
-    "Sennheiser e602 II",
-    "Shure Beta 91",
-    "Shure SM7B ×3",
-    "Shure SM57 ×2",
-    "Shure SM58 ×2",
-    "Slate Digital ML-2",
-    "Warm Audio WA87 ×2 (U87 stílusú)",
-    "Warm Audio WA-47jr"
-  ],
-
-  drums: [
-    "DW Collector’s Maple shell (24” lábdob, 10-12-14-16” tamok)",
-    "FG Custom Ash shell (22” lábdob, 12-14” tamok)",
-    "Tama Starclassic Birch (22” lábdob, 10-12-16” tamok)",
-    "DW Performance Steel pergő (14x8”)",
-    "FG Custom Bubinga pergő (13x6,5”)",
-    "Ludwig Black Beauty pergő (14x6,5”)",
-    "Tama Starphonic Brass pergő (14x6”)",
-    "Tama SLP Black Brass pergő (14x6,5”)",
-    "Zildjian K Dark cintányér szett (15” light lábcin, 17-19” Dark Thin beütők, 20” Dark kísérő/beütő)",
-    "Zultan Caz Series cintányérok",
-    "Istanbul Agop cintányérok"
-  ],
-
-  amplifiers: [
-    "Kemper Profiler",
-    "VOX AC30",
-    "Marshall JCM 900",
-    "Fender Bassbreaker 15",
-    "Marshall 1960 4x12",
-    "Blackstar Debut 2x12",
-    "Tech21 SansAmp Bass DI",
-    "Tech21 Dug Pinnick DP-3X",
-    "Radial Pro RMP passzív reamper"
-  ],
-
-  instruments: [
-    "PRS Mira",
-    "Schecter PT Fastback",
-    "Fender Precision Bass",
-    "Schecter Baron-H",
-    "Takamine akusztikus gitár",
-    "Gretsch akusztikus gitár",
-    "Roland FP10 digitális zongora"
-  ]
-}
-
 const config = useRuntimeConfig()
+const studioA = `${config.app.baseURL}images/studio_a.jpg`
+const studioB = `${config.app.baseURL}images/studio_b.jpg`
+const studioF = `${config.app.baseURL}images/studio_f.jpg`
+
+const equipmentA = computed(() => content.value.equipmentA)
+const equipmentB = computed(() => content.value.equipmentB)
+const equipmentF = computed(() => content.value.equipmentF)
+
+const labels = computed(() => ({
+  studioA: content.value.studioALabel,
+  studioB: content.value.studioBLabel,
+  liveRoom: content.value.liveRoomLabel,
+  roomADesc: content.value.roomADesc,
+  roomBDesc: content.value.roomBDesc,
+  roomFDesc: content.value.roomFDesc,
+  monitors: content.value.monitorsLabel,
+  outboard: content.value.outboardLabel,
+  listening: content.value.listeningLabel,
+  microphones: content.value.microphonesLabel,
+  drums: content.value.drumsLabel,
+  amplifiers: content.value.amplifiersLabel,
+  instruments: content.value.instrumentsLabel,
+  gallery: content.value.galleryHeading,
+  referencesCta: content.value.referencesCta
+}))
 
 // --- GALÉRIA LOGIKA ---
-const imageModules = import.meta.glob('@/assets/gallery/*.jpg', {
-  eager: true,
-  import: 'default'
-})
-
+// A galéria képlistáját futásidőben kérjük le a gallery.php-től (a public/gallery
+// mappa aktuális tartalmát adja vissza) — így egy admin kép fel-/letöltése azonnal
+// látszik, nincs szükség új build-re. Ha a végpont nem elérhető (pl. helyi fejlesztés
+// PHP nélkül), a galéria egyszerűen üresen marad, az oldal többi része zavartalan.
 const images = ref([])
 
 function getImageSize(url) {
   return new Promise(resolve => {
     const img = new Image()
     img.onload = () => resolve({ width: img.width, height: img.height })
+    img.onerror = () => resolve({ width: 0, height: 0 })
     img.src = url
   })
 }
 
 onMounted(async () => {
-  for (const path in imageModules) {
-    const src = imageModules[path]
-    const size = await getImageSize(src)
+  try {
+    const files = await $fetch(`${config.app.baseURL}gallery.php`)
 
-    images.value.push({
-      src,
-      w: size.width,
-      h: size.height
-    })
+    for (const file of files) {
+      const src = `${config.app.baseURL}gallery/${file}`
+      const size = await getImageSize(src)
+
+      images.value.push({
+        src,
+        w: size.width,
+        h: size.height
+      })
+    }
+  } catch (e) {
+    console.warn('A galéria képlistája nem érhető el:', e)
   }
 
   const PhotoSwipeLightbox = (await import('photoswipe/lightbox')).default
@@ -213,10 +100,10 @@ onMounted(async () => {
     <!-- HERO BACKGROUND -->
     <div
         class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] min-h-[300px]
-         bg-cover bg-[center_5%]
+         bg-black bg-cover bg-[center_5%]
          lg:bg-[center_30%]
          2xl:bg-[center_80%] 2xl:bg-fixed"
-        :style="{ backgroundImage: `url(${config.app.baseURL}studio_1.jpg)` }"
+        :style="{ backgroundImage: `url(${config.app.baseURL}images/studio_1.jpg)` }"
     ></div>
     <div class="absolute inset-0 bg-black/60"></div>
     <!-- Micro-grid overlay (csak a hero-ra) -->
@@ -233,15 +120,13 @@ onMounted(async () => {
       <div>
         <div
             @click="toggle('A')"
-            class="relative h-56 rounded-xl overflow-hidden cursor-pointer group bg-cover bg-center"
+            class="relative h-56 rounded-xl overflow-hidden cursor-pointer group bg-black bg-cover bg-center"
             :style="{ backgroundImage: `url(${studioA})` }"
         >
-          <!-- ALAP SÖTÉTÍTÉS → HOVERRE FINOM VILÁGOSODÁS -->
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
 
-          <!-- TITLE + NYÍL -->
-          <h3  class="absolute inset-0 flex flex-col items-center justify-center text-white">
-            STÚDIÓ A
+          <h3 class="absolute inset-0 flex flex-col items-center justify-center text-white">
+            {{ labels.studioA }}
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -259,9 +144,7 @@ onMounted(async () => {
             :style="{ maxHeight: open === 'A' ? '2000px' : '0px' }"
         >
           <div class="p-8">
-            <p class="mb-6">
-              25 m²-es akusztikailag kezelt lehallgató helyiség.
-            </p>
+            <p class="mb-6">{{ labels.roomADesc }}</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
@@ -275,14 +158,14 @@ onMounted(async () => {
               </div>
 
               <div>
-                <h3 class="text-xl font-semibold mb-2">Monitorok</h3>
+                <h3 class="text-xl font-semibold mb-2">{{ labels.monitors }}</h3>
                 <ul class="list-disc pl-6 text-neutral-700 mb-6">
                   <li v-for="(item, i) in equipmentA.monitors" :key="i">
                     {{ item }}
                   </li>
                 </ul>
 
-                <h3 class="text-xl font-semibold mb-2">Előfokok / Külső eszközök</h3>
+                <h3 class="text-xl font-semibold mb-2">{{ labels.outboard }}</h3>
                 <ul class="list-disc pl-6 text-neutral-700">
                   <li v-for="(item, i) in equipmentA.outboard" :key="i">
                     {{ item }}
@@ -299,15 +182,13 @@ onMounted(async () => {
       <div>
         <div
             @click="toggle('B')"
-            class="relative h-56 rounded-xl overflow-hidden cursor-pointer group bg-cover bg-center"
+            class="relative h-56 rounded-xl overflow-hidden cursor-pointer group bg-black bg-cover bg-center"
             :style="{ backgroundImage: `url(${studioB})` }"
         >
-          <!-- ALAP SÖTÉTÍTÉS → HOVERRE FINOM VILÁGOSODÁS -->
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
 
-          <!-- TITLE + NYÍL -->
-          <h3  class="absolute inset-0 flex flex-col items-center justify-center text-white">
-            STÚDIÓ B
+          <h3 class="absolute inset-0 flex flex-col items-center justify-center text-white">
+            {{ labels.studioB }}
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -325,9 +206,7 @@ onMounted(async () => {
             :style="{ maxHeight: open === 'B' ? '1200px' : '0px' }"
         >
           <div class="p-8">
-            <p class="mb-6">
-              20 m²-es akusztikailag kezelt lehallgató helyiség.
-            </p>
+            <p class="mb-6">{{ labels.roomBDesc }}</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
@@ -341,14 +220,14 @@ onMounted(async () => {
               </div>
 
               <div>
-                <h3 class="text-xl font-semibold mb-2">Monitorok</h3>
+                <h3 class="text-xl font-semibold mb-2">{{ labels.monitors }}</h3>
                 <ul class="list-disc pl-6 text-neutral-700 mb-6">
                   <li v-for="(item, i) in equipmentB.monitors" :key="i">
                     {{ item }}
                   </li>
                 </ul>
 
-                <h3 class="text-xl font-semibold mb-2">Előfokok / Külső eszközök</h3>
+                <h3 class="text-xl font-semibold mb-2">{{ labels.outboard }}</h3>
                 <ul class="list-disc pl-6 text-neutral-700">
                   <li v-for="(item, i) in equipmentB.outboard" :key="i">
                     {{ item }}
@@ -365,15 +244,13 @@ onMounted(async () => {
       <div>
         <div
             @click="toggle('F')"
-            class="relative h-56 rounded-xl overflow-hidden cursor-pointer group bg-cover bg-center"
+            class="relative h-56 rounded-xl overflow-hidden cursor-pointer group bg-black bg-cover bg-center"
             :style="{ backgroundImage: `url(${studioF})` }"
         >
-          <!-- ALAP SÖTÉTÍTÉS → HOVERRE FINOM VILÁGOSODÁS -->
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
 
-          <!-- TITLE + NYÍL -->
-          <h3  class="absolute inset-0 flex flex-col items-center justify-center text-white">
-            FELJÁTSZÓ
+          <h3 class="absolute inset-0 flex flex-col items-center justify-center text-white">
+            {{ labels.liveRoom }}
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -391,21 +268,19 @@ onMounted(async () => {
             :style="{ maxHeight: open === 'F' ? '2300px' : '0px' }"
         >
           <div class="p-8">
-            <p class="mb-6">
-              35 m²-es akusztikailag kezelt feljátszó helyiség, kényelmes akár egy teljes zenekar együtt játszásához is.
-            </p>
+            <p class="mb-6">{{ labels.roomFDesc }}</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
               <div>
-                <h3 class="text-xl font-semibold mb-2">Lehallgatás</h3>
+                <h3 class="text-xl font-semibold mb-2">{{ labels.listening }}</h3>
                 <ul class="list-disc pl-6 text-neutral-700 mb-6">
                   <li v-for="(item, i) in equipmentF.monitors" :key="i">
                     {{ item }}
                   </li>
                 </ul>
 
-                <h3 class="text-xl font-semibold mb-2">Mikrofonok</h3>
+                <h3 class="text-xl font-semibold mb-2">{{ labels.microphones }}</h3>
                 <ul class="list-disc pl-6 text-neutral-700">
                   <li v-for="(item, i) in equipmentF.microphones" :key="i">
                     {{ item }}
@@ -414,21 +289,21 @@ onMounted(async () => {
               </div>
 
               <div>
-                <h3 class="text-xl font-semibold mb-2">Dobok</h3>
+                <h3 class="text-xl font-semibold mb-2">{{ labels.drums }}</h3>
                 <ul class="list-disc pl-6 text-neutral-700 mb-6">
                   <li v-for="(item, i) in equipmentF.drums" :key="i">
                     {{ item }}
                   </li>
                 </ul>
 
-                <h3 class="text-xl font-semibold mb-2">Erősítők</h3>
+                <h3 class="text-xl font-semibold mb-2">{{ labels.amplifiers }}</h3>
                 <ul class="list-disc pl-6 text-neutral-700 mb-6">
                   <li v-for="(item, i) in equipmentF.amplifiers" :key="i">
                     {{ item }}
                   </li>
                 </ul>
 
-                <h3 class="text-xl font-semibold mb-2">Hangszerek</h3>
+                <h3 class="text-xl font-semibold mb-2">{{ labels.instruments }}</h3>
                 <ul class="list-disc pl-6 text-neutral-700">
                   <li v-for="(item, i) in equipmentF.instruments" :key="i">
                     {{ item }}
@@ -446,9 +321,9 @@ onMounted(async () => {
   <!-- PARALLAX BLOKK A GALÉRIA ELŐTT -->
   <section
       class="relative w-full h-[22vh] sm:h-[30vh] md:h-[40vh]
-         bg-cover bg-center
+         bg-black bg-cover bg-center
          xl:bg-fixed"
-      :style="{ backgroundImage: `url(${config.app.baseURL}studio_studio_middle.jpg)` }"
+      :style="{ backgroundImage: `url(${config.app.baseURL}images/studio_studio_middle.jpg)` }"
   >
     <div class="absolute inset-0 bg-black/50"></div>
   </section>
@@ -457,7 +332,7 @@ onMounted(async () => {
   <div class="bg-white text-black py-16 md:py-20">
 
     <section class="px-6 max-w-[1200px] mx-auto text-center mb-10 font-body">
-      <h2>KÉPEK</h2>
+      <h2>{{ labels.gallery }}</h2>
     </section>
 
     <section class="px-6 max-w-[1200px] mx-auto font-body mt-10">
@@ -476,6 +351,7 @@ onMounted(async () => {
         >
           <img
               :src="img.src"
+              :alt="`${labels.gallery} ${i + 1}`"
               class="w-full h-64 object-cover hover:scale-105 transition duration-300"
           />
         </a>
@@ -488,21 +364,21 @@ onMounted(async () => {
   <!-- ALSÓ PARALLAX + CTA -->
   <section
       class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh]
-         bg-cover bg-center
+         bg-black bg-cover bg-center
          flex items-center justify-center
          xl:bg-fixed"
-      :style="{ backgroundImage: `url(${config.app.baseURL}studio_studio_bottom.jpg)` }"
+      :style="{ backgroundImage: `url(${config.app.baseURL}images/studio_studio_bottom.jpg)` }"
   >
 
     <div class="absolute inset-0 bg-black/60"></div>
 
     <div class="relative z-10 text-center">
       <NuxtLink
-          :to="$route.path.startsWith('/en') ? '/en/references' : '/references'"
+          :to="isEN ? '/en/references' : '/references'"
           class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-prompt font-semibold
                transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
       >
-        REFERENCIÁK
+        {{ labels.referencesCta }}
       </NuxtLink>
     </div>
   </section>
