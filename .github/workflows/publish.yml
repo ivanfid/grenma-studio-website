@@ -6,12 +6,14 @@ name: Publish content to live site
 # (workflow_dispatch) — ilyenkor a repóban jelenleg lévő tartalommal buildel,
 # admin-adat nélkül (pl. csak kód-változás után újra akarod deploy-olni).
 #
-# A build eredményét NEM FTP-vel toljuk fel — a tárhelyünk valamiért blokkolja
-# a kívülről (GitHub Actions IP-ről) érkező FTP írási/mappa-létrehozási
-# műveleteket. Ehelyett "pull" alapú deploy-t használunk: becsomagoljuk a
-# build-et egy GitHub Release-be, majd egy kimenő HTTPS hívással szólunk a
-# szerverünknek (admin/pull-deploy.php), hogy MAGA töltse le és csomagolja ki —
-# ez a kérés-irány sosem ütközik a fenti korlátozásba.
+# A build eredményét NEM FTP-vel toljuk fel, és nem is hívjuk meg kívülről a
+# szerverünket — a tárhelyünk egy bot-elhárító réteggel mindkettőt blokkolja
+# (a GitHub Actions felől érkező FTP-írást ÉS a HTTP-kéréseket is, mert nem
+# néznek ki "valódi böngészőnek"). Ehelyett "pull" alapú deploy-t használunk:
+# becsomagoljuk a build-et egy GitHub Release-be, a szerveren pedig egy
+# cPanel Cron Job néhány percenként lefuttatja az admin/pull-deploy.php-t
+# HELYBEN (nem HTTP-n át) — ez így sosem ütközik a fenti korlátozásba, mert
+# nem jön kívülről semmilyen kérés a szerver felé.
 
 on:
   repository_dispatch:
@@ -58,15 +60,4 @@ jobs:
           gh release delete live-build --yes --cleanup-tag || true
           gh release create live-build public.zip \
             --title "Live build" \
-            --notes "Automatikusan frissül minden közzétételkor — ezt tölti le a szerver."
-
-      - name: Tell the server to pull & deploy the new build
-        run: |
-          response=$(curl -s -w "\n%{http_code}" "https://grenmastudio.hu/admin/pull-deploy.php?token=${{ secrets.DEPLOY_TOKEN }}")
-          http_code=$(echo "$response" | tail -n1)
-          body=$(echo "$response" | sed '$d')
-          echo "Response ($http_code): $body"
-          if [ "$http_code" != "200" ]; then
-            echo "::error::A szerver nem tudta letölteni/kicsomagolni a build-et."
-            exit 1
-          fi
+            --notes "Automatikusan frissül minden közzétételkor — a szerveren futó cron job veszi fel innen néhány percen belül."
