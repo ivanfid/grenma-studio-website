@@ -51,3 +51,6 @@ jobs:
           # Sose törölje a szerveren azt, ami nincs a build kimenetében — ez
           # védi a sendmail.php-t, gallery.php-t, admin/ mappát, .htaccess-t stb.
           dangerous-clean-slate: false
+          # IDEIGLENES: részletes napló, hogy lássuk a nyers FTP parancs/válasz
+          # kommunikációt — ez segít kideríteni, mi okozza a mappa-létrehozási hibát.
+          log-level: verbose
