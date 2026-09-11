@@ -23,7 +23,8 @@ logs
 .env.*
 !.env.example
 
-# Admin: titkokat tartalmazó config és az élő (szerveren szerkesztett)
-# tartalom-adatbázis — ezek soha nem git-tracked, csak a config.example.php.
-admin/config.php
-admin/content-data.json
+# Admin felület: a repo publikus, ezért a teljes admin/ mappa (belépő oldal,
+# szerkesztő logika, titkos config, élő tartalom-adatbázis) csak FTP-vel megy
+# fel a szerverre, sosem git-tracked — hogy a belépési pont és a logika ne
+# legyen nyilvánosan látható/kereshető a GitHubon.
+/admin/
