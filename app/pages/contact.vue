@@ -1,12 +1,16 @@
+
 <script setup lang="ts">
+import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const isEN = computed(() => route.path.startsWith('/en'))
+const t = computed(() => useSiteContent('contact', isEN.value ? 'en' : 'hu'))
 
 useSeoMeta({
-  title: 'Kapcsolat | Grenma Studio',
-  description:
-      'Lépj kapcsolatba a Grenma Studio csapatával.'
+  title: computed(() => t.value.seoTitle),
+  description: computed(() => t.value.seoDescription)
 })
-
-import { ref } from 'vue'
 
 const name = ref('')
 const email = ref('')
@@ -36,25 +40,22 @@ const sendForm = async () => {
     const result = await response.json()
 
     if (!response.ok) {
-      errorMessage.value =
-          result.message || 'Hiba történt az üzenet küldése közben.'
+      errorMessage.value = result.message || t.value.genericError || ''
       return
     }
 
     if (result.success) {
-      successMessage.value =
-          'Köszönjük! Az üzenet sikeresen elküldve.'
+      successMessage.value = t.value.successMessage || ''
 
       name.value = ''
       email.value = ''
       message.value = ''
     } else {
-      errorMessage.value =
-          result.message || 'Hiba történt az üzenet küldése közben.'
+      errorMessage.value = result.message || t.value.genericError || ''
     }
   } catch (error) {
     console.error(error)
-    errorMessage.value = 'Hiba történt az üzenet küldése közben.'
+    errorMessage.value = t.value.genericError || ''
   } finally {
     loading.value = false
   }
@@ -66,7 +67,8 @@ const sendForm = async () => {
 
   <!-- Background image -->
     <img
-        src="/studio_contact.jpg"
+        src="/images/studio_contact.jpg"
+        alt=""
         fetchpriority="high"
         class="absolute inset-0 w-full h-full object-cover opacity-40"
     />
@@ -83,42 +85,40 @@ const sendForm = async () => {
       <!-- LEFT COLUMN – FORM -->
       <div class="bg-neutral-900/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-neutral-800 font-body">
 
-        <p class="text-gray-300 mb-10 text-center text-lg">
-          Írj nekünk, és 48 órán belül válaszolunk.
-        </p>
+        <p class="text-gray-300 mb-10 text-center text-lg">{{ t.intro }}</p>
 
         <form @submit.prevent="sendForm" class="space-y-6">
 
           <div>
-            <label class="block mb-2 text-lg">Név</label>
+            <label class="block mb-2 text-lg">{{ t.nameLabel }}</label>
             <input
                 v-model="name"
                 type="text"
                 class="w-full py-3 px-4 rounded-lg bg-neutral-800 border border-neutral-700
                        focus:border-brand outline-none transition"
-                placeholder="Add meg a neved"
+                :placeholder="t.namePlaceholder"
             />
           </div>
 
           <div>
-            <label class="block mb-2 text-lg">Email</label>
+            <label class="block mb-2 text-lg">{{ t.emailLabel }}</label>
             <input
                 v-model="email"
                 type="email"
                 class="w-full py-3 px-4 rounded-lg bg-neutral-800 border border-neutral-700
                        focus:border-brand outline-none transition"
-                placeholder="email@cimed.hu"
+                :placeholder="t.emailPlaceholder"
             />
           </div>
 
           <div>
-            <label class="block mb-2 text-lg">Üzenet</label>
+            <label class="block mb-2 text-lg">{{ t.messageLabel }}</label>
             <textarea
                 v-model="message"
                 rows="5"
                 class="w-full py-3 px-4 rounded-lg bg-neutral-800 border border-neutral-700
                        focus:border-brand outline-none transition"
-                placeholder="Miben segíthetünk?"
+                :placeholder="t.messagePlaceholder"
             ></textarea>
           </div>
 
@@ -132,7 +132,7 @@ const sendForm = async () => {
          disabled:opacity-50 disabled:cursor-not-allowed"
             >
 
-              {{ loading ? 'KÜLDÉS...' : 'ÜZENET KÜLDÉSE' }}
+              {{ loading ? t.sending : t.send }}
             </button>
           </div>
           <p v-if="successMessage" class="text-green-400 text-center mt-4">
@@ -151,7 +151,7 @@ const sendForm = async () => {
         <!-- Contact Info -->
         <div class="bg-neutral-900/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-neutral-800 font-body">
 
-          <h3 class="text-white">ELÉRHETŐSÉGEK</h3>
+          <h3 class="text-white">{{ t.contactInfoTitle }}</h3>
 
           <!-- Cím -->
           <p class="text-lg mb-4">
@@ -161,7 +161,7 @@ const sendForm = async () => {
                 target="_blank"
                 class="text-gray-300 hover:text-white underline underline-offset-4"
             >
-              1131 Budapest, Dolmány utca 48
+              {{ t.address }}
             </a>
           </p>
 
@@ -178,7 +178,7 @@ const sendForm = async () => {
 
           <!-- Botlik Mátyás -->
           <p class="text-lg mb-2">
-            👤 <span class="text-gray-300">Botlik Mátyás</span>
+            👤 <span class="text-gray-300">{{ t.person1 }}</span>
           </p>
           <p class="text-lg mb-6">
             📞
@@ -192,7 +192,7 @@ const sendForm = async () => {
 
           <!-- Ivánfi Dániel -->
           <p class="text-lg mb-2">
-            👤 <span class="text-gray-300">Ivánfi Dániel</span>
+            👤 <span class="text-gray-300">{{ t.person2 }}</span>
           </p>
           <p class="text-lg">
             📞
@@ -210,11 +210,11 @@ const sendForm = async () => {
         <!-- Google Maps (LAST ELEMENT) -->
         <div class="rounded-2xl overflow-hidden shadow-2xl border border-neutral-800">
           <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2896.693391102049!2d19.09258127660756!3d47.54261397118405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dc80965ce77b%3A0xb28020a5eba2ae51!2sGrenma%20Studio!5e1!3m2!1sen!2hu!4v1782035847690!5m2!1sen!2hu"
+              :src="t.mapSrc"
               width="100%"
               height="350"
               style="border:0;"
-              allowfullscreen=""
+              allowfullscreen
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
           ></iframe>

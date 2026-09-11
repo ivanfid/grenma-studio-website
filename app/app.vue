@@ -1,15 +1,24 @@
 
 <script setup>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const isEN = computed(() => route.path.startsWith('/en'))
+
 useSeoMeta({
-  ogImage: 'https://grenmastudio.hu/og-image.jpg',
+  ogImage: 'https://grenmastudio.hu/images/og-image.jpg',
   ogUrl: 'https://grenmastudio.hu',
   ogType: 'website',
 
   twitterCard: 'summary_large_image',
-  twitterImage: 'https://grenmastudio.hu/og-image.jpg'
+  twitterImage: 'https://grenmastudio.hu/images/og-image.jpg'
 })
 
 useHead({
+  htmlAttrs: {
+    lang: computed(() => isEN.value ? 'en' : 'hu')
+  },
   link: [
     {
       rel: 'canonical',
