@@ -5,11 +5,23 @@ name: Publish content to live site
 # a szerkesztett szöveget is elküldve a hívásban. Kézzel is elindítható
 # (workflow_dispatch) — ilyenkor a repóban jelenleg lévő tartalommal buildel,
 # admin-adat nélkül (pl. csak kód-változás után újra akarod deploy-olni).
+#
+# A build eredményét NEM FTP-vel toljuk fel, és nem is hívjuk meg kívülről a
+# szerverünket — a tárhelyünk egy bot-elhárító réteggel mindkettőt blokkolja
+# (a GitHub Actions felől érkező FTP-írást ÉS a HTTP-kéréseket is, mert nem
+# néznek ki "valódi böngészőnek"). Ehelyett "pull" alapú deploy-t használunk:
+# becsomagoljuk a build-et egy GitHub Release-be, a szerveren pedig egy
+# cPanel Cron Job néhány percenként lefuttatja az admin/pull-deploy.php-t
+# HELYBEN (nem HTTP-n át) — ez így sosem ütközik a fenti korlátozásba, mert
+# nem jön kívülről semmilyen kérés a szerver felé.
 
 on:
   repository_dispatch:
     types: [content-publish]
   workflow_dispatch: {}
+
+permissions:
+  contents: write
 
 jobs:
   publish:
@@ -38,14 +50,14 @@ jobs:
       - name: Build
         run: npm run generate
 
-      - name: Deploy via FTP to tárhely.eu
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: .output/public/
-          server-dir: ./public_html/
-          # Sose törölje a szerveren azt, ami nincs a build kimenetében — ez
-          # védi a sendmail.php-t, gallery.php-t, admin/ mappát, .htaccess-t stb.
-          dangerous-clean-slate: false
+      - name: Package build as zip
+        run: cd .output/public && zip -r ../../public.zip . -x '.*'
+
+      - name: Publish build as a GitHub Release asset
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release delete live-build --yes --cleanup-tag || true
+          gh release create live-build public.zip \
+            --title "Live build" \
+            --notes "Automatikusan frissül minden közzétételkor — a szerveren futó cron job veszi fel innen néhány percen belül."
