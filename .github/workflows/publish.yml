@@ -45,7 +45,9 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: .output/public/
-          server-dir: ./public_html/
+          # A dedikált FTP-fiók eleve a public_html-be van zárva (chroot) —
+          # belépéskor már annak a tartalmát látja, nem kell rá külön belépni.
+          server-dir: ./
           # Sose törölje a szerveren azt, ami nincs a build kimenetében — ez
           # védi a sendmail.php-t, gallery.php-t, admin/ mappát, .htaccess-t stb.
           dangerous-clean-slate: false
