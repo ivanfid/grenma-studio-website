@@ -5,11 +5,21 @@ name: Publish content to live site
 # a szerkesztett szöveget is elküldve a hívásban. Kézzel is elindítható
 # (workflow_dispatch) — ilyenkor a repóban jelenleg lévő tartalommal buildel,
 # admin-adat nélkül (pl. csak kód-változás után újra akarod deploy-olni).
+#
+# A build eredményét NEM FTP-vel toljuk fel — a tárhelyünk valamiért blokkolja
+# a kívülről (GitHub Actions IP-ről) érkező FTP írási/mappa-létrehozási
+# műveleteket. Ehelyett "pull" alapú deploy-t használunk: becsomagoljuk a
+# build-et egy GitHub Release-be, majd egy kimenő HTTPS hívással szólunk a
+# szerverünknek (admin/pull-deploy.php), hogy MAGA töltse le és csomagolja ki —
+# ez a kérés-irány sosem ütközik a fenti korlátozásba.
 
 on:
   repository_dispatch:
     types: [content-publish]
   workflow_dispatch: {}
+
+permissions:
+  contents: write
 
 jobs:
   publish:
@@ -38,19 +48,25 @@ jobs:
       - name: Build
         run: npm run generate
 
-      - name: Deploy via FTP to tárhely.eu
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: .output/public/
-          # A dedikált FTP-fiók eleve a public_html-be van zárva (chroot) —
-          # belépéskor már annak a tartalmát látja, nem kell rá külön belépni.
-          server-dir: ./
-          # Sose törölje a szerveren azt, ami nincs a build kimenetében — ez
-          # védi a sendmail.php-t, gallery.php-t, admin/ mappát, .htaccess-t stb.
-          dangerous-clean-slate: false
-          # IDEIGLENES: részletes napló, hogy lássuk a nyers FTP parancs/válasz
-          # kommunikációt — ez segít kideríteni, mi okozza a mappa-létrehozási hibát.
-          log-level: verbose
+      - name: Package build as zip
+        run: cd .output/public && zip -r ../../public.zip . -x '.*'
+
+      - name: Publish build as a GitHub Release asset
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release delete live-build --yes --cleanup-tag || true
+          gh release create live-build public.zip \
+            --title "Live build" \
+            --notes "Automatikusan frissül minden közzétételkor — ezt tölti le a szerver."
+
+      - name: Tell the server to pull & deploy the new build
+        run: |
+          response=$(curl -s -w "\n%{http_code}" "https://grenmastudio.hu/admin/pull-deploy.php?token=${{ secrets.DEPLOY_TOKEN }}")
+          http_code=$(echo "$response" | tail -n1)
+          body=$(echo "$response" | sed '$d')
+          echo "Response ($http_code): $body"
+          if [ "$http_code" != "200" ]; then
+            echo "::error::A szerver nem tudta letölteni/kicsomagolni a build-et."
+            exit 1
+          fi
