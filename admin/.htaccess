@@ -1,0 +1,9 @@
+# Ne legyen közvetlenül letölthető a tartalom-adatbázis és a titkokat
+# tartalmazó config — ezeket csak a PHP szkriptek olvassák szerver-oldalon.
+<FilesMatch "\.(json)$">
+    Require all denied
+</FilesMatch>
+
+<Files "config.php">
+    Require all denied
+</Files>
