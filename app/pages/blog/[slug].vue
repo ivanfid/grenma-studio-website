@@ -1,0 +1,114 @@
+
+<script setup>
+const route = useRoute()
+const config = useRuntimeConfig()
+
+const post = useBlogPost(route.params.slug)
+
+if (!post) {
+  throw createError({ statusCode: 404, statusMessage: 'A bejegyzés nem található' })
+}
+
+useSeoMeta({
+  title: `${post.title} | Grenma Studio Blog`,
+  description: blogExcerpt(post).slice(0, 160),
+  ogImage: `https://grenmastudio.hu/${post.coverImage}`,
+  ogType: 'article'
+})
+
+function formatDate(iso) {
+  const [y, m, d] = iso.split('-')
+  return `${y}. ${m}. ${d}.`
+}
+
+const paragraphs = post.body.split('\n\n')
+</script>
+
+<template>
+
+  <!-- HERO WRAPPER -->
+  <div class="relative w-full h-[30vh] sm:h-[38vh] md:h-[50vh] min-h-[320px]">
+
+    <!-- HERO BACKGROUND -->
+    <div
+        class="relative w-full h-[30vh] sm:h-[38vh] md:h-[50vh] min-h-[320px]
+         bg-black bg-cover bg-center
+         lg:bg-[center_30%]
+         2xl:bg-[center_80%] 2xl:bg-fixed"
+        :style="{ backgroundImage: `url(${config.app.baseURL}${post.coverImage})` }"
+    ></div>
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="absolute inset-0 pointer-events-none opacity-60 micro-grid"></div>
+
+    <!-- CÍM A HERO-BAN -->
+    <div class="absolute inset-0 flex items-end">
+      <div class="w-full max-w-[900px] mx-auto px-6 pb-8 sm:pb-10 text-center">
+        <div class="inline-block bg-brand-dark/90 text-white text-xs font-prompt font-semibold tracking-wide px-3 py-1 rounded-full mb-4">
+          No. {{ post.number }}
+        </div>
+        <h1 class="!text-white !text-[32px] sm:!text-[40px] md:!text-[48px] !leading-tight !mb-0">
+          {{ post.title }}
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEHÉR BLOKK – CIKK -->
+  <div class="bg-white py-16 md:py-20">
+
+    <article class="px-6 max-w-[800px] mx-auto font-body">
+
+      <div class="text-neutral-500 text-sm mb-10 pb-6 border-b border-neutral-200 text-center">
+        {{ formatDate(post.date) }} &middot; {{ post.author }}
+      </div>
+
+      <p v-for="(paragraph, i) in paragraphs" :key="i">
+        {{ paragraph }}
+      </p>
+
+    </article>
+
+    <div class="px-6 max-w-[800px] mx-auto mt-10 text-center">
+      <NuxtLink
+          to="/blog"
+          class="inline-block text-brand hover:text-brand-dark font-prompt font-semibold tracking-wide transition"
+      >
+        ← Vissza a bloghoz
+      </NuxtLink>
+    </div>
+
+  </div>
+
+  <!-- ALSÓ PARALLAX + CTA -->
+  <section
+      class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh]
+         bg-black bg-cover bg-center
+         flex items-center justify-center
+         xl:bg-fixed"
+      :style="{ backgroundImage: `url(${config.app.baseURL}images/studio_main.jpg)` }"
+  >
+
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative z-10 text-center">
+      <NuxtLink
+          to="/contact"
+          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-prompt font-semibold
+           transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
+      >
+        KAPCSOLAT
+      </NuxtLink>
+    </div>
+
+  </section>
+
+</template>
+
+<style scoped>
+.micro-grid {
+  background-image:
+      linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: 5px 5px;
+}
+</style>

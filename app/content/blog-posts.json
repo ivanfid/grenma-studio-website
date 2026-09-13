@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "slug": "elindult-a-grenma-studio-blogja",
+      "number": 1,
+      "title": "Elindult a Grenma Studio blogja",
+      "coverImage": "images/studio_lounge.jpg",
+      "author": "Ivánfi Dániel",
+      "date": "2026-09-13",
+      "body": "Örömmel jelentjük be, hogy elindult a Grenma Studio blogja! Ezen a felületen ezentúl rendszeresen osztunk majd meg veletek híreket a stúdióból — új felszerelésekről, elkészült produkciókról, és mindenről, ami a mindennapi munkánkat érdekessé teszi.\n\nA cél, hogy ne csak a kész felvételeket halljátok, hanem egy kicsit bepillantást is nyerjetek abba, hogyan születnek ezek a produkciók — a felvételi trükköktől kezdve a stúdióban zajló élet apróságaiig.\n\nKövesd a blogot, hogy elsők között értesülj minden újdonságról!"
+    },
+    {
+      "slug": "uj-felszerelesek-erkeztek-a-studioba",
+      "number": 2,
+      "title": "Új felszerelések érkeztek a stúdióba",
+      "coverImage": "images/studio_1.jpg",
+      "author": "Botlik Mátyás",
+      "date": "2026-08-22",
+      "body": "Az elmúlt hónapban több új eszközzel is bővült a stúdió felszereltsége, hogy még szélesebb hangzásvilágot tudjunk kínálni a hozzánk érkező zenészeknek és előadóknak.\n\nAz új előfokok és mikrofonok révén még árnyaltabb, melegebb hangzást tudunk elérni akusztikus felvételeknél, a bővített monitor-parkkal pedig a keverési munkafolyamat lett pontosabb és megbízhatóbb.\n\nHa kíváncsi vagy, pontosan milyen eszközökkel dolgozunk, nézz be a Stúdió oldalunkra a részletes listáért — vagy gyere el személyesen, és nézd meg élőben!"
+    },
+    {
+      "slug": "5-tipp-a-legjobb-hangzasert-a-felvetel-soran",
+      "number": 3,
+      "title": "5 tipp a legjobb hangzásért a felvétel során",
+      "coverImage": "images/studio_studio_middle.jpg",
+      "author": "Botlik Mátyás",
+      "date": "2026-07-05",
+      "body": "Sokan kérdezik, mit tehetnek ők maguk azért, hogy egy stúdiós felvétel a lehető legjobban sikerüljön. Íme néhány gyakorlati tanács, amit érdemes megfogadni felvétel előtt.\n\nElőször is: pihenten és bemelegítve érkezz. Egy fáradt hangszálakkal vagy ujjakkal felvett sáv sosem fogja ugyanazt a energiát átadni, mint egy felkészült, pihent előadásé.\n\nMásodszor: ne félj több variációt is felvenni ugyanabból a részből — a stúdióban pont ez a luxus adott, hogy válogathatunk a legjobb pillanatok közül.\n\nHarmadszor: bízz a folyamatban, és hallgass a stúdiós csapatra — évek tapasztalata áll amögött, amit javaslunk.\n\nNegyedszer: igyál sok vizet, kerüld a tejtermékeket felvétel előtt, ha énekelsz — apróságnak tűnik, de sokat számít.\n\nÖtödször pedig: élvezd a folyamatot! A legjobb felvételek mindig azok, amikben benne van az alkotás öröme is."
+    }
+  ]
+}

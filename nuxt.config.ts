@@ -48,6 +48,16 @@ export default defineNuxtConfig({
     'photoswipe/style.css'
   ],
 
+  nitro: {
+    prerender: {
+      // A sitemap.xml egy szerver route (app/server/routes/sitemap.xml.ts),
+      // amire semmilyen oldal nem linkel — a crawler magától nem találná meg,
+      // ezért explicit ki kell jelölni, hogy a `nuxt generate` statikus
+      // fájlként is legenerálja.
+      routes: ['/sitemap.xml']
+    }
+  },
+
   /*nitro: {
     preset: 'github-pages' // <-- Ez teszi statikussá a buildet
   },*/
@@ -73,8 +83,9 @@ export default defineNuxtConfig({
     // kattintásos navigáció és az aktív-link kiemelés is helyesen működik — az oldalak
     // saját `route.path`-alapú HU/EN logikája (lásd `useSiteContent`) változatlan marad.
     'pages:extend'(pages) {
+      // A blog egyelőre csak magyar nyelvű — nem kap /en/blog... duplikátumot.
       const enPages = pages
-        .filter(page => !page.path.startsWith('/en'))
+        .filter(page => !page.path.startsWith('/en') && !page.path.startsWith('/blog'))
         .map(page => ({
           name: `en-${page.name ?? page.path.replace(/\//g, '') ?? 'index'}`,
           path: page.path === '/' ? '/en' : `/en${page.path}`,
