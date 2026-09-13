@@ -67,10 +67,12 @@ p {
 }
 
 /* Two-line H2 structure */
+h1 span:first-child,
 h3 span:first-child {
   @apply block font-normal;
 }
 
+h1 span:last-child,
 h3 span:last-child {
   @apply block mt-2 font-bold;
 }

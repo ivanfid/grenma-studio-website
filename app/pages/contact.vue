@@ -12,6 +12,8 @@ useSeoMeta({
   description: computed(() => t.value.seoDescription)
 })
 
+const pageTitle = computed(() => isEN.value ? 'Contact' : 'Kapcsolat')
+
 const name = ref('')
 const email = ref('')
 const message = ref('')
@@ -63,6 +65,8 @@ const sendForm = async () => {
 </script>
 
 <template>
+  <h1 class="sr-only">{{ pageTitle }}</h1>
+
   <section class="relative min-h-screen bg-black text-white px-4 pt-24 md:pt-40 pb-20">
 
   <!-- Background image -->

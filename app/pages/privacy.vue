@@ -5,7 +5,7 @@
 
       <div class="max-w-4xl">
 
-        <h2 class="text-3xl md:text-3xl font-bold mb-6">{{ t.heading }}</h2>
+        <h1 class="!text-3xl md:!text-4xl lg:!text-5xl !font-bold !normal-case !tracking-normal !mb-6">{{ t.heading }}</h1>
 
         <div class="w-24 h-px bg-[#b02c07] mb-10"></div>
 

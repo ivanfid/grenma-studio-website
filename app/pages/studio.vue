@@ -19,6 +19,7 @@ const toggle = (panel) => {
 }
 
 const config = useRuntimeConfig()
+const pageTitle = computed(() => isEN.value ? 'Studio' : 'Stúdió')
 const studioA = `${config.app.baseURL}images/studio_a.jpg`
 const studioB = `${config.app.baseURL}images/studio_b.jpg`
 const studioF = `${config.app.baseURL}images/studio_f.jpg`
@@ -93,6 +94,8 @@ onMounted(async () => {
 </script>
 
 <template>
+
+  <h1 class="sr-only">{{ pageTitle }}</h1>
 
   <!-- HERO WRAPPER -->
   <div class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] min-h-[300px]">
