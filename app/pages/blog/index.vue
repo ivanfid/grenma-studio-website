@@ -21,10 +21,12 @@ useSeoMeta({
 
 const t = computed(() => isEN.value ? {
   earlierPosts: 'Earlier posts',
-  readMore: 'Read more →'
+  readMore: 'Read more →',
+  cta: 'CONTACT'
 } : {
   earlierPosts: 'Korábbi bejegyzések',
-  readMore: 'Tovább olvasom →'
+  readMore: 'Tovább olvasom →',
+  cta: 'KAPCSOLAT'
 })
 
 function formatDate(iso) {
@@ -115,6 +117,29 @@ function postLink(slug) {
     </section>
 
   </div>
+
+  <!-- ALSÓ PARALLAX + CTA -->
+  <section
+      class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh]
+         bg-black bg-cover bg-center
+         flex items-center justify-center
+         xl:bg-fixed"
+      :style="{ backgroundImage: `url(${config.app.baseURL}images/studio_main.jpg)` }"
+  >
+
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative z-10 text-center">
+      <NuxtLink
+          :to="isEN ? '/en/contact' : '/contact'"
+          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-prompt font-semibold
+           transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
+      >
+        {{ t.cta }}
+      </NuxtLink>
+    </div>
+
+  </section>
 
 </template>
 
