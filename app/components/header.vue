@@ -19,9 +19,6 @@ const isHU = computed(() => !route.path.startsWith("/en"))
 // --- LANGUAGE SWITCHER ---
 const toEN = computed(() => {
   if (route.path.startsWith("/en")) return route.path
-  // A blog egyelőre csak magyar nyelvű, nincs neki /en/blog megfelelője —
-  // ilyenkor az angol főoldalra visz a váltás, nem egy nem létező oldalra.
-  if (route.path === "/blog" || route.path.startsWith("/blog/")) return "/en"
   if (route.path === "/") return "/en"
   return `/en${route.path}`
 })
@@ -40,8 +37,7 @@ const aboutLink = computed(() => isEN.value ? "/en/about" : "/about")
 const studioLink = computed(() => isEN.value ? "/en/studio" : "/studio")
 const referencesLink = computed(() => isEN.value ? "/en/references" : "/references")
 const pricingLink = computed(() => isEN.value ? "/en/pricing" : "/pricing")
-// A blog egyelőre csak magyar nyelvű, nincs /en/blog verziója.
-const blogLink = "/blog"
+const blogLink = computed(() => isEN.value ? "/en/blog" : "/blog")
 const contactLink = computed(() => isEN.value ? "/en/contact" : "/contact")
 
 // --- MENU LABELS ---

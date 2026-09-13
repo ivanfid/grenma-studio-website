@@ -1,12 +1,17 @@
 
 <script setup>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
 const route = useRoute()
 const config = useRuntimeConfig()
+const isEN = computed(() => route.path.startsWith('/en'))
+const lang = computed(() => isEN.value ? 'en' : 'hu')
 
-const post = useBlogPost(route.params.slug)
+const post = useBlogPost(route.params.slug, lang.value)
 
 if (!post) {
-  throw createError({ statusCode: 404, statusMessage: 'A bejegyzés nem található' })
+  throw createError({ statusCode: 404, statusMessage: isEN.value ? 'Post not found' : 'A bejegyzés nem található' })
 }
 
 useSeoMeta({
@@ -22,6 +27,14 @@ function formatDate(iso) {
 }
 
 const paragraphs = post.body.split('\n\n')
+
+const t = computed(() => isEN.value ? {
+  back: '← Back to the blog',
+  cta: 'CONTACT'
+} : {
+  back: '← Vissza a bloghoz',
+  cta: 'KAPCSOLAT'
+})
 </script>
 
 <template>
@@ -70,10 +83,10 @@ const paragraphs = post.body.split('\n\n')
 
     <div class="px-6 max-w-[800px] mx-auto mt-10 text-center">
       <NuxtLink
-          to="/blog"
+          :to="isEN ? '/en/blog' : '/blog'"
           class="inline-block text-brand hover:text-brand-dark font-prompt font-semibold tracking-wide transition"
       >
-        ← Vissza a bloghoz
+        {{ t.back }}
       </NuxtLink>
     </div>
 
@@ -92,11 +105,11 @@ const paragraphs = post.body.split('\n\n')
 
     <div class="relative z-10 text-center">
       <NuxtLink
-          to="/contact"
+          :to="isEN ? '/en/contact' : '/contact'"
           class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-prompt font-semibold
            transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
       >
-        KAPCSOLAT
+        {{ t.cta }}
       </NuxtLink>
     </div>
 

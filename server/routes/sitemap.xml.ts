@@ -22,15 +22,15 @@ const staticPages = [
   '/en/studio',
   '/en/references',
   '/en/pricing',
+  '/en/blog',
   '/en/contact',
   '/privacy',
   '/en/privacy',
 ]
 
 export default defineEventHandler(event => {
-  const blogPaths = (blogData as { posts: { slug: string }[] }).posts.map(
-    p => `/blog/${p.slug}`
-  )
+  const slugs = (blogData as { posts: { slug: string }[] }).posts.map(p => p.slug)
+  const blogPaths = slugs.flatMap(slug => [`/blog/${slug}`, `/en/blog/${slug}`])
 
   const urls = [...staticPages, ...blogPaths]
     .map(path => {

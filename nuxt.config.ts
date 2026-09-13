@@ -83,9 +83,8 @@ export default defineNuxtConfig({
     // kattintásos navigáció és az aktív-link kiemelés is helyesen működik — az oldalak
     // saját `route.path`-alapú HU/EN logikája (lásd `useSiteContent`) változatlan marad.
     'pages:extend'(pages) {
-      // A blog egyelőre csak magyar nyelvű — nem kap /en/blog... duplikátumot.
       const enPages = pages
-        .filter(page => !page.path.startsWith('/en') && !page.path.startsWith('/blog'))
+        .filter(page => !page.path.startsWith('/en'))
         .map(page => ({
           name: `en-${page.name ?? page.path.replace(/\//g, '') ?? 'index'}`,
           path: page.path === '/' ? '/en' : `/en${page.path}`,

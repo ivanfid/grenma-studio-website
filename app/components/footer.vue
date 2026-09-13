@@ -10,7 +10,7 @@ const aboutLink = computed(() => isEN.value ? '/en/about' : '/about')
 const studioLink = computed(() => isEN.value ? '/en/studio' : '/studio')
 const referencesLink = computed(() => isEN.value ? '/en/references' : '/references')
 const pricingLink = computed(() => isEN.value ? '/en/pricing' : '/pricing')
-const blogLink = '/blog'
+const blogLink = computed(() => isEN.value ? '/en/blog' : '/blog')
 const contactLink = computed(() => isEN.value ? '/en/contact' : '/contact')
 </script>
 <template>

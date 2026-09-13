@@ -3,29 +3,47 @@
     {
       "slug": "elindult-a-grenma-studio-blogja",
       "number": 1,
-      "title": "Elindult a Grenma Studio blogja",
       "coverImage": "images/studio_lounge.jpg",
       "author": "Ivánfi Dániel",
       "date": "2026-09-13",
-      "body": "Örömmel jelentjük be, hogy elindult a Grenma Studio blogja! Ezen a felületen ezentúl rendszeresen osztunk majd meg veletek híreket a stúdióból — új felszerelésekről, elkészült produkciókról, és mindenről, ami a mindennapi munkánkat érdekessé teszi.\n\nA cél, hogy ne csak a kész felvételeket halljátok, hanem egy kicsit bepillantást is nyerjetek abba, hogyan születnek ezek a produkciók — a felvételi trükköktől kezdve a stúdióban zajló élet apróságaiig.\n\nKövesd a blogot, hogy elsők között értesülj minden újdonságról!"
+      "hu": {
+        "title": "Elindult a Grenma Studio blogja",
+        "body": "Örömmel jelentjük be, hogy elindult a Grenma Studio blogja! Ezen a felületen ezentúl rendszeresen osztunk majd meg veletek híreket a stúdióból — új felszerelésekről, elkészült produkciókról, és mindenről, ami a mindennapi munkánkat érdekessé teszi.\n\nA cél, hogy ne csak a kész felvételeket halljátok, hanem egy kicsit bepillantást is nyerjetek abba, hogyan születnek ezek a produkciók — a felvételi trükköktől kezdve a stúdióban zajló élet apróságaiig.\n\nKövesd a blogot, hogy elsők között értesülj minden újdonságról!"
+      },
+      "en": {
+        "title": "The Grenma Studio blog has launched",
+        "body": "We're happy to announce that the Grenma Studio blog has launched! From now on, we'll be sharing news from the studio here regularly — new gear, finished productions, and everything that makes our everyday work interesting.\n\nThe goal is to let you in on more than just the finished recordings — to give you a glimpse into how these productions come together, from recording tricks to the small everyday moments of studio life.\n\nFollow the blog to be among the first to hear about every update!"
+      }
     },
     {
       "slug": "uj-felszerelesek-erkeztek-a-studioba",
       "number": 2,
-      "title": "Új felszerelések érkeztek a stúdióba",
       "coverImage": "images/studio_1.jpg",
       "author": "Botlik Mátyás",
       "date": "2026-08-22",
-      "body": "Az elmúlt hónapban több új eszközzel is bővült a stúdió felszereltsége, hogy még szélesebb hangzásvilágot tudjunk kínálni a hozzánk érkező zenészeknek és előadóknak.\n\nAz új előfokok és mikrofonok révén még árnyaltabb, melegebb hangzást tudunk elérni akusztikus felvételeknél, a bővített monitor-parkkal pedig a keverési munkafolyamat lett pontosabb és megbízhatóbb.\n\nHa kíváncsi vagy, pontosan milyen eszközökkel dolgozunk, nézz be a Stúdió oldalunkra a részletes listáért — vagy gyere el személyesen, és nézd meg élőben!"
+      "hu": {
+        "title": "Új felszerelések érkeztek a stúdióba",
+        "body": "Az elmúlt hónapban több új eszközzel is bővült a stúdió felszereltsége, hogy még szélesebb hangzásvilágot tudjunk kínálni a hozzánk érkező zenészeknek és előadóknak.\n\nAz új előfokok és mikrofonok révén még árnyaltabb, melegebb hangzást tudunk elérni akusztikus felvételeknél, a bővített monitor-parkkal pedig a keverési munkafolyamat lett pontosabb és megbízhatóbb.\n\nHa kíváncsi vagy, pontosan milyen eszközökkel dolgozunk, nézz be a Stúdió oldalunkra a részletes listáért — vagy gyere el személyesen, és nézd meg élőben!"
+      },
+      "en": {
+        "title": "New gear has arrived at the studio",
+        "body": "Over the past month, the studio's equipment has grown with several new pieces of gear, so we can offer an even wider sound palette to the musicians and performers who record with us.\n\nThe new preamps and microphones let us capture an even warmer, more nuanced sound on acoustic recordings, and the expanded monitor lineup has made the mixing workflow more precise and reliable.\n\nIf you're curious exactly what gear we work with, check out our Studio page for the full list — or come by in person and see it live!"
+      }
     },
     {
       "slug": "5-tipp-a-legjobb-hangzasert-a-felvetel-soran",
       "number": 3,
-      "title": "5 tipp a legjobb hangzásért a felvétel során",
       "coverImage": "images/studio_studio_middle.jpg",
       "author": "Botlik Mátyás",
       "date": "2026-07-05",
-      "body": "Sokan kérdezik, mit tehetnek ők maguk azért, hogy egy stúdiós felvétel a lehető legjobban sikerüljön. Íme néhány gyakorlati tanács, amit érdemes megfogadni felvétel előtt.\n\nElőször is: pihenten és bemelegítve érkezz. Egy fáradt hangszálakkal vagy ujjakkal felvett sáv sosem fogja ugyanazt a energiát átadni, mint egy felkészült, pihent előadásé.\n\nMásodszor: ne félj több variációt is felvenni ugyanabból a részből — a stúdióban pont ez a luxus adott, hogy válogathatunk a legjobb pillanatok közül.\n\nHarmadszor: bízz a folyamatban, és hallgass a stúdiós csapatra — évek tapasztalata áll amögött, amit javaslunk.\n\nNegyedszer: igyál sok vizet, kerüld a tejtermékeket felvétel előtt, ha énekelsz — apróságnak tűnik, de sokat számít.\n\nÖtödször pedig: élvezd a folyamatot! A legjobb felvételek mindig azok, amikben benne van az alkotás öröme is."
+      "hu": {
+        "title": "5 tipp a legjobb hangzásért a felvétel során",
+        "body": "Sokan kérdezik, mit tehetnek ők maguk azért, hogy egy stúdiós felvétel a lehető legjobban sikerüljön. Íme néhány gyakorlati tanács, amit érdemes megfogadni felvétel előtt.\n\nElőször is: pihenten és bemelegítve érkezz. Egy fáradt hangszálakkal vagy ujjakkal felvett sáv sosem fogja ugyanazt a energiát átadni, mint egy felkészült, pihent előadásé.\n\nMásodszor: ne félj több variációt is felvenni ugyanabból a részből — a stúdióban pont ez a luxus adott, hogy válogathatunk a legjobb pillanatok közül.\n\nHarmadszor: bízz a folyamatban, és hallgass a stúdiós csapatra — évek tapasztalata áll amögött, amit javaslunk.\n\nNegyedszer: igyál sok vizet, kerüld a tejtermékeket felvétel előtt, ha énekelsz — apróságnak tűnik, de sokat számít.\n\nÖtödször pedig: élvezd a folyamatot! A legjobb felvételek mindig azok, amikben benne van az alkotás öröme is."
+      },
+      "en": {
+        "title": "5 tips for the best sound during your recording session",
+        "body": "Many people ask what they themselves can do to make a studio recording turn out as well as possible. Here are a few practical tips worth following before a session.\n\nFirst: arrive rested and warmed up. A track recorded with tired vocal cords or fingers will never carry the same energy as a well-prepared, rested performance.\n\nSecond: don't be afraid to record several takes of the same part — that's exactly the luxury the studio gives you, being able to pick the best moments afterward.\n\nThird: trust the process, and listen to the studio team — years of experience stand behind what we suggest.\n\nFourth: drink plenty of water, and avoid dairy before recording if you're singing — it sounds small, but it makes a real difference.\n\nAnd fifth: enjoy the process! The best recordings are always the ones that carry the joy of creating something.\n"
+      }
     }
   ]
 }

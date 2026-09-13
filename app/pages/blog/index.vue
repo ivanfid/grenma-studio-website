@@ -1,16 +1,41 @@
 
 <script setup>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 const config = useRuntimeConfig()
-const posts = useBlogPosts()
+const isEN = computed(() => route.path.startsWith('/en'))
+const lang = computed(() => isEN.value ? 'en' : 'hu')
+
+const posts = computed(() => useBlogPosts(lang.value))
+const featured = computed(() => posts.value[0])
+const older = computed(() => posts.value.slice(1))
 
 useSeoMeta({
-  title: 'Blog | Grenma Studio',
-  description: 'Hírek, tippek és sztorik a Grenma Studióból.'
+  title: computed(() => isEN.value ? 'Blog | Grenma Studio' : 'Blog | Grenma Studio'),
+  description: computed(() => isEN.value
+      ? 'News, tips and stories from the Grenma Studio.'
+      : 'Hírek, tippek és sztorik a Grenma Studióból.')
+})
+
+const t = computed(() => isEN.value ? {
+  intro: 'News, tips and stories from the Grenma Studio.',
+  earlierPosts: 'Earlier posts',
+  readMore: 'Read more →'
+} : {
+  intro: 'Hírek, tippek és sztorik a Grenma Studióból.',
+  earlierPosts: 'Korábbi bejegyzések',
+  readMore: 'Tovább olvasom →'
 })
 
 function formatDate(iso) {
   const [y, m, d] = iso.split('-')
   return `${y}. ${m}. ${d}.`
+}
+
+function postLink(slug) {
+  return isEN.value ? `/en/blog/${slug}` : `/blog/${slug}`
 }
 </script>
 
@@ -35,48 +60,66 @@ function formatDate(iso) {
   <!-- FEHÉR BLOKK – BEJEGYZÉSEK -->
   <div class="bg-white py-16 md:py-20">
 
-    <section class="px-6 max-w-[1200px] mx-auto text-center mb-14 font-body">
+    <section class="px-6 max-w-[900px] mx-auto text-center mb-14 font-body">
       <p class="text-lg max-w-3xl mx-auto text-center">
-        Hírek, tippek és sztorik a Grenma Studióból.
+        {{ t.intro }}
       </p>
     </section>
 
-    <section class="px-6 max-w-[1200px] mx-auto">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+    <!-- LEGFRISSEBB BEJEGYZÉS – TELJES -->
+    <article v-if="featured" class="px-6 max-w-[800px] mx-auto font-body">
 
-        <NuxtLink
-            v-for="post in posts"
-            :key="post.slug"
-            :to="`/blog/${post.slug}`"
-            class="group block rounded-xl overflow-hidden border border-neutral-200 shadow-sm hover:shadow-lg transition-shadow duration-300"
-        >
-          <div class="relative h-52 overflow-hidden">
-            <img
-                :src="`${config.app.baseURL}${post.coverImage}`"
-                :alt="post.title"
-                class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-            />
-            <div class="absolute top-3 left-3 bg-brand-dark/90 text-white text-xs font-prompt font-semibold tracking-wide px-3 py-1 rounded-full">
-              No. {{ post.number }}
-            </div>
-          </div>
-
-          <div class="p-6">
-            <h3 class="!text-xl !mb-2 !leading-tight group-hover:text-brand transition-colors">
-              {{ post.title }}
-            </h3>
-
-            <div class="text-sm text-neutral-500 mb-3 font-body">
-              {{ formatDate(post.date) }} &middot; {{ post.author }}
-            </div>
-
-            <p class="!text-base !mb-0 !text-neutral-600 line-clamp-3">
-              {{ blogExcerpt(post) }}
-            </p>
-          </div>
-        </NuxtLink>
-
+      <div class="flex flex-wrap items-center justify-center gap-4 mb-6 text-center">
+        <h1 class="!mb-0">{{ featured.title }}</h1>
+        <span class="inline-block bg-brand-dark text-white text-sm font-prompt font-semibold tracking-wide px-3 py-1 rounded-full whitespace-nowrap">
+          No. {{ featured.number }}
+        </span>
       </div>
+
+      <div class="rounded-xl overflow-hidden mb-8">
+        <img
+            :src="`${config.app.baseURL}${featured.coverImage}`"
+            :alt="featured.title"
+            class="w-full h-auto object-cover"
+        />
+      </div>
+
+      <p v-for="(paragraph, i) in featured.body.split('\n\n')" :key="i">
+        {{ paragraph }}
+      </p>
+
+      <NuxtLink
+          :to="postLink(featured.slug)"
+          class="block text-neutral-500 hover:text-brand text-sm mt-8 pt-6 border-t border-neutral-200 text-center transition-colors"
+      >
+        {{ formatDate(featured.date) }} &middot; {{ featured.author }}
+      </NuxtLink>
+
+    </article>
+
+    <!-- KORÁBBI BEJEGYZÉSEK – LISTA -->
+    <section v-if="older.length" class="px-6 max-w-[800px] mx-auto mt-20">
+
+      <div class="max-w-[800px] mx-auto h-[2px] bg-[#851707]/50 mb-12"></div>
+
+      <h2 class="!text-2xl">{{ t.earlierPosts }}</h2>
+
+      <ul class="space-y-6 font-body">
+        <li v-for="post in older" :key="post.slug">
+          <NuxtLink :to="postLink(post.slug)" class="group block">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h3 class="!text-xl !mb-0 !normal-case group-hover:text-brand transition-colors">
+                {{ post.title }}
+              </h3>
+              <span class="text-sm text-neutral-500 whitespace-nowrap">{{ formatDate(post.date) }}</span>
+            </div>
+            <p class="!mb-0 !mt-1 text-neutral-500 text-sm">
+              {{ t.readMore }}
+            </p>
+          </NuxtLink>
+        </li>
+      </ul>
+
     </section>
 
   </div>
@@ -89,12 +132,5 @@ function formatDate(iso) {
       linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
       linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
   background-size: 5px 5px;
-}
-
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 </style>
