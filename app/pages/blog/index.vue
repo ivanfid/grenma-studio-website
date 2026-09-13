@@ -108,7 +108,7 @@ function postLink(slug) {
         <li v-for="post in older" :key="post.slug">
           <NuxtLink :to="postLink(post.slug)" class="group block">
             <div class="flex flex-wrap items-baseline justify-between gap-2">
-              <h3 class="!text-xl !mb-0 !normal-case group-hover:text-brand transition-colors">
+              <h3 class="!font-body !text-xl !font-bold !mb-0 !normal-case !tracking-normal group-hover:text-brand transition-colors">
                 {{ post.title }}
               </h3>
               <span class="text-sm text-neutral-500 whitespace-nowrap">{{ formatDate(post.date) }}</span>

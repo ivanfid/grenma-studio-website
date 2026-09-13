@@ -39,31 +39,19 @@ const t = computed(() => isEN.value ? {
 
 <template>
 
-  <!-- HERO WRAPPER -->
-  <div class="relative w-full h-[30vh] sm:h-[38vh] md:h-[50vh] min-h-[320px]">
+  <!-- HERO WRAPPER (általános, nem cikkenként cserélődő kép) -->
+  <div class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] min-h-[300px]">
 
     <!-- HERO BACKGROUND -->
     <div
-        class="relative w-full h-[30vh] sm:h-[38vh] md:h-[50vh] min-h-[320px]
+        class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] min-h-[300px]
          bg-black bg-cover bg-center
          lg:bg-[center_30%]
          2xl:bg-[center_80%] 2xl:bg-fixed"
-        :style="{ backgroundImage: `url(${config.app.baseURL}${post.coverImage})` }"
+        :style="{ backgroundImage: `url(${config.app.baseURL}images/studio_lounge.jpg)` }"
     ></div>
     <div class="absolute inset-0 bg-black/60"></div>
     <div class="absolute inset-0 pointer-events-none opacity-60 micro-grid"></div>
-
-    <!-- CÍM A HERO-BAN -->
-    <div class="absolute inset-0 flex items-end">
-      <div class="w-full max-w-[900px] mx-auto px-6 pb-8 sm:pb-10 text-center">
-        <div class="inline-block bg-brand-dark/90 text-white text-xs font-prompt font-semibold tracking-wide px-3 py-1 rounded-full mb-4">
-          No. {{ post.number }}
-        </div>
-        <h1 class="!text-white !text-[32px] sm:!text-[40px] md:!text-[48px] !leading-tight !mb-0">
-          {{ post.title }}
-        </h1>
-      </div>
-    </div>
   </div>
 
   <!-- FEHÉR BLOKK – CIKK -->
@@ -71,13 +59,29 @@ const t = computed(() => isEN.value ? {
 
     <article class="px-6 max-w-[800px] mx-auto font-body">
 
-      <div class="text-neutral-500 text-sm mb-10 pb-6 border-b border-neutral-200 text-center">
-        {{ formatDate(post.date) }} &middot; {{ post.author }}
+      <div class="flex flex-wrap items-center justify-center gap-4 mb-6 text-center">
+        <h1 class="!mb-0">{{ post.title }}</h1>
+        <span class="inline-block bg-brand-dark text-white text-sm font-prompt font-semibold tracking-wide px-3 py-1 rounded-full whitespace-nowrap">
+          No. {{ post.number }}
+        </span>
+      </div>
+
+      <!-- A CIKK SAJÁT KÉPE — itt, a szövegben, nem hero-ként -->
+      <div class="rounded-xl overflow-hidden mb-8">
+        <img
+            :src="`${config.app.baseURL}${post.coverImage}`"
+            :alt="post.title"
+            class="w-full h-auto object-cover"
+        />
       </div>
 
       <p v-for="(paragraph, i) in paragraphs" :key="i">
         {{ paragraph }}
       </p>
+
+      <div class="text-neutral-500 text-sm mt-8 pt-6 border-t border-neutral-200 text-center">
+        {{ formatDate(post.date) }} &middot; {{ post.author }}
+      </div>
 
     </article>
 
