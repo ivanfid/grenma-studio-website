@@ -29,10 +29,10 @@ function formatDate(iso) {
 const paragraphs = post.body.split('\n\n')
 
 const t = computed(() => isEN.value ? {
-  back: '← Back to the blog',
+  back: '← Back to the blog homepage',
   cta: 'CONTACT'
 } : {
-  back: '← Vissza a bloghoz',
+  back: '← Vissza a blog főoldalára',
   cta: 'KAPCSOLAT'
 })
 </script>
