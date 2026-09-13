@@ -20,11 +20,9 @@ useSeoMeta({
 })
 
 const t = computed(() => isEN.value ? {
-  intro: 'News, tips and stories from the Grenma Studio.',
   earlierPosts: 'Earlier posts',
   readMore: 'Read more →'
 } : {
-  intro: 'Hírek, tippek és sztorik a Grenma Studióból.',
   earlierPosts: 'Korábbi bejegyzések',
   readMore: 'Tovább olvasom →'
 })
@@ -60,17 +58,11 @@ function postLink(slug) {
   <!-- FEHÉR BLOKK – BEJEGYZÉSEK -->
   <div class="bg-white py-16 md:py-20">
 
-    <section class="px-6 max-w-[900px] mx-auto text-center mb-14 font-body">
-      <p class="text-lg max-w-3xl mx-auto text-center">
-        {{ t.intro }}
-      </p>
-    </section>
-
     <!-- LEGFRISSEBB BEJEGYZÉS – TELJES -->
     <article v-if="featured" class="px-6 max-w-[800px] mx-auto font-body">
 
       <div class="flex flex-wrap items-center justify-center gap-4 mb-6 text-center">
-        <h1 class="!mb-0">{{ featured.title }}</h1>
+        <h3 class="!mb-0">{{ featured.title }}</h3>
         <span class="inline-block bg-brand-dark text-white text-sm font-prompt font-semibold tracking-wide px-3 py-1 rounded-full whitespace-nowrap">
           No. {{ featured.number }}
         </span>
