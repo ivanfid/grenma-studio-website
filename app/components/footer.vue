@@ -10,6 +10,7 @@ const aboutLink = computed(() => isEN.value ? '/en/about' : '/about')
 const studioLink = computed(() => isEN.value ? '/en/studio' : '/studio')
 const referencesLink = computed(() => isEN.value ? '/en/references' : '/references')
 const pricingLink = computed(() => isEN.value ? '/en/pricing' : '/pricing')
+const blogLink = computed(() => isEN.value ? '/en/blog' : '/blog')
 const contactLink = computed(() => isEN.value ? '/en/contact' : '/contact')
 </script>
 <template>
@@ -76,6 +77,12 @@ const contactLink = computed(() => isEN.value ? '/en/contact' : '/contact')
             <li>
               <NuxtLink :to="pricingLink" class="text-white/80 hover:text-white">
                 {{ isEN ? 'Pricing' : 'Árak' }}
+              </NuxtLink>
+            </li>
+
+            <li>
+              <NuxtLink :to="blogLink" class="text-white/80 hover:text-white">
+                Blog
               </NuxtLink>
             </li>
 

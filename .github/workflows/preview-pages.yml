@@ -1,0 +1,53 @@
+name: Deploy feature/blog preview to GitHub Pages
+
+# Ideiglenes preview-deploy KIZÁRÓLAG a feature/blog branch-ről, GitHub Pages-re —
+# nem érinti a main branch-et és nem érinti az éles (tárhely.eu) oldalt. A cél,
+# hogy a feature branch-en dolgozva legyen egy megosztható, élő teszt-URL, mielőtt
+# bármi mergelődne a main-be. A base URL a GitHub Pages alkönyvtárához (repo név)
+# igazodik, futásidőben, a nuxt.config.ts módosítása nélkül (NUXT_APP_BASE_URL env).
+
+on:
+  push:
+    branches:
+      - feature/blog
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build (GitHub Pages base URL-lel)
+        env:
+          NUXT_APP_BASE_URL: /grenma-studio-website/
+        run: npm run generate
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .output/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

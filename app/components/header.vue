@@ -37,6 +37,7 @@ const aboutLink = computed(() => isEN.value ? "/en/about" : "/about")
 const studioLink = computed(() => isEN.value ? "/en/studio" : "/studio")
 const referencesLink = computed(() => isEN.value ? "/en/references" : "/references")
 const pricingLink = computed(() => isEN.value ? "/en/pricing" : "/pricing")
+const blogLink = computed(() => isEN.value ? "/en/blog" : "/blog")
 const contactLink = computed(() => isEN.value ? "/en/contact" : "/contact")
 
 // --- MENU LABELS ---
@@ -45,6 +46,7 @@ const labels = computed(() => ({
   studio: isEN.value ? "STUDIO" : "STÚDIÓ",
   references: isEN.value ? "REFERENCES" : "REFERENCIÁK",
   pricing: isEN.value ? "PRICING" : "ÁRAK",
+  blog: "BLOG",
   contact: isEN.value ? "CONTACT" : "KAPCSOLAT"
 }))
 </script>
@@ -74,9 +76,9 @@ const labels = computed(() => ({
 
 
       <!-- DESKTOP MENU -->
-      <div class="hidden md:flex items-center gap-10">
+      <div class="hidden md:flex items-center gap-6 lg:gap-8">
 
-        <ul class="flex items-center gap-8 text-lg">
+        <ul class="flex items-center gap-5 lg:gap-6 text-base lg:text-lg">
 
           <!-- ABOUT -->
           <li>
@@ -135,6 +137,21 @@ const labels = computed(() => ({
               ]"
             >
               {{ labels.pricing }}
+            </NuxtLink>
+          </li>
+
+          <!-- BLOG -->
+          <li>
+            <NuxtLink
+                :to="blogLink"
+                :class="[
+                'relative transition text-white hover:text-brand',
+                'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0',
+                'after:bg-brand after:transition-all after:duration-300 hover:after:w-full',
+                route.path.startsWith(blogLink) ? 'text-brand after:w-full' : ''
+              ]"
+            >
+              {{ labels.blog }}
             </NuxtLink>
           </li>
 
@@ -209,6 +226,7 @@ const labels = computed(() => ({
         <li><NuxtLink :to="studioLink" @click="mobileOpen = false" class="text-white hover:text-brand">{{ labels.studio }}</NuxtLink></li>
         <li><NuxtLink :to="referencesLink" @click="mobileOpen = false" class="text-white hover:text-brand">{{ labels.references }}</NuxtLink></li>
         <li><NuxtLink :to="pricingLink" @click="mobileOpen = false" class="text-white hover:text-brand">{{ labels.pricing }}</NuxtLink></li>
+        <li><NuxtLink :to="blogLink" @click="mobileOpen = false" class="text-white hover:text-brand">{{ labels.blog }}</NuxtLink></li>
         <li><NuxtLink :to="contactLink" @click="mobileOpen = false" class="text-white hover:text-brand">{{ labels.contact }}</NuxtLink></li>
 
       </ul>
