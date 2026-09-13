@@ -59,7 +59,7 @@ const t = computed(() => isEN.value ? {
 
     <article class="px-6 max-w-[800px] mx-auto font-body">
 
-      <div class="flex flex-wrap items-center justify-center gap-4 mb-6 text-center">
+      <div class="flex flex-col items-center gap-4 mb-10 text-center">
         <h3 class="!mb-0">{{ post.title }}</h3>
         <span class="inline-block bg-brand-dark text-white text-sm font-prompt font-semibold tracking-wide px-3 py-1 rounded-full whitespace-nowrap">
           No. {{ post.number }}
