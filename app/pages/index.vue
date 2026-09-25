@@ -67,14 +67,14 @@ onActivated(() => {
           class="mx-auto mb-6 w-[160px] md:w-[200px] lg:w-[240px]"
       />
 
-      <h3>
+      <h1 class="!text-[28px] !leading-[32px] !mb-6 md:!text-[36px] md:!leading-[40px] lg:!text-[48px] lg:!leading-[52px] lg:!mb-10">
       <span>
         {{ content.heroLine1 }}
       </span>
       <span>
         {{ content.heroLine2 }}
       </span>
-      </h3>
+      </h1>
 
       <p style="white-space: pre-line">{{ content.paragraph1 }}</p>
 
