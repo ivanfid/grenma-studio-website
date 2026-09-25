@@ -64,23 +64,27 @@ onActivated(() => {
       <img
           :src="`${config.app.baseURL}images/studio_main_logo.png`"
           alt="Main Logo"
-          class="mx-auto mb-6 w-[160px] md:w-[200px] lg:w-[240px]"
+          class="mx-auto mb-6 w-[160px] md:w-[200px] lg:w-[210px]"
       />
 
-      <h3>
-      <span>
+      <h1 class="!text-[28px] !leading-[32px] !mb-6 md:!text-[36px] md:!leading-[40px] lg:!text-[48px] lg:!leading-[52px] lg:!mb-6">
+      <span class="!font-bold">
         {{ content.heroLine1 }}
       </span>
-      <span>
+      <span class="!font-normal">
         {{ content.heroLine2 }}
       </span>
-      </h3>
+      </h1>
 
-      <p style="white-space: pre-line">{{ content.paragraph1 }}</p>
+      <div class="w-24 h-px bg-[#b02c07] mx-auto mb-10"></div>
 
-      <p style="white-space: pre-line">{{ content.paragraph2 }}</p>
+      <div class="max-w-[700px] mx-auto">
+        <p class="!text-center" style="white-space: pre-line">{{ content.paragraph1 }}</p>
 
-      <p style="white-space: pre-line">{{ content.paragraph3 }}</p>
+        <p class="!text-center !font-bold" style="white-space: pre-line">{{ content.paragraph2 }}</p>
+
+        <p class="!text-center" style="white-space: pre-line">{{ content.paragraph3 }}</p>
+      </div>
 
     </div>
 
