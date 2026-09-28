@@ -28,39 +28,32 @@ function formatDate(iso) {
 
 const paragraphs = post.body.split('\n\n')
 
+function isQuestion(paragraph) {
+  return /^\d+\.,\s/.test(paragraph)
+}
+
 const t = computed(() => isEN.value ? {
-  back: '← Back to the blog homepage',
-  cta: 'CONTACT'
+  back: '← Back to the blog homepage'
 } : {
-  back: '← Vissza a blog főoldalára',
-  cta: 'KAPCSOLAT'
+  back: '← Vissza a blog főoldalára'
 })
 </script>
 
 <template>
 
-  <!-- HERO WRAPPER (általános, nem cikkenként cserélődő kép) -->
-  <div class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] min-h-[300px]">
-
-    <!-- HERO BACKGROUND -->
-    <div
-        class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh] min-h-[300px]
-         bg-black bg-cover bg-center
-         lg:bg-[center_30%]
-         2xl:bg-[center_80%] 2xl:bg-fixed"
-        :style="{ backgroundImage: `url(${config.app.baseURL}images/studio_lounge.jpg)` }"
-    ></div>
-    <div class="absolute inset-0 bg-black/60"></div>
-    <div class="absolute inset-0 pointer-events-none opacity-60 micro-grid"></div>
-  </div>
-
   <!-- FEHÉR BLOKK – CIKK -->
-  <div class="bg-white py-16 md:py-20">
+  <div class="bg-white pt-32 md:pt-56 pb-16 md:pb-20">
 
     <article class="px-6 max-w-[800px] mx-auto font-body">
 
       <div class="flex flex-col items-center gap-4 mb-10 text-center">
-        <h1 class="!text-[28px] !leading-[32px] !mb-0 md:!text-[36px] md:!leading-[40px] lg:!text-[48px] lg:!leading-[52px]">{{ post.title }}</h1>
+        <h1 class="!text-[28px] !leading-[32px] !mb-0 md:!text-[36px] md:!leading-[40px] lg:!text-[48px] lg:!leading-[52px]">
+          <template v-if="post.titleBold">
+            <span class="!font-bold">{{ post.titleBold }}</span>
+            <span class="!font-normal"> {{ post.titleLight }}</span>
+          </template>
+          <template v-else>{{ post.title }}</template>
+        </h1>
         <span class="inline-block bg-brand-dark text-white text-sm font-prompt font-semibold tracking-wide px-3 py-1 rounded-full whitespace-nowrap">
           No. {{ post.number }}
         </span>
@@ -75,9 +68,16 @@ const t = computed(() => isEN.value ? {
         />
       </div>
 
-      <p v-for="(paragraph, i) in paragraphs" :key="i">
-        {{ paragraph }}
-      </p>
+      <template v-for="(paragraph, i) in paragraphs" :key="i">
+        <div v-if="paragraph === '[IMAGE]' && post.inlineImage" class="rounded-xl overflow-hidden my-8">
+          <img
+              :src="`${config.app.baseURL}${post.inlineImage}`"
+              :alt="post.title"
+              class="w-full h-auto object-cover"
+          />
+        </div>
+        <p v-else :class="{ '!font-bold': isQuestion(paragraph) }">{{ paragraph }}</p>
+      </template>
 
       <div class="text-neutral-500 text-sm mt-8 pt-6 border-t border-neutral-200 text-center">
         {{ formatDate(post.date) }} &middot; {{ post.author }}
@@ -96,36 +96,4 @@ const t = computed(() => isEN.value ? {
 
   </div>
 
-  <!-- ALSÓ PARALLAX + CTA -->
-  <section
-      class="relative w-full h-[22vh] sm:h-[30vh] md:h-[45vh]
-         bg-black bg-cover bg-center
-         flex items-center justify-center
-         xl:bg-fixed"
-      :style="{ backgroundImage: `url(${config.app.baseURL}images/studio_main.jpg)` }"
-  >
-
-    <div class="absolute inset-0 bg-black/60"></div>
-
-    <div class="relative z-10 text-center">
-      <NuxtLink
-          :to="isEN ? '/en/contact' : '/contact'"
-          class="px-12 py-4 sm:px-14 sm:py-5 border-2 border-white text-white rounded-xl text-xl sm:text-2xl font-prompt font-semibold
-           transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
-      >
-        {{ t.cta }}
-      </NuxtLink>
-    </div>
-
-  </section>
-
 </template>
-
-<style scoped>
-.micro-grid {
-  background-image:
-      linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
-  background-size: 5px 5px;
-}
-</style>

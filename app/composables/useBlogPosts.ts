@@ -6,9 +6,12 @@ export interface BlogPost {
   slug: string
   number: number
   coverImage: string
+  inlineImage?: string
   author: string
   date: string
   title: string
+  titleBold?: string
+  titleLight?: string
   body: string
 }
 
@@ -16,10 +19,11 @@ interface RawBlogPost {
   slug: string
   number: number
   coverImage: string
+  inlineImage?: string
   author: string
   date: string
-  hu: { title: string; body: string }
-  en: { title: string; body: string }
+  hu: { title: string; titleBold?: string; titleLight?: string; body: string }
+  en: { title: string; titleBold?: string; titleLight?: string; body: string }
 }
 
 const rawPosts = (blogData as { posts: RawBlogPost[] }).posts

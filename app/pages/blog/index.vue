@@ -37,6 +37,7 @@ function formatDate(iso) {
 function postLink(slug) {
   return isEN.value ? `/en/blog/${slug}` : `/blog/${slug}`
 }
+
 </script>
 
 <template>
@@ -50,7 +51,7 @@ function postLink(slug) {
          bg-black bg-cover bg-center
          lg:bg-[center_30%]
          2xl:bg-[center_80%] 2xl:bg-fixed"
-        :style="{ backgroundImage: `url(${config.app.baseURL}images/studio_lounge.jpg)` }"
+        :style="{ backgroundImage: `url(${config.app.baseURL}images/studio_blog_top.jpg)` }"
     ></div>
     <div class="absolute inset-0 bg-black/60"></div>
     <!-- Micro-grid overlay (csak a hero-ra!) -->
@@ -64,7 +65,13 @@ function postLink(slug) {
     <article v-if="featured" class="px-6 max-w-[800px] mx-auto font-body">
 
       <div class="flex flex-col items-center gap-4 mb-10 text-center">
-        <h1 class="!text-[28px] !leading-[32px] !mb-0 md:!text-[36px] md:!leading-[40px] lg:!text-[48px] lg:!leading-[52px]">{{ featured.title }}</h1>
+        <h1 class="!text-[28px] !leading-[32px] !mb-0 md:!text-[36px] md:!leading-[40px] lg:!text-[48px] lg:!leading-[52px]">
+          <template v-if="featured.titleBold">
+            <span class="!font-bold">{{ featured.titleBold }}</span>
+            <span class="!font-normal"> {{ featured.titleLight }}</span>
+          </template>
+          <template v-else>{{ featured.title }}</template>
+        </h1>
         <span class="inline-block bg-brand-dark text-white text-sm font-prompt font-semibold tracking-wide px-3 py-1 rounded-full whitespace-nowrap">
           No. {{ featured.number }}
         </span>
@@ -78,16 +85,17 @@ function postLink(slug) {
         />
       </div>
 
-      <p v-for="(paragraph, i) in featured.body.split('\n\n')" :key="i">
-        {{ paragraph }}
-      </p>
+      <p class="!font-bold text-center">{{ featured.body.split('\n\n')[0] }}</p>
+      <p class="text-center">{{ featured.body.split('\n\n')[1] }}</p>
 
-      <NuxtLink
-          :to="postLink(featured.slug)"
-          class="block text-neutral-500 hover:text-brand text-sm mt-8 pt-6 border-t border-neutral-200 text-center transition-colors"
-      >
-        {{ formatDate(featured.date) }} &middot; {{ featured.author }}
-      </NuxtLink>
+      <div class="text-center mt-6">
+        <NuxtLink
+            :to="postLink(featured.slug)"
+            class="inline-block text-brand hover:text-brand-dark font-prompt font-semibold tracking-wide transition"
+        >
+          {{ t.readMore }}
+        </NuxtLink>
+      </div>
 
     </article>
 
@@ -124,7 +132,7 @@ function postLink(slug) {
          bg-black bg-cover bg-center
          flex items-center justify-center
          xl:bg-fixed"
-      :style="{ backgroundImage: `url(${config.app.baseURL}images/studio_main.jpg)` }"
+      :style="{ backgroundImage: `url(${config.app.baseURL}images/studio_blog_bottom.jpg)` }"
   >
 
     <div class="absolute inset-0 bg-black/60"></div>

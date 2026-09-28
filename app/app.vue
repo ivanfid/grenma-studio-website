@@ -37,7 +37,7 @@ import 'photoswipe/style.css'
 
 
 <template>
-  <div class="font-body font-medium">
+  <div class="font-body font-normal">
     <Header />
 
     <NuxtLayout>
