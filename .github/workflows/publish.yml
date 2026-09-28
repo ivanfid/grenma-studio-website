@@ -1,10 +1,15 @@
 name: Publish content to live site
 
 # Ezt a workflow-t az admin felület "Mentés és közzététel" gombja indítja el,
-# egy GitHub API hívással (repository_dispatch, event_type: content-publish),
-# a szerkesztett szöveget is elküldve a hívásban. Kézzel is elindítható
-# (workflow_dispatch) — ilyenkor a repóban jelenleg lévő tartalommal buildel,
-# admin-adat nélkül (pl. csak kód-változás után újra akarod deploy-olni).
+# egy GitHub API hívással (repository_dispatch, event_type: content-publish).
+# Kézzel is elindítható (workflow_dispatch) — mindkét esetben pontosan
+# ugyanúgy viselkedik: azt buildeli, ami ÉPPEN a main ágon van.
+#
+# A szöveges tartalom (app/content/site-content.json) mostantól MINDIG a git
+# main ága a forrása — az admin felület a "Mentés" gombra közvetlenül commitol
+# ide a GitHub API-n keresztül, nincs többé külön szerver-oldali másolat, ami
+# elcsúszhatna. Emiatt ennek a workflow-nak nem kell semmilyen szöveget
+# "beleírnia" a build-be — egyszerűen csak buildeli, ami már ott van.
 #
 # A build eredményét NEM FTP-vel toljuk fel, és nem is hívjuk meg kívülről a
 # szerverünket — a tárhelyünk egy bot-elhárító réteggel mindkettőt blokkolja
@@ -30,15 +35,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Write published content (ha admin-triggerelt)
-        if: github.event_name == 'repository_dispatch'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const fs = require('fs');
-            const content = context.payload.client_payload.content;
-            fs.writeFileSync('app/content/site-content.json', JSON.stringify(content, null, 2) + '\n');
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -61,3 +57,4 @@ jobs:
           gh release create live-build public.zip \
             --title "Live build" \
             --notes "Automatikusan frissül minden közzétételkor — a szerveren futó cron job veszi fel innen néhány percen belül."
+
