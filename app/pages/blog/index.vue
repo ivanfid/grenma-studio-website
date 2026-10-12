@@ -11,6 +11,7 @@ const lang = computed(() => isEN.value ? 'en' : 'hu')
 const posts = computed(() => useBlogPosts(lang.value))
 const featured = computed(() => posts.value[0])
 const older = computed(() => posts.value.slice(1))
+const featuredReadingTime = computed(() => featured.value ? blogReadingTime(featured.value) : 0)
 
 useSeoMeta({
   title: computed(() => isEN.value ? 'Blog | Grenma Studio' : 'Blog | Grenma Studio'),
@@ -22,11 +23,13 @@ useSeoMeta({
 const t = computed(() => isEN.value ? {
   earlierPosts: 'Earlier posts',
   readMore: 'Read more →',
-  cta: 'CONTACT'
+  cta: 'CONTACT',
+  readingTime: `${featuredReadingTime.value} min read`
 } : {
   earlierPosts: 'Korábbi bejegyzések',
   readMore: 'Tovább olvasom →',
-  cta: 'KAPCSOLAT'
+  cta: 'KAPCSOLAT',
+  readingTime: `${featuredReadingTime.value} perc olvasás`
 })
 
 function formatDate(iso) {
@@ -72,9 +75,14 @@ function postLink(slug) {
           </template>
           <template v-else>{{ featured.title }}</template>
         </h1>
-        <span class="inline-block bg-brand-dark text-white text-sm font-prompt font-semibold tracking-wide px-3 py-1 rounded-full whitespace-nowrap">
-          No. {{ featured.number }}
-        </span>
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <span class="inline-block bg-brand-dark text-white text-sm font-prompt font-semibold tracking-wide px-3 py-1 rounded-full whitespace-nowrap">
+            No. {{ featured.number }}
+          </span>
+          <span class="inline-block bg-brand-dark text-white text-sm font-prompt font-semibold tracking-wide px-3 py-1 rounded-full whitespace-nowrap">
+            {{ t.readingTime }}
+          </span>
+        </div>
       </div>
 
       <div class="rounded-xl overflow-hidden mb-8">
