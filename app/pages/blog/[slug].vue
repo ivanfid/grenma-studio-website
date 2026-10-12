@@ -152,7 +152,7 @@ onUnmounted(stopTracking)
 
 // Felfelé kerekítve, hogy ne mutasson "0 perc"-et, amíg van még hátra.
 const remainingMinutes = computed(() => Math.ceil(readingTime * (1 - scrollProgress.value / 100)))
-const remainingLabel = computed(() => isEN.value ? `${remainingMinutes.value} min left` : `${remainingMinutes.value} perc hátra`)
+const remainingLabel = computed(() => isEN.value ? `${remainingMinutes.value} min left` : `${remainingMinutes.value} perc van hátra`)
 </script>
 
 <template>
