@@ -54,3 +54,11 @@ export function useBlogPost(slug: string, lang: BlogLang): BlogPost | undefined 
 export function blogExcerpt(post: BlogPost): string {
   return post.body.split('\n\n')[0] ?? ''
 }
+
+const WORDS_PER_MINUTE = 130
+
+/** Becsült olvasási idő percben (min. 1). */
+export function blogReadingTime(post: BlogPost): number {
+  const wordCount = post.body.trim().split(/\s+/).filter(Boolean).length
+  return Math.max(1, Math.round(wordCount / WORDS_PER_MINUTE))
+}
