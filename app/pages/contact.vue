@@ -1,7 +1,10 @@
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { useRoute } from 'vue-router'
+
+// Nyilvános kulcs, mehet a repóba; a titkos párja az admin/config.php-ban van.
+const TURNSTILE_SITE_KEY = '0x4AAAAAAFmZQJLz4N6Ns5oW'
 
 const route = useRoute()
 const isEN = computed(() => route.path.startsWith('/en'))
@@ -17,10 +20,66 @@ const pageTitle = computed(() => isEN.value ? 'Contact' : 'Kapcsolat')
 const name = ref('')
 const email = ref('')
 const message = ref('')
+const website = ref('') // honeypot: ember nem látja, bot kitölti
 
 const loading = ref(false)
 const successMessage = ref('')
 const errorMessage = ref('')
+
+const captchaError = computed(() => isEN.value
+  ? 'Verification failed, please try again.'
+  : 'Az ellenőrzés nem sikerült, kérjük, próbáld újra.')
+
+const turnstileEl = ref<HTMLElement | null>(null)
+const turnstileToken = ref('')
+let widgetId: string | undefined
+let formShownAt = 0
+
+declare global {
+  interface Window { turnstile?: any }
+}
+
+let turnstileScript: Promise<void> | undefined
+const loadTurnstile = () => {
+  if (window.turnstile) return Promise.resolve()
+  turnstileScript ??= new Promise((resolve, reject) => {
+    const s = document.createElement('script')
+    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
+    s.async = true
+    s.onload = () => resolve()
+    s.onerror = reject
+    document.head.appendChild(s)
+  })
+  return turnstileScript
+}
+
+onMounted(async () => {
+  formShownAt = Date.now()
+  try {
+    await loadTurnstile()
+  } catch (error) {
+    console.error(error)
+    return
+  }
+  if (!turnstileEl.value) return
+  widgetId = window.turnstile.render(turnstileEl.value, {
+    sitekey: TURNSTILE_SITE_KEY,
+    theme: 'dark',
+    language: isEN.value ? 'en' : 'hu',
+    callback: (token: string) => { turnstileToken.value = token },
+    'expired-callback': () => { turnstileToken.value = '' },
+    'error-callback': () => { turnstileToken.value = '' }
+  })
+})
+
+onBeforeUnmount(() => {
+  if (widgetId !== undefined) window.turnstile?.remove(widgetId)
+})
+
+const resetTurnstile = () => {
+  turnstileToken.value = ''
+  if (widgetId !== undefined) window.turnstile?.reset(widgetId)
+}
 
 const sendForm = async () => {
   loading.value = true
@@ -33,6 +92,9 @@ const sendForm = async () => {
     formData.append('name', name.value)
     formData.append('email', email.value)
     formData.append('message', message.value)
+    formData.append('website', website.value)
+    formData.append('elapsed', String(Date.now() - formShownAt))
+    formData.append('cf-turnstile-response', turnstileToken.value)
 
     const response = await fetch('/sendmail.php', {
       method: 'POST',
@@ -41,8 +103,13 @@ const sendForm = async () => {
 
     const result = await response.json()
 
+    // A token egyszer használható, minden küldés után újat kérünk.
+    resetTurnstile()
+
     if (!response.ok) {
-      errorMessage.value = result.message || t.value.genericError || ''
+      errorMessage.value = result.code === 'captcha'
+        ? captchaError.value
+        : result.message || t.value.genericError || ''
       return
     }
 
@@ -126,11 +193,18 @@ const sendForm = async () => {
             ></textarea>
           </div>
 
+          <!-- Honeypot: képernyőn kívül, billentyűzettel és felolvasóval sem elérhető -->
+          <div class="absolute -left-[9999px] w-px h-px overflow-hidden" aria-hidden="true">
+            <label>Website <input v-model="website" type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+          </div>
+
+          <div ref="turnstileEl" class="flex justify-center min-h-[65px]"></div>
+
           <!-- BUTTON – brand hover only -->
           <div class="flex justify-center">
             <button
                 type="submit"
-                :disabled="loading || !name || !email || !message"
+                :disabled="loading || !name || !email || !message || !turnstileToken"
                 class="px-12 py-4 border-2 border-white text-white rounded-xl text-xl font-prompt font-semibold
          transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark
          disabled:opacity-50 disabled:cursor-not-allowed"
